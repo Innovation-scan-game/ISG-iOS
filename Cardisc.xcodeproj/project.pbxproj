@@ -1,0 +1,762 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2281CDD2292B9C1200106B12 /* EditAccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281CDD1292B9C1200106B12 /* EditAccountSettingsView.swift */; };
+		22939309292ADE1D0010F0FD /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22939308292ADE1D0010F0FD /* MenuItem.swift */; };
+		22A80AAC292A722D003CD018 /* CardiscApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AAB292A722D003CD018 /* CardiscApp.swift */; };
+		22A80AAE292A722D003CD018 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AAD292A722D003CD018 /* StartView.swift */; };
+		22A80AB0292A722F003CD018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A80AAF292A722F003CD018 /* Assets.xcassets */; };
+		22A80AB3292A722F003CD018 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A80AB2292A722F003CD018 /* Preview Assets.xcassets */; };
+		22A80ABD292A722F003CD018 /* CardiscTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80ABC292A722F003CD018 /* CardiscTests.swift */; };
+		22A80AC7292A722F003CD018 /* CardiscUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AC6292A722F003CD018 /* CardiscUITests.swift */; };
+		22A80AC9292A722F003CD018 /* CardiscUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AC8292A722F003CD018 /* CardiscUITestsLaunchTests.swift */; };
+		22A80ADF292A7869003CD018 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80ADE292A7869003CD018 /* LoginView.swift */; };
+		22A80AE3292A78C1003CD018 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AE2292A78C1003CD018 /* RegisterView.swift */; };
+		22A80AE5292A78D7003CD018 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AE4292A78D7003CD018 /* ForgotPasswordView.swift */; };
+		22A80AE7292A7914003CD018 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AE6292A7914003CD018 /* MainMenuView.swift */; };
+		22A80AE9292A7928003CD018 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AE8292A7928003CD018 /* AccountSettingsView.swift */; };
+		22A80AEB292A7944003CD018 /* JoinGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AEA292A7944003CD018 /* JoinGameView.swift */; };
+		22A80AEF292A7992003CD018 /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AEE292A7992003CD018 /* HowToPlayView.swift */; };
+		22A80AF1292A79CE003CD018 /* GameLobbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AF0292A79CE003CD018 /* GameLobbyView.swift */; };
+		22A80AF3292A7A17003CD018 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AF2292A7A17003CD018 /* LoadingView.swift */; };
+		22A80AF5292A7A34003CD018 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AF4292A7A34003CD018 /* CardView.swift */; };
+		22A80AF7292A7A63003CD018 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AF6292A7A63003CD018 /* ChatView.swift */; };
+		22A80AF9292A7A90003CD018 /* ConclussionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AF8292A7A90003CD018 /* ConclussionView.swift */; };
+		22A80AFE292A83C3003CD018 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AFD292A83C3003CD018 /* AccountViewModel.swift */; };
+		22A80B00292A83D9003CD018 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AFF292A83D9003CD018 /* MenuViewModel.swift */; };
+		22A80B02292A83FC003CD018 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B01292A83FC003CD018 /* GameViewModel.swift */; };
+		22A80B04292A8420003CD018 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B03292A8420003CD018 /* UserManager.swift */; };
+		22A80B06292A842D003CD018 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B05292A842D003CD018 /* CardManager.swift */; };
+		22A80B08292A845B003CD018 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B07292A845B003CD018 /* User.swift */; };
+		22A80B0A292A846A003CD018 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B09292A846A003CD018 /* Card.swift */; };
+		22A80B0C292A8549003CD018 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B0B292A8549003CD018 /* Constants.swift */; };
+		22A80B0E292A856C003CD018 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B0D292A856C003CD018 /* API.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22A80AB9292A722F003CD018 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22A80AA0292A722D003CD018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22A80AA7292A722D003CD018;
+			remoteInfo = Cardisc;
+		};
+		22A80AC3292A722F003CD018 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22A80AA0292A722D003CD018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22A80AA7292A722D003CD018;
+			remoteInfo = Cardisc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2281CDD1292B9C1200106B12 /* EditAccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountSettingsView.swift; sourceTree = "<group>"; };
+		22939308292ADE1D0010F0FD /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		22A80AA8292A722D003CD018 /* Cardisc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardisc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22A80AAB292A722D003CD018 /* CardiscApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardiscApp.swift; sourceTree = "<group>"; };
+		22A80AAD292A722D003CD018 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		22A80AAF292A722F003CD018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22A80AB2292A722F003CD018 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22A80AB8292A722F003CD018 /* CardiscTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardiscTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22A80ABC292A722F003CD018 /* CardiscTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardiscTests.swift; sourceTree = "<group>"; };
+		22A80AC2292A722F003CD018 /* CardiscUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardiscUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22A80AC6292A722F003CD018 /* CardiscUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardiscUITests.swift; sourceTree = "<group>"; };
+		22A80AC8292A722F003CD018 /* CardiscUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardiscUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		22A80ADE292A7869003CD018 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		22A80AE2292A78C1003CD018 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		22A80AE4292A78D7003CD018 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		22A80AE6292A7914003CD018 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		22A80AE8292A7928003CD018 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
+		22A80AEA292A7944003CD018 /* JoinGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameView.swift; sourceTree = "<group>"; };
+		22A80AEE292A7992003CD018 /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
+		22A80AF0292A79CE003CD018 /* GameLobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLobbyView.swift; sourceTree = "<group>"; };
+		22A80AF2292A7A17003CD018 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		22A80AF4292A7A34003CD018 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		22A80AF6292A7A63003CD018 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		22A80AF8292A7A90003CD018 /* ConclussionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConclussionView.swift; sourceTree = "<group>"; };
+		22A80AFD292A83C3003CD018 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		22A80AFF292A83D9003CD018 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		22A80B01292A83FC003CD018 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		22A80B03292A8420003CD018 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		22A80B05292A842D003CD018 /* CardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
+		22A80B07292A845B003CD018 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		22A80B09292A846A003CD018 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		22A80B0B292A8549003CD018 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		22A80B0D292A856C003CD018 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		22A80AA5292A722D003CD018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22A80AB5292A722F003CD018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22A80ABF292A722F003CD018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		22939307292ADE070010F0FD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				22939308292ADE1D0010F0FD /* MenuItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		22A80A9F292A722D003CD018 = {
+			isa = PBXGroup;
+			children = (
+				22A80AAA292A722D003CD018 /* Cardisc */,
+				22A80ABB292A722F003CD018 /* CardiscTests */,
+				22A80AC5292A722F003CD018 /* CardiscUITests */,
+				22A80AA9292A722D003CD018 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		22A80AA9292A722D003CD018 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				22A80AA8292A722D003CD018 /* Cardisc.app */,
+				22A80AB8292A722F003CD018 /* CardiscTests.xctest */,
+				22A80AC2292A722F003CD018 /* CardiscUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		22A80AAA292A722D003CD018 /* Cardisc */ = {
+			isa = PBXGroup;
+			children = (
+				22A80AAB292A722D003CD018 /* CardiscApp.swift */,
+				22A80AD9292A7284003CD018 /* Managers */,
+				22A80AD8292A727A003CD018 /* Viewmodels */,
+				22A80AD7292A7270003CD018 /* Views */,
+				22A80AD6292A7269003CD018 /* Models */,
+				22A80AD5292A7260003CD018 /* Helpers */,
+				22A80AB1292A722F003CD018 /* Preview Content */,
+				22A80AAF292A722F003CD018 /* Assets.xcassets */,
+			);
+			path = Cardisc;
+			sourceTree = "<group>";
+		};
+		22A80AB1292A722F003CD018 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				22A80AB2292A722F003CD018 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22A80ABB292A722F003CD018 /* CardiscTests */ = {
+			isa = PBXGroup;
+			children = (
+				22A80ABC292A722F003CD018 /* CardiscTests.swift */,
+			);
+			path = CardiscTests;
+			sourceTree = "<group>";
+		};
+		22A80AC5292A722F003CD018 /* CardiscUITests */ = {
+			isa = PBXGroup;
+			children = (
+				22A80AC6292A722F003CD018 /* CardiscUITests.swift */,
+				22A80AC8292A722F003CD018 /* CardiscUITestsLaunchTests.swift */,
+			);
+			path = CardiscUITests;
+			sourceTree = "<group>";
+		};
+		22A80AD5292A7260003CD018 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				22A80B0B292A8549003CD018 /* Constants.swift */,
+				22A80B0D292A856C003CD018 /* API.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		22A80AD6292A7269003CD018 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				22A80B07292A845B003CD018 /* User.swift */,
+				22A80B09292A846A003CD018 /* Card.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		22A80AD7292A7270003CD018 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22A80ADB292A774C003CD018 /* Game */,
+				22A80ADA292A7734003CD018 /* Menu */,
+				22A80AAD292A722D003CD018 /* StartView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		22A80AD8292A727A003CD018 /* Viewmodels */ = {
+			isa = PBXGroup;
+			children = (
+				22A80AFB292A82CD003CD018 /* Game */,
+				22A80AFA292A82C0003CD018 /* Menu */,
+			);
+			path = Viewmodels;
+			sourceTree = "<group>";
+		};
+		22A80AD9292A7284003CD018 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				22A80B03292A8420003CD018 /* UserManager.swift */,
+				22A80B05292A842D003CD018 /* CardManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		22A80ADA292A7734003CD018 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				22A80AFC292A8368003CD018 /* Account */,
+				22A80AF0292A79CE003CD018 /* GameLobbyView.swift */,
+				22A80AE6292A7914003CD018 /* MainMenuView.swift */,
+				22A80AEA292A7944003CD018 /* JoinGameView.swift */,
+				22A80AEE292A7992003CD018 /* HowToPlayView.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		22A80ADB292A774C003CD018 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				22A80AF2292A7A17003CD018 /* LoadingView.swift */,
+				22A80AF4292A7A34003CD018 /* CardView.swift */,
+				22A80AF6292A7A63003CD018 /* ChatView.swift */,
+				22A80AF8292A7A90003CD018 /* ConclussionView.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		22A80AFA292A82C0003CD018 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				22A80AFD292A83C3003CD018 /* AccountViewModel.swift */,
+				22A80AFF292A83D9003CD018 /* MenuViewModel.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		22A80AFB292A82CD003CD018 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				22A80B01292A83FC003CD018 /* GameViewModel.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		22A80AFC292A8368003CD018 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				22939307292ADE070010F0FD /* Components */,
+				22A80AE8292A7928003CD018 /* AccountSettingsView.swift */,
+				2281CDD1292B9C1200106B12 /* EditAccountSettingsView.swift */,
+				22A80AE4292A78D7003CD018 /* ForgotPasswordView.swift */,
+				22A80ADE292A7869003CD018 /* LoginView.swift */,
+				22A80AE2292A78C1003CD018 /* RegisterView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		22A80AA7292A722D003CD018 /* Cardisc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22A80ACC292A722F003CD018 /* Build configuration list for PBXNativeTarget "Cardisc" */;
+			buildPhases = (
+				22A80AA4292A722D003CD018 /* Sources */,
+				22A80AA5292A722D003CD018 /* Frameworks */,
+				22A80AA6292A722D003CD018 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cardisc;
+			productName = Cardisc;
+			productReference = 22A80AA8292A722D003CD018 /* Cardisc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		22A80AB7292A722F003CD018 /* CardiscTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22A80ACF292A722F003CD018 /* Build configuration list for PBXNativeTarget "CardiscTests" */;
+			buildPhases = (
+				22A80AB4292A722F003CD018 /* Sources */,
+				22A80AB5292A722F003CD018 /* Frameworks */,
+				22A80AB6292A722F003CD018 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22A80ABA292A722F003CD018 /* PBXTargetDependency */,
+			);
+			name = CardiscTests;
+			productName = CardiscTests;
+			productReference = 22A80AB8292A722F003CD018 /* CardiscTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		22A80AC1292A722F003CD018 /* CardiscUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22A80AD2292A722F003CD018 /* Build configuration list for PBXNativeTarget "CardiscUITests" */;
+			buildPhases = (
+				22A80ABE292A722F003CD018 /* Sources */,
+				22A80ABF292A722F003CD018 /* Frameworks */,
+				22A80AC0292A722F003CD018 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22A80AC4292A722F003CD018 /* PBXTargetDependency */,
+			);
+			name = CardiscUITests;
+			productName = CardiscUITests;
+			productReference = 22A80AC2292A722F003CD018 /* CardiscUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		22A80AA0292A722D003CD018 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					22A80AA7292A722D003CD018 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					22A80AB7292A722F003CD018 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 22A80AA7292A722D003CD018;
+					};
+					22A80AC1292A722F003CD018 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = 22A80AA7292A722D003CD018;
+					};
+				};
+			};
+			buildConfigurationList = 22A80AA3292A722D003CD018 /* Build configuration list for PBXProject "Cardisc" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 22A80A9F292A722D003CD018;
+			productRefGroup = 22A80AA9292A722D003CD018 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				22A80AA7292A722D003CD018 /* Cardisc */,
+				22A80AB7292A722F003CD018 /* CardiscTests */,
+				22A80AC1292A722F003CD018 /* CardiscUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		22A80AA6292A722D003CD018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22A80AB3292A722F003CD018 /* Preview Assets.xcassets in Resources */,
+				22A80AB0292A722F003CD018 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22A80AB6292A722F003CD018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22A80AC0292A722F003CD018 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		22A80AA4292A722D003CD018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22A80B02292A83FC003CD018 /* GameViewModel.swift in Sources */,
+				2281CDD2292B9C1200106B12 /* EditAccountSettingsView.swift in Sources */,
+				22A80ADF292A7869003CD018 /* LoginView.swift in Sources */,
+				22A80B04292A8420003CD018 /* UserManager.swift in Sources */,
+				22A80AF9292A7A90003CD018 /* ConclussionView.swift in Sources */,
+				22A80AE7292A7914003CD018 /* MainMenuView.swift in Sources */,
+				22A80AF1292A79CE003CD018 /* GameLobbyView.swift in Sources */,
+				22A80B0C292A8549003CD018 /* Constants.swift in Sources */,
+				22A80AAE292A722D003CD018 /* StartView.swift in Sources */,
+				22A80AF7292A7A63003CD018 /* ChatView.swift in Sources */,
+				22A80AEB292A7944003CD018 /* JoinGameView.swift in Sources */,
+				22A80AF3292A7A17003CD018 /* LoadingView.swift in Sources */,
+				22A80AE3292A78C1003CD018 /* RegisterView.swift in Sources */,
+				22A80AF5292A7A34003CD018 /* CardView.swift in Sources */,
+				22A80AFE292A83C3003CD018 /* AccountViewModel.swift in Sources */,
+				22939309292ADE1D0010F0FD /* MenuItem.swift in Sources */,
+				22A80B06292A842D003CD018 /* CardManager.swift in Sources */,
+				22A80AEF292A7992003CD018 /* HowToPlayView.swift in Sources */,
+				22A80AE9292A7928003CD018 /* AccountSettingsView.swift in Sources */,
+				22A80B00292A83D9003CD018 /* MenuViewModel.swift in Sources */,
+				22A80AAC292A722D003CD018 /* CardiscApp.swift in Sources */,
+				22A80AE5292A78D7003CD018 /* ForgotPasswordView.swift in Sources */,
+				22A80B08292A845B003CD018 /* User.swift in Sources */,
+				22A80B0E292A856C003CD018 /* API.swift in Sources */,
+				22A80B0A292A846A003CD018 /* Card.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22A80AB4292A722F003CD018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22A80ABD292A722F003CD018 /* CardiscTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22A80ABE292A722F003CD018 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22A80AC9292A722F003CD018 /* CardiscUITestsLaunchTests.swift in Sources */,
+				22A80AC7292A722F003CD018 /* CardiscUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22A80ABA292A722F003CD018 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22A80AA7292A722D003CD018 /* Cardisc */;
+			targetProxy = 22A80AB9292A722F003CD018 /* PBXContainerItemProxy */;
+		};
+		22A80AC4292A722F003CD018 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22A80AA7292A722D003CD018 /* Cardisc */;
+			targetProxy = 22A80AC3292A722F003CD018 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		22A80ACA292A722F003CD018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		22A80ACB292A722F003CD018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		22A80ACD292A722F003CD018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cardisc/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.vankesteren.tim.Cardisc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		22A80ACE292A722F003CD018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Cardisc/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.vankesteren.tim.Cardisc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		22A80AD0292A722F003CD018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.vankesteren.tim.CardiscTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cardisc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cardisc";
+			};
+			name = Debug;
+		};
+		22A80AD1292A722F003CD018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.vankesteren.tim.CardiscTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cardisc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Cardisc";
+			};
+			name = Release;
+		};
+		22A80AD3292A722F003CD018 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.vankesteren.tim.CardiscUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cardisc;
+			};
+			name = Debug;
+		};
+		22A80AD4292A722F003CD018 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.vankesteren.tim.CardiscUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Cardisc;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		22A80AA3292A722D003CD018 /* Build configuration list for PBXProject "Cardisc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22A80ACA292A722F003CD018 /* Debug */,
+				22A80ACB292A722F003CD018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22A80ACC292A722F003CD018 /* Build configuration list for PBXNativeTarget "Cardisc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22A80ACD292A722F003CD018 /* Debug */,
+				22A80ACE292A722F003CD018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22A80ACF292A722F003CD018 /* Build configuration list for PBXNativeTarget "CardiscTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22A80AD0292A722F003CD018 /* Debug */,
+				22A80AD1292A722F003CD018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22A80AD2292A722F003CD018 /* Build configuration list for PBXNativeTarget "CardiscUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22A80AD3292A722F003CD018 /* Debug */,
+				22A80AD4292A722F003CD018 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 22A80AA0292A722D003CD018 /* Project object */;
+}
