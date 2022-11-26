@@ -15,23 +15,7 @@ struct RegisterView: View {
     @State private var passwordRepeated: String = ""
     
     var body: some View {
-        VStack {
-            // Logo
-            HStack {
-                HStack {
-                    Image(systemName: "chevron.left").foregroundColor(Color(UIColor.systemBlue))
-                    Text("Back").foregroundColor(Color(UIColor.systemBlue))
-                }
-                .padding(.vertical, 10)
-                .padding(.horizontal, 25)
-                .background(Color.white)
-                .cornerRadius(20, corners: [.topRight, .bottomRight])
-                .shadow(radius: 8)
-                .padding(.top, 10)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Spacer().frame(height: 50)
+        NavigationStack {
             
             VStack{
                 HStack {
@@ -44,7 +28,7 @@ struct RegisterView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-    
+                
                 VStack {
                     HStack {
                         Text("Login to your Cardisc-Account to gain access to the game.")
@@ -74,7 +58,7 @@ struct RegisterView: View {
                 }.padding(.bottom, 10)
                 
                 VStack {
-                    Text("Username").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
+                    Text("Password").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
                     TextField(
                         "...",
                         text: $password
@@ -86,7 +70,7 @@ struct RegisterView: View {
                 }.padding(.bottom, 10)
                 
                 VStack {
-                    Text("Password").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
+                    Text("Password repeated").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
                     TextField(
                         "...",
                         text: $passwordRepeated
@@ -100,17 +84,18 @@ struct RegisterView: View {
             }.padding(.horizontal, 30)
             
             HStack {
-                MenuItem(menuIcon: "person.crop.circle.badge.plus.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Register", menuColor: UIColor.systemBlue, menuPaddingRight: 40, destination: nil)
+                MenuItem(menuIcon: "person.crop.circle.badge.plus.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Register", menuColor: UIColor.systemBlue, menuPaddingRight: 40)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(.top, 50)
             
             
         }
+        .padding(.top, 15)
         .frame(maxHeight: .infinity, alignment: .top)
         .background(Image("WP1")
             .resizable()
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+30)
+            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+80)
             .brightness(-0.08)
         )
     }

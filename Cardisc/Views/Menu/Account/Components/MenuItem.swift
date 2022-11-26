@@ -16,12 +16,9 @@ struct MenuItem: View {
     let menuTitle: String
     let menuColor: UIColor
     let menuPaddingRight: CGFloat?
-    let destination: String?
     
     var body: some View {
-        VStack(
-            alignment: .trailing
-        ) {
+        HStack {
             HStack{
                 Image(systemName: menuIcon)
                     .resizable()
@@ -37,10 +34,7 @@ struct MenuItem: View {
             .cornerRadius(13, corners: [.topLeft, .bottomLeft])
             .shadow(radius: 15)
             .padding(.vertical, 10)
-            .onTapGesture {
-                //..
-            }
-        }
+        }.frame(maxWidth: .infinity, alignment: .trailing)
     }
 }
 

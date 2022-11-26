@@ -9,28 +9,10 @@ import Foundation
 import SwiftUI
 
 struct AccountSettingsView: View {
-    @State private var username: String = ""
-    @State private var password: String = ""
+    private let vm = UserViewModel()
     
     var body: some View {
         VStack {
-            // Logo
-            HStack {
-                HStack {
-                    Image(systemName: "chevron.left").foregroundColor(Color(UIColor.systemBlue))
-                    Text("Back").foregroundColor(Color(UIColor.systemBlue))
-                }
-                .padding(.vertical, 10)
-                .padding(.horizontal, 25)
-                .background(Color.white)
-                .cornerRadius(20, corners: [.topRight, .bottomRight])
-                .shadow(radius: 8)
-                .padding(.top, 10)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Spacer().frame(height: 50)
-            
             VStack{
                 HStack {
                     Image(systemName: "gearshape.fill")
@@ -49,7 +31,7 @@ struct AccountSettingsView: View {
                         .padding(20)
                     VStack {
                         HStack {
-                            Text("Title").bold().font(.system(size: 16))
+                            Text(vm.getInfo(userDefaults: "USERNAME")).bold().font(.system(size: 16))
                             Spacer()
                             Text("ID")
                         }
@@ -86,19 +68,25 @@ struct AccountSettingsView: View {
                 
             }.padding(.horizontal, 30)
             
-            HStack {
-                MenuItem(menuIcon: "square.and.pencil", iconHeight: 26, iconWidth: 26, menuTitle: "Edit account info", menuColor: UIColor.systemBlue, menuPaddingRight: 40, destination: nil)
+            NavigationLink {
+                EditAccountSettingsView()
+            } label: {
+                HStack {
+                    MenuItem(menuIcon: "square.and.pencil", iconHeight: 26, iconWidth: 26, menuTitle: "Edit account info", menuColor: UIColor.systemBlue, menuPaddingRight: 40)
+                }
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .padding(.top, 50)
             }
-            .frame(maxWidth: .infinity, alignment: .trailing)
-            .padding(.top, 50)
+            
+            
             
             HStack {
-                MenuItem(menuIcon: "camera.fill", iconHeight: 22, iconWidth: 30, menuTitle: "Change picture", menuColor: UIColor.systemBlue, menuPaddingRight: 40, destination: nil)
+                MenuItem(menuIcon: "camera.fill", iconHeight: 22, iconWidth: 30, menuTitle: "Change picture", menuColor: UIColor.systemBlue, menuPaddingRight: 40)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             
             HStack {
-                MenuItem(menuIcon: "trash.fill", iconHeight: 26, iconWidth: 26, menuTitle: "Delete account", menuColor: UIColor.systemRed, menuPaddingRight: 40, destination: nil)
+                MenuItem(menuIcon: "trash.fill", iconHeight: 26, iconWidth: 26, menuTitle: "Delete account", menuColor: UIColor.systemRed, menuPaddingRight: 40)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             
@@ -108,9 +96,10 @@ struct AccountSettingsView: View {
             
         }
         .frame(maxHeight: .infinity, alignment: .top)
+        .padding(.top, 30)
         .background(Image("WP1")
             .resizable()
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+30)
+            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+70)
             .brightness(-0.08)
         )
     }

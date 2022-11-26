@@ -11,23 +11,6 @@ import SwiftUI
 struct HowToPlayView: View {
     var body: some View {
         VStack {
-            // Logo
-            HStack {
-                HStack {
-                    Image(systemName: "chevron.left").foregroundColor(Color(UIColor.systemBlue))
-                    Text("Back").foregroundColor(Color(UIColor.systemBlue))
-                }
-                .padding(.vertical, 10)
-                .padding(.horizontal, 25)
-                .background(Color.white)
-                .cornerRadius(20, corners: [.topRight, .bottomRight])
-                .shadow(radius: 8)
-                .padding(.top, 10)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Spacer().frame(height: 50)
-            
             VStack{
                 HStack {
                     Image(systemName: "person.fill.questionmark.rtl")
@@ -86,10 +69,11 @@ struct HowToPlayView: View {
                 }
             }.padding(.horizontal, 30)
         }
+        .padding(.top, 20)
         .frame(maxHeight: .infinity, alignment: .top)
         .background(Image("WP1")
             .resizable()
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+30)
+            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+70)
             .brightness(-0.08)
         )
     }

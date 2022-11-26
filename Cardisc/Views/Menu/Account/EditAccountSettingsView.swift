@@ -14,23 +14,6 @@ struct EditAccountSettingsView: View {
     
     var body: some View {
         VStack {
-            // Logo
-            HStack {
-                HStack {
-                    Image(systemName: "chevron.left").foregroundColor(Color(UIColor.systemBlue))
-                    Text("Back").foregroundColor(Color(UIColor.systemBlue))
-                }
-                .padding(.vertical, 10)
-                .padding(.horizontal, 25)
-                .background(Color.white)
-                .cornerRadius(20, corners: [.topRight, .bottomRight])
-                .shadow(radius: 8)
-                .padding(.top, 10)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Spacer().frame(height: 50)
-            
             VStack{
                 HStack {
                     Image(systemName: "gearshape.fill")
@@ -85,21 +68,14 @@ struct EditAccountSettingsView: View {
                 }.padding(.bottom, 5)
             }.padding(.horizontal, 30)
             
-            HStack {
-                MenuItem(menuIcon: "checkmark", iconHeight: 26, iconWidth: 30, menuTitle: "Confirm", menuColor: UIColor.systemBlue, menuPaddingRight: 40, destination: nil)
-            }
-            .frame(maxWidth: .infinity, alignment: .trailing)
-            .padding(.top, 50)
-            
-            
-            
-
-            
+            MenuItem(menuIcon: "checkmark", iconHeight: 26, iconWidth: 30, menuTitle: "Confirm", menuColor: UIColor.systemBlue, menuPaddingRight: 40)
+     
         }
         .frame(maxHeight: .infinity, alignment: .top)
+        .padding(.top, 20)
         .background(Image("WP1")
             .resizable()
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+30)
+            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+70)
             .brightness(-0.08)
         )
     }
