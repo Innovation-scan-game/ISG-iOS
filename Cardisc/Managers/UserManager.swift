@@ -31,14 +31,6 @@ class UserManager {
         }
     }
     
-    func createNewUser(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
-    }
-    
     func updateUser(id: Int, completion:@escaping (userDto) -> ()) {
         Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
             completion(data)

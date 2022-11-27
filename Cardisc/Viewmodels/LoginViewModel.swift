@@ -22,4 +22,17 @@ class LoginViewModel: ObservableObject {
         sleep(1)
         return loggedIn
     }
+    
+    func registerUser(username: String, password: String, email: String) -> Bool {
+        var registered = false
+        
+        loginManager.registerUser(username: username, password: password, emailadress: email) { data in
+            print (data)
+            registered = true
+            
+        }
+        sleep(1)
+        return registered
+    }
+    
 }

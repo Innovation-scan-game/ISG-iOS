@@ -26,4 +26,20 @@ class LoginManager {
             print(error)
         }
     }
+    
+    func registerUser(username: String, password: String, emailadress: String, completion:@escaping (registerResponseDto) -> ()) {
+        let body: [String: AnyHashable] = [
+            "username": username,
+            "password": password,
+            "email": emailadress
+        ]
+        
+        Bundle.main.postData(body: body, url: Constants.API_BASE_URL + "user", model: registerResponseDto.self) { data in
+            print(data)
+            completion(data)
+            
+        } failure: { error in
+            print(error)
+        }
+    }
 }

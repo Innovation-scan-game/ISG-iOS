@@ -13,6 +13,9 @@ struct RegisterView: View {
     @State private var emailaddress: String = ""
     @State private var password: String = ""
     @State private var passwordRepeated: String = ""
+    @State private var isActive: Bool = false
+    
+    private var vm = LoginViewModel()
     
     var body: some View {
         NavigationStack {
@@ -46,7 +49,7 @@ struct RegisterView: View {
                 }.padding(.bottom, 10)
                 
                 VStack {
-                    Text("Emailaddress").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
+                    Text("Emailadress").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
                     TextField(
                         "...",
                         text: $emailaddress
@@ -83,11 +86,17 @@ struct RegisterView: View {
                 
             }.padding(.horizontal, 30)
             
-            HStack {
-                MenuItem(menuIcon: "person.crop.circle.badge.plus.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Register", menuColor: UIColor.systemBlue, menuPaddingRight: 40)
+            NavigationLink("", destination: StartView(), isActive: $isActive)
+            MenuItem(menuIcon: "person.crop.circle.badge.plus.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Register", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
+                if(password == passwordRepeated) {
+                    if(vm.registerUser(username: username, password: password, email: emailaddress)) {
+                        print("User created")
+                        isActive = true
+                    }
+                }
+                
             }
-            .frame(maxWidth: .infinity, alignment: .trailing)
-            .padding(.top, 50)
+            
             
             
         }

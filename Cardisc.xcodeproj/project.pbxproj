@@ -36,6 +36,7 @@
 		22A40E762932CEEF00FF7952 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E752932CEEF00FF7952 /* LoginViewModel.swift */; };
 		22A40E782932CF3E00FF7952 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E772932CF3E00FF7952 /* CardViewModel.swift */; };
 		22A40E7A2932CF6C00FF7952 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E792932CF6C00FF7952 /* UserViewModel.swift */; };
+		22A40E7C2932DD8600FF7952 /* registerResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E7B2932DD8600FF7952 /* registerResponseDto.swift */; };
 		22A80AAC292A722D003CD018 /* CardiscApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AAB292A722D003CD018 /* CardiscApp.swift */; };
 		22A80AAE292A722D003CD018 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AAD292A722D003CD018 /* StartView.swift */; };
 		22A80AB0292A722F003CD018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A80AAF292A722F003CD018 /* Assets.xcassets */; };
@@ -108,6 +109,7 @@
 		22A40E752932CEEF00FF7952 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		22A40E772932CF3E00FF7952 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		22A40E792932CF6C00FF7952 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		22A40E7B2932DD8600FF7952 /* registerResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerResponseDto.swift; sourceTree = "<group>"; };
 		22A80AA8292A722D003CD018 /* Cardisc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardisc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A80AAB292A722D003CD018 /* CardiscApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardiscApp.swift; sourceTree = "<group>"; };
 		22A80AAD292A722D003CD018 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				22A40E6929316AB400FF7952 /* changeReadinessDto.swift */,
 				22A40E6B29316AEF00FF7952 /* cardListDto.swift */,
 				22A40E6D29316B1B00FF7952 /* cardDto.swift */,
+				22A40E7B2932DD8600FF7952 /* registerResponseDto.swift */,
 			);
 			path = Dto;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				22A40E602931686E00FF7952 /* lobbyResponseDto.swift in Sources */,
 				22A80AEB292A7944003CD018 /* JoinGameView.swift in Sources */,
 				22A40E64293169D500FF7952 /* joinRequestDto.swift in Sources */,
+				22A40E7C2932DD8600FF7952 /* registerResponseDto.swift in Sources */,
 				22A40E53293165B400FF7952 /* userDto.swift in Sources */,
 				22A40E722932CCB800FF7952 /* SessionManager.swift in Sources */,
 				226CC8792930ECEB005663C5 /* MPCQuestionCard.swift in Sources */,
