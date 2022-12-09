@@ -1,17 +1,17 @@
 //
-//  lobbyPlayerDto.swift
+//  Lobby.swift
 //  Cardisc
 //
-//  Created by Tim van Kesteren on 25/11/2022.
+//  Created by Tim van Kesteren on 10/12/2022.
 //
 
 import Foundation
 
-struct lobbyResponseDto: Codable {
+struct Lobby: Codable {
     let id: String
     let hostId: String
     let sessionCode: String
     let created: String
     let sessionAuth: String
-    let players: [lobbyPlayerDto]
+    let players: [LobbyPlayer]
 }

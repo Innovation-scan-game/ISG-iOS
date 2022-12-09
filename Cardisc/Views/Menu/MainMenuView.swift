@@ -12,14 +12,14 @@ struct MainMenuView: View {
     @ObservedObject private var vm = MainMenuViewModel()
     
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Image("WP1")
-                    .resizable()
-                    .aspectRatio(geometry.size, contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
-                
-                NavigationStack {
+        NavigationStack {
+            GeometryReader { geometry in
+                ZStack {
+                    Image("WP1")
+                        .resizable()
+                        .aspectRatio(geometry.size, contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                    
                     VStack {
                         HStack {
                             HStack {
@@ -36,7 +36,9 @@ struct MainMenuView: View {
                             .padding(.vertical, 35)
                             .padding(.leading, 10)
                             .padding(.trailing, 20)
+                            .background(Color.white)
                             .cornerRadius(20, corners: [.topRight, .bottomRight])
+                            
                             .shadow(radius: 8)
                             .padding(.top, 20)
                         }

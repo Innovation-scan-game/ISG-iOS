@@ -50,13 +50,15 @@ class ApiService {
     //POST request
     func postData<T: Decodable>
     (
-        body: Dictionary<String, AnyHashable>,
+        token: String?,
+        body: Dictionary<String, AnyHashable>?,
         url: String,
         model: T.Type,
         completion:@escaping(T) -> (),
         failure:@escaping(Error) -> ()
     )
     {
+        
         guard let url = URL(string: url) else {
             return
         }
@@ -65,7 +67,16 @@ class ApiService {
         
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "content-type")
-        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        
+        //if token is given with at the manager
+        if let token = token {
+            request.setValue("bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        //if body is given with at the manager
+        if let body = body {
+            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        }
         
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data = data, error == nil else {

@@ -53,11 +53,8 @@ class SessionManager {
     
     func createGame(completion:@escaping (lobbyResponseDto) -> ()) {
         if let token = defaults.string(forKey: "X-AUTHTOKEN") {
-            let body: [String: AnyHashable] = [
-                "Authorization": token
-            ]
             
-            apiService.postData(body: body, url: Constants.API_BASE_URL + "session/create", model: lobbyResponseDto.self) { data in
+            apiService.postData(token: token, body: nil, url: Constants.API_BASE_URL + "session/create", model: lobbyResponseDto.self) { data in
 
                 do {
                     print(data.id)
