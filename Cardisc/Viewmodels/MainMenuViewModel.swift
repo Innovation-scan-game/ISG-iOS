@@ -33,4 +33,9 @@ class MainMenuViewModel: ObservableObject {
         self.isLoggedOff = true
         self.logOffIsLoading = false
     }
+    
+    func resetButtonStates() {
+        isLoggedOff = false
+        sessionCreated = false
+    }
 }
