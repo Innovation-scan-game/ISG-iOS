@@ -25,7 +25,6 @@ class LoginViewModel: ObservableObject {
     
     func registerUser(username: String, password: String, email: String) -> Bool {
         var registered = false
-        
         loginManager.registerUser(username: username, password: password, emailadress: email) { data in
             print (data)
             registered = true

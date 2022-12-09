@@ -11,7 +11,7 @@ struct StartView: View {
     var body: some View {
         let defaults = UserDefaults.standard
         
-        if let token = defaults.string(forKey: "X-AUTHTOKEN")  {
+        if let token = defaults.string(forKey: "X-AUTHTOKEN"){
             MainMenuView()
         }
         

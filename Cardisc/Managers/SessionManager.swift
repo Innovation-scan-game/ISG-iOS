@@ -8,85 +8,86 @@
 import Foundation
 
 class SessionManager {
-    let defaults = UserDefaults.standard
+    private var signalRService: SignalRService?
+    private var apiService = ApiService()
+    private let defaults = UserDefaults.standard
+    
+    init(signalRService: SignalRService? = nil) {
+        self.signalRService = signalRService
+        if let token = defaults.string(forKey: "X-AUTHTOKEN") {
+            if let url = URL(string: Constants.SIGNALR_BASE_URL + token){
+                self.signalRService = SignalRService(url: url)
+            }
+            else {
+                print("incorrect url")
+            }
+        }
+        else {
+            print ("no key found")
+        }
+    }
     
     func submitSession(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
+        
     }
     
     func sendChatMessage(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
+        
     }
     
     func nextRound(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
+        
     }
     
     func endGame(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
+        
     }
     
     func joinGame(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
+        
     }
     
     func leaveGame(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
+        
     }
     
-    func createGame(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
+    func createGame(completion:@escaping (lobbyResponseDto) -> ()) {
+        if let token = defaults.string(forKey: "X-AUTHTOKEN") {
+            let body: [String: AnyHashable] = [
+                "Authorization": token
+            ]
+            
+            apiService.postData(body: body, url: Constants.API_BASE_URL + "session/create", model: lobbyResponseDto.self) { data in
+
+                do {
+                    print(data.id)
+
+                } catch {
+                    print("Unable to Encode Note (\(error))")
+                }
+                
+                completion(data)
+                
+            } failure: { error in
+                print(error)
+            }
         }
+        
     }
     
     func startGame(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
+        
     }
     
     func changeState(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
+        
     }
     
     func sessionHistory(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
+        
+    }
+    
+    func testSession() {
+        
     }
 }

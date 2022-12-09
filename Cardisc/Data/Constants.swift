@@ -9,5 +9,6 @@ import Foundation
 
 class Constants {
     static let API_BASE_URL = "https://cardisc.azurewebsites.net/api/"
+    static let SIGNALR_BASE_URL = "https://cardisc.azurewebsites.net/api?token="
 }
 

@@ -14,5 +14,4 @@ struct lobbyResponseDto: Codable {
     let created: String
     let sessionAuth: String
     let players: [lobbyPlayerDto]
-    
 }

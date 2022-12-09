@@ -9,6 +9,7 @@ import Foundation
 
 class LoginManager {
     let defaults = UserDefaults.standard
+    private let apiService = ApiService()
     
     func loginUser(username: String, password: String, completion:@escaping (loginResponseDto) -> ()) {
         let body: [String: AnyHashable] = [
@@ -16,10 +17,18 @@ class LoginManager {
             "password": password
         ]
         
-        Bundle.main.postData(body: body, url: Constants.API_BASE_URL + "login", model: loginResponseDto.self) { data in
+        apiService.postData(body: body, url: Constants.API_BASE_URL + "login", model: loginResponseDto.self) { data in
             self.defaults.set(data.accessToken, forKey: "X-AUTHTOKEN")
-            self.defaults.set(data.user.id, forKey: "USERID")
-            print(data.user.id)
+
+            do {
+                let encoder = JSONEncoder()
+                let user = try encoder.encode(data)
+                self.defaults.set(user, forKey: "user")
+
+            } catch {
+                print("Unable to Encode Note (\(error))")
+            }
+            
             completion(data)
             
         } failure: { error in
@@ -34,7 +43,7 @@ class LoginManager {
             "email": emailadress
         ]
         
-        Bundle.main.postData(body: body, url: Constants.API_BASE_URL + "user", model: registerResponseDto.self) { data in
+        apiService.postData(body: body, url: Constants.API_BASE_URL + "user", model: registerResponseDto.self) { data in
             print(data)
             completion(data)
             

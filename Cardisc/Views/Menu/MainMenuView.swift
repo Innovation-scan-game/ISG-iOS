@@ -9,8 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MainMenuView: View {
-    private let vm = UserViewModel()
-    @State private var isActive = false
+    @ObservedObject private var vm = MainMenuViewModel()
     
     var body: some View {
         NavigationStack {
@@ -49,13 +48,9 @@ struct MainMenuView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 
-                NavigationLink {
-                    GameLobbyView()
-                } label: {
-                    HStack {
-                        MenuItem(menuIcon: "crown.fill", iconHeight: 26, iconWidth: 36, menuTitle: "Host a game", menuColor: UIColor.systemBlue, menuPaddingRight: 69)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .trailing)
+                NavigationLink("", destination: GameLobbyView(), isActive: $vm.sessionCreated)
+                MenuItem(menuIcon: "crown.fill", iconHeight: 26, iconWidth: 35, menuTitle: "Host a game", menuColor: UIColor.systemBlue, menuPaddingRight: 73).onTapGesture {
+                    vm.hostGame()
                 }
                 
                 NavigationLink {
@@ -78,15 +73,10 @@ struct MainMenuView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 
-                NavigationLink("", destination: StartView(), isActive: $isActive)
-                MenuItem(menuIcon: "arrowshape.turn.up.left.fill", iconHeight: 24, iconWidth: 30, menuTitle: "Logoff", menuColor: UIColor.systemRed, menuPaddingRight: 40).onTapGesture {
-                    vm.logoffUser()
-                    isActive = true
+                NavigationLink("", destination: StartView(), isActive: $vm.isLoggedOff)
+                MenuItem(menuIcon: "arrowshape.turn.up.left.fill", iconHeight: 24, iconWidth: 30, menuTitle: "Logoff", menuColor: UIColor.systemRed, menuPaddingRight: 40, isLoading: vm.logOffIsLoading).onTapGesture {
+                    vm.logOff()
                 }
-                
-                
-                
-                
             }
             .navigationBarHidden(true)
             .frame(maxHeight: .infinity, alignment: .top)

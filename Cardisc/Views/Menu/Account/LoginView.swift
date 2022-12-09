@@ -43,6 +43,7 @@ struct LoginView: View {
                         )
                         .padding(.vertical, 10)
                         .padding(.horizontal, 15)
+                        .autocapitalization(.none)
                         .background(Color.white)
                         .cornerRadius(10)
                     }.padding(.bottom, 15)
@@ -55,6 +56,7 @@ struct LoginView: View {
                         )
                         .padding(.vertical, 10)
                         .padding(.horizontal, 15)
+                        .autocapitalization(.none)
                         .background(Color.white)
                         .cornerRadius(10)
                     }

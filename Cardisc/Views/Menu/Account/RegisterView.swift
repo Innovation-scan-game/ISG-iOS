@@ -45,6 +45,7 @@ struct RegisterView: View {
                     .padding(.vertical, 10)
                     .padding(.horizontal, 15)
                     .background(Color.white)
+                    .autocapitalization(.none)
                     .cornerRadius(10)
                 }.padding(.bottom, 10)
                 
@@ -56,6 +57,7 @@ struct RegisterView: View {
                     )
                     .padding(.vertical, 10)
                     .padding(.horizontal, 15)
+                    .autocapitalization(.none)
                     .background(Color.white)
                     .cornerRadius(10)
                 }.padding(.bottom, 10)
@@ -68,6 +70,7 @@ struct RegisterView: View {
                     )
                     .padding(.vertical, 10)
                     .padding(.horizontal, 15)
+                    .autocapitalization(.none)
                     .background(Color.white)
                     .cornerRadius(10)
                 }.padding(.bottom, 10)
@@ -80,6 +83,7 @@ struct RegisterView: View {
                     )
                     .padding(.vertical, 10)
                     .padding(.horizontal, 15)
+                    .autocapitalization(.none)
                     .background(Color.white)
                     .cornerRadius(10)
                 }

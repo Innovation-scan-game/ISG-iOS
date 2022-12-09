@@ -8,11 +8,29 @@
 import Foundation
 
 class UserViewModel: ObservableObject {
-    let userManager = UserManager()
+    private let userManager = UserManager()
+    @Published var currentUser = userDto(id: "", username: "", email: "", picture: "")
+    
+    
+    init(currentUser: userDto = userDto(id: "", username: "", email: "", picture: "")) {
+        if let currentUser = UserDefaults.standard.data(forKey: "user") {
+            do {
+                print(currentUser)
+                let decoder = JSONDecoder()
+                self.currentUser = try decoder.decode(loginResponseDto.self, from: currentUser).user
+            } catch {
+                print("Unable to Decode Note (\(error))")
+            }
+        }
+        else {
+            print("No user found")
+        }
+    }
     
     func logoffUser() {
         userManager.logoffUser()
     }
+    
     
     func getUserById() {
         //..

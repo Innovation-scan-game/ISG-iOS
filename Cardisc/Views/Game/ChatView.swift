@@ -12,6 +12,7 @@ import SwiftUI
 
 struct ChatView: View {
     @State private var msg: String = ""
+    private let vm = SessionViewModel()
     
     var body: some View {
         NavigationStack {
@@ -117,8 +118,3 @@ struct ChatView: View {
     }
 }
 
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatView()
-    }
-}

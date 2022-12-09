@@ -16,14 +16,24 @@ struct MenuItem: View {
     let menuTitle: String
     let menuColor: UIColor
     let menuPaddingRight: CGFloat?
+    var isLoading: Bool = false
     
     var body: some View {
         HStack {
             HStack{
-                Image(systemName: menuIcon)
-                    .resizable()
-                    .frame(width: iconWidth, height: iconHeight)
-                    .padding(.trailing, 5)
+                if (isLoading) {
+                    ProgressView()
+                        .frame(width: iconWidth, height: iconHeight)
+                        .padding(.trailing, 5)
+                        .foregroundColor(Color.white)
+                }
+                else {
+                    Image(systemName: menuIcon)
+                        .resizable()
+                        .frame(width: iconWidth, height: iconHeight)
+                        .padding(.trailing, 5)
+                }
+                
                 Text(menuTitle).font(.system(size: 18)).bold()
             }
             .padding(.trailing, menuPaddingRight ?? 70)

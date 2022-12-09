@@ -9,6 +9,7 @@ import Foundation
 
 class UserManager {
     let defaults = UserDefaults()
+    private let apiService = ApiService()
     
     func logoffUser() {
         self.defaults.removeObject(forKey: "X-AUTHTOKEN")
@@ -16,7 +17,7 @@ class UserManager {
     }
     
     func getUserById(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
+        apiService.getData(body: nil, url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
             completion(data)
         } failure: { error in
             print(error)
@@ -24,7 +25,7 @@ class UserManager {
     }
     
     func deleteUserById(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
+        apiService.getData(body: nil, url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
             completion(data)
         } failure: { error in
             print(error)
@@ -32,7 +33,7 @@ class UserManager {
     }
     
     func updateUser(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
+        apiService.getData(body: nil, url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
             completion(data)
         } failure: { error in
             print(error)
@@ -40,7 +41,7 @@ class UserManager {
     }
     
     func uploadAvatar(id: Int, completion:@escaping (userDto) -> ()) {
-        Bundle.main.fetchData( url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
+        apiService.getData(body: nil, url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
             completion(data)
         } failure: { error in
             print(error)

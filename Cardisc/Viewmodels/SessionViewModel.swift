@@ -6,8 +6,15 @@
 //
 
 import Foundation
+import SignalRClient
 
 class SessionViewModel: ObservableObject {
+    private let sessionManager = SessionManager()
+    @Published var joinGameIsLoading: Bool = false
+    @Published var hostGameIsLoading: Bool = false
+    @Published var howToPlayIsLoading: Bool = false
+    @Published var accountSettingsIsLoading: Bool = false
+    
     func submitSession() {
         //..
     }
@@ -33,7 +40,9 @@ class SessionViewModel: ObservableObject {
     }
     
     func createGame() {
-        //..
+        sessionManager.createGame() { data in
+            print (data)
+        }
     }
     
     func startGame() {
@@ -47,5 +56,4 @@ class SessionViewModel: ObservableObject {
     func sessionHistory() {
         //..
     }
-    
 }

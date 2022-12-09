@@ -25,32 +25,33 @@ struct AccountSettingsView: View {
                 
                 
                 HStack {
-                    Image("UserIcon")
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                        .padding(20)
+                    if(vm.currentUser.picture != "") {
+                        AsyncImage(url: URL(string: vm.currentUser.picture))
+                            .frame(width: 60, height: 60)
+                            .padding(20)
+                    }
+                    else {
+                        Image("UserIcon")
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .padding(20)
+                    }
                     VStack {
                         HStack {
-                            Text(vm.getInfo(userDefaults: "USERNAME")).bold().font(.system(size: 16))
+                            Text(vm.currentUser.username).bold().font(.system(size: 16))
                             Spacer()
-                            Text("ID")
                         }
                         Divider().frame(height: 0.2)
                         VStack {
                             HStack {
-                                Text("Account type:")
+                                Text("Email:")
                                 Spacer()
-                                Text("...")
-                            }
-                            HStack {
-                                Text("Emailadress:")
-                                Spacer()
-                                Text("...")
+                                Text(vm.currentUser.email)
                             }
                             HStack {
                                 Text("Password:")
                                 Spacer()
-                                Text("...")
+                                Text("********")
                             }
                         }
                         .foregroundColor(Color(UIColor.systemGray))
@@ -63,7 +64,7 @@ struct AccountSettingsView: View {
                 .background(Color(UIColor.white))
                 .cornerRadius(10)
                 .shadow(radius: 5)
-
+                
                 
                 
             }.padding(.horizontal, 30)
@@ -92,7 +93,7 @@ struct AccountSettingsView: View {
             
             
             
-
+            
             
         }
         .frame(maxHeight: .infinity, alignment: .top)
