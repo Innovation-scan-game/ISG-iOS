@@ -14,6 +14,11 @@ class GameManager {
     
     init() {
         print("init")
+        
+        
+        defaults.set([], forKey: "players")
+        
+        
         if let token = defaults.string(forKey: "X-AUTHTOKEN") {
             if let url = URL(string: Constants.SIGNALR_BASE_URL + token){
                 self.signalRService = SignalRService(url: url)

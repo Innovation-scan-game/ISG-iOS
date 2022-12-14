@@ -47,6 +47,51 @@ class ApiService {
         task.resume()
     }
     
+    
+    func postReq
+    (
+        body: Dictionary<String, AnyHashable>?,
+        url: String
+    )
+    {
+        guard let url = URL(string: url) else {
+            return
+        }
+        
+        let defaults = UserDefaults.standard;
+        let tkn = defaults.string(forKey: "X-AUTHTOKEN")
+        
+        
+        var request = URLRequest(url: url)
+        
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "content-type")
+        
+        //if token is given with at the manager
+        if let tkn = tkn {
+            request.setValue("bearer \(tkn)", forHTTPHeaderField: "Authorization")
+        }
+        
+        //if body is given with at the manager
+        if let body = body {
+            request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
+//                let response = try JSONDecoder().decode(T.self, from: data)
+                            }
+            catch{
+                print(error)
+            }
+        }
+        
+        task.resume()
+    }
+    
     //POST request
     func postData<T: Decodable>
     (
@@ -58,10 +103,15 @@ class ApiService {
         failure:@escaping(Error) -> ()
     )
     {
+
         
         guard let url = URL(string: url) else {
             return
         }
+        
+        let defaults = UserDefaults.standard;
+        let tkn = defaults.string(forKey: "X-AUTHTOKEN")
+        
         
         var request = URLRequest(url: url)
         
@@ -69,8 +119,8 @@ class ApiService {
         request.setValue("application/json", forHTTPHeaderField: "content-type")
         
         //if token is given with at the manager
-        if let token = token {
-            request.setValue("bearer \(token)", forHTTPHeaderField: "Authorization")
+        if let tkn = tkn {
+            request.setValue("bearer \(tkn)", forHTTPHeaderField: "Authorization")
         }
         
         //if body is given with at the manager

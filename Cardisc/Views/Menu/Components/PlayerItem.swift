@@ -14,7 +14,7 @@ struct PlayerItem: View {
     var body: some View {
         HStack {
             if(player.picture != "") {
-                AsyncImage(url: URL(string: player.picture))
+//                AsyncImage(url: URL(string: player.picture))
             }
             else {
                 Image(systemName: "person.circle.fill")

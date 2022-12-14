@@ -11,7 +11,12 @@ import SignalRClient
 class SignalRService {
     private var connection: HubConnection
     
+    private var svc = ApiService()
+    
     public init(url: URL) {
+        
+        let defaults = UserDefaults.standard;
+        
         // has to be created after logging in
         connection = HubConnectionBuilder(url: url)
             .withLogging(minLogLevel: .error)
@@ -20,11 +25,16 @@ class SignalRService {
         connection.on(method: "newConnection", callback: {
             (id: String) in
             print("NEW CONNECTION ACTION PERFORMED")
+            self.joinMessageGroup(connectionId: id);
+            
+            
+
+            
             print(id)
             //perform action
         })
         
-        connection.on(method: "readyStateChange", callback: {
+        connection.on(method: "readyStateChanged", callback: {
             (player: lobbyPlayerDto) in
             print("READY STATE CHANGE ACTION PERFORMED")
             print(player.id)
@@ -32,8 +42,13 @@ class SignalRService {
         
         connection.on(method: "newPlayer", callback: {
             (player: lobbyPlayerDto) in
+            
+//            var userList = defaults.array(forKey: "players") as! [lobbyPlayerDto]
+//            userList.append(player)
+//            defaults.set(userList, forKey: "players")
             print("NEW PLAYER IN THE ROOM")
             print(player.id)
+            
         })
         
         connection.on(method: "playerLeft", callback: {
@@ -65,9 +80,22 @@ class SignalRService {
             print("END SESSION ACTION PERFORMED")
             //Method te perform
         })
-        
+        connection.on(method: "close", callback: {
+            print("CONN CLOSED")
+            //Method te perform
+        })
         connection.start()
     }
+    
+    
+    private func joinMessageGroup(connectionId: String) {
+        let body: [String: AnyHashable] = [
+            "connectionId": connectionId,
+        ]
+        
+        svc.postReq(body: body, url: Constants.API_BASE_URL + "joinGrp");
+    }
+
     
     private func onNewConnection(id: String) {
         //..

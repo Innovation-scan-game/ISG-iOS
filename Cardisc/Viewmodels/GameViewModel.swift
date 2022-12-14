@@ -67,6 +67,7 @@ class GameViewModel: ObservableObject {
     }
     
     func changeState() {
+        print("state change func");
 //        DispatchQueue.main.async {
 //            self.gameManager.changeState(id: <#T##Int#>, completion: <#T##(userDto) -> ()#>) { data in
 //                self.lobbyResponseDto = data
