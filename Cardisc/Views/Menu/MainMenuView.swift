@@ -59,7 +59,7 @@ struct MainMenuView: View {
                         }
                         
                         NavigationLink {
-                            GameLobbyView(vm: vm.gameViewModel)
+                            GameLobbyView(vm: vm.gameViewModel, isHost: true)
                         } label: {
                             MenuItem(
                                 menuIcon: "crown.fill",

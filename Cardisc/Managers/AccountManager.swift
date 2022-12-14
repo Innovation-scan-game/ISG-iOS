@@ -17,7 +17,7 @@ class AccountManager {
             "password": password
         ]
         
-        apiService.postData(token: nil, body: body, url: Constants.API_BASE_URL + "login", model: loginResponseDto.self) { data in
+        apiService.postData(body: body, url: Constants.API_BASE_URL + "login", model: loginResponseDto.self) { data in
             self.defaults.set(data.accessToken, forKey: "X-AUTHTOKEN")
 
             do {
@@ -45,7 +45,7 @@ class AccountManager {
             "email": emailadress
         ]
         
-        apiService.postData(token: nil, body: body, url: Constants.API_BASE_URL + "user", model: registerResponseDto.self) { data in
+        apiService.postData(body: body, url: Constants.API_BASE_URL + "user", model: registerResponseDto.self) { data in
             print(data)
             completion(data)
             

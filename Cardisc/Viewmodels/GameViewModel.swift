@@ -15,6 +15,7 @@ class GameViewModel: ObservableObject {
     @Published var lobbyResponseDto: lobbyResponseDto?
     @Published var gameId = ""
     @Published var joinSucceed = false
+    @Published var amountSelected = 0
     
     func submitSession() {
         //..
@@ -28,29 +29,25 @@ class GameViewModel: ObservableObject {
         //..
     }
     
-    func endGame() {
-        //..
-    }
-    
     func joinGame() {
         DispatchQueue.main.async {
-            if(self.gameId != self.lobbyResponseDto?.sessionAuth) {
-                self.gameManager.joinGame(sessionAuth: self.gameId) { data in
-                    self.lobbyResponseDto = data
-                    self.joinSucceed = true
-                }
-            }
-            else {
-                print("Can not join own hosted session")
+            self.gameManager.joinGame(sessionAuth: self.gameId) { data in
+                self.lobbyResponseDto = data
+                self.joinSucceed = true
             }
         }
     }
     
     func leaveGame() {
         DispatchQueue.main.async {
-            self.gameManager.leaveGame(sessionAuth: self.gameId) { data in
-                self.lobbyResponseDto = nil
-            }
+            self.gameManager.leaveGame(sessionAuth: self.gameId)
+            self.lobbyResponseDto = nil
+        }
+    }
+    
+    func startGame() {
+        DispatchQueue.main.async {
+            self.gameManager.startGame()
         }
     }
     
@@ -62,21 +59,17 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    func startGame() {
-        //..
+    func endSession() {
+        DispatchQueue.main.async {
+            self.gameManager.endGame()
+        }
     }
     
     func changeState() {
-        print("state change func");
-//        DispatchQueue.main.async {
-//            self.gameManager.changeState(id: <#T##Int#>, completion: <#T##(userDto) -> ()#>) { data in
-//                self.lobbyResponseDto = data
-//            }
-//        }
-        
-    }
-    
-    func sessionHistory() {
-        //..
+        DispatchQueue.main.async {
+            if let lobbyResponseDto = self.lobbyResponseDto {
+                self.gameManager.changeState(state: lobbyResponseDto.players[0].ready)
+            }
+        }
     }
 }

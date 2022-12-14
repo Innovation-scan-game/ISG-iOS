@@ -10,6 +10,9 @@ import SwiftUI
 
 struct GameLobbyView: View {
     @ObservedObject var vm: GameViewModel
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    let isHost: Bool
     
     var body: some View {
         NavigationStack {
@@ -37,38 +40,51 @@ struct GameLobbyView: View {
                                 PlayerList(players: players)
                             }
                             
-                            HStack {
-                                //                                    Picker("Number of cards", selection: $amountSelected) {
-                                //                                            ForEach(1 ..< 10) {
-                                //                                                Text("\($0) round(s)")
-                                //                                            }
-                                //                                    }
-                                //                                    .padding(.vertical, 5)
-                                //                                    .padding(.horizontal, 50)
-                                //                                    .background(Color.white)
-                                //                                    .frame(maxWidth: .infinity)
-                                //                                    .cornerRadius(25, corners: [.allCorners])
+                            if(isHost) {
+                                HStack {
+                                    Picker("Number of cards", selection: $vm.amountSelected) {
+                                        ForEach(1 ..< 10) {
+                                            Text("\($0) round(s)")
+                                        }
+                                    }
+                                    .padding(.vertical, 5)
+                                    .padding(.horizontal, 50)
+                                    .background(Color.white)
+                                    .frame(maxWidth: .infinity)
+                                    .cornerRadius(25, corners: [.allCorners])
+                                }
+                                .background(Color.white)
+                                .cornerRadius(10, corners: [.allCorners])
+                                .shadow(radius: 5)
+                                .padding(.bottom, 10)
                             }
-                            .background(Color.white)
-                            .cornerRadius(10, corners: [.allCorners])
-                            .shadow(radius: 5)
-                            .padding(.bottom, 10)
-                            
                         }
                         .padding(.horizontal, 35)
                         
-                        
-                        MenuItem(
-                            menuIcon: "person.crop.circle.badge.checkmark",
-                            iconHeight: 30,
-                            iconWidth: 35,
-                            menuTitle: "Ready/unready",
-                            menuColor: UIColor.systemGreen,
-                            menuPaddingRight: 30
-                        ).onTapGesture {
-                            vm.changeState()
+                        if(isHost) {
+                            MenuItem(
+                                menuIcon: "play.fill",
+                                iconHeight: 25,
+                                iconWidth: 25,
+                                menuTitle: "Start game",
+                                menuColor: UIColor.systemGreen,
+                                menuPaddingRight: 30
+                            ).onTapGesture {
+                                vm.startGame()
+                            }
                         }
-                        
+                        else {
+                            MenuItem(
+                                menuIcon: "person.crop.circle.badge.checkmark",
+                                iconHeight: 30,
+                                iconWidth: 35,
+                                menuTitle: "Ready/unready",
+                                menuColor: UIColor.systemGreen,
+                                menuPaddingRight: 30
+                            ).onTapGesture {
+                                vm.changeState()
+                            }
+                        }
                     }
                     .frame(maxHeight: .infinity, alignment: .top)
                     .padding(.top, 30)
@@ -77,5 +93,13 @@ struct GameLobbyView: View {
                 }
             }
         }
+
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action : {
+            vm.leaveGame()
+            self.presentationMode.wrappedValue.dismiss()
+        }){
+            Image(systemName: "chevron.backward")
+        })
     }
 }

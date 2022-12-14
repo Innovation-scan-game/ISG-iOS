@@ -8,6 +8,8 @@
 import Foundation
 
 class ApiService {
+    let defaults = UserDefaults.standard
+    
     // GET request
     func getData<T: Decodable>
     (
@@ -47,29 +49,27 @@ class ApiService {
         task.resume()
     }
     
-    
-    func postReq
+    //POST request
+    func postData<T: Decodable>
     (
         body: Dictionary<String, AnyHashable>?,
-        url: String
+        url: String,
+        model: T.Type?,
+        completion:@escaping(T) -> (),
+        failure:@escaping(Error) -> ()
     )
     {
         guard let url = URL(string: url) else {
             return
         }
-        
-        let defaults = UserDefaults.standard;
-        let tkn = defaults.string(forKey: "X-AUTHTOKEN")
-        
-        
         var request = URLRequest(url: url)
         
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "content-type")
         
         //if token is given with at the manager
-        if let tkn = tkn {
-            request.setValue("bearer \(tkn)", forHTTPHeaderField: "Authorization")
+        if let token = defaults.string(forKey: "X-AUTHTOKEN") {
+            request.setValue("bearer \(token)", forHTTPHeaderField: "Authorization")
         }
         
         //if body is given with at the manager
@@ -82,8 +82,11 @@ class ApiService {
                 return
             }
             do {
-//                let response = try JSONDecoder().decode(T.self, from: data)
-                            }
+                if (model != nil) {
+                    let response = try JSONDecoder().decode(T.self, from: data)
+                    completion(response)
+                }
+            }
             catch{
                 print(error)
             }
@@ -93,34 +96,23 @@ class ApiService {
     }
     
     //POST request
-    func postData<T: Decodable>
+    func postDataWithoutReturn
     (
-        token: String?,
         body: Dictionary<String, AnyHashable>?,
-        url: String,
-        model: T.Type?,
-        completion:@escaping(T) -> (),
-        failure:@escaping(Error) -> ()
+        url: String
     )
     {
-
-        
         guard let url = URL(string: url) else {
             return
         }
-        
-        let defaults = UserDefaults.standard;
-        let tkn = defaults.string(forKey: "X-AUTHTOKEN")
-        
-        
         var request = URLRequest(url: url)
         
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "content-type")
         
         //if token is given with at the manager
-        if let tkn = tkn {
-            request.setValue("bearer \(tkn)", forHTTPHeaderField: "Authorization")
+        if let token = defaults.string(forKey: "X-AUTHTOKEN") {
+            request.setValue("bearer \(token)", forHTTPHeaderField: "Authorization")
         }
         
         //if body is given with at the manager
@@ -128,18 +120,7 @@ class ApiService {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
         }
         
-        let task = URLSession.shared.dataTask(with: request) { data, _, error in
-            guard let data = data, error == nil else {
-                return
-            }
-            do {
-                let response = try JSONDecoder().decode(T.self, from: data)
-                completion(response)
-            }
-            catch{
-                print(error)
-            }
-        }
+        let task = URLSession.shared.dataTask(with: request)
         
         task.resume()
     }

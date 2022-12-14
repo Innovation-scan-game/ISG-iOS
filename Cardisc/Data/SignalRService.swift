@@ -11,7 +11,8 @@ import SignalRClient
 class SignalRService {
     private var connection: HubConnection
     
-    private var svc = ApiService()
+    private var apiService = ApiService()
+    private var connectionId = ""
     
     public init(url: URL) {
         
@@ -25,30 +26,18 @@ class SignalRService {
         connection.on(method: "newConnection", callback: {
             (id: String) in
             print("NEW CONNECTION ACTION PERFORMED")
-            self.joinMessageGroup(connectionId: id);
-            
-            
-
-            
-            print(id)
+            self.connectionId = id
             //perform action
         })
         
         connection.on(method: "readyStateChanged", callback: {
             (player: lobbyPlayerDto) in
             print("READY STATE CHANGE ACTION PERFORMED")
-            print(player.id)
         })
         
         connection.on(method: "newPlayer", callback: {
             (player: lobbyPlayerDto) in
-            
-//            var userList = defaults.array(forKey: "players") as! [lobbyPlayerDto]
-//            userList.append(player)
-//            defaults.set(userList, forKey: "players")
             print("NEW PLAYER IN THE ROOM")
-            print(player.id)
-            
         })
         
         connection.on(method: "playerLeft", callback: {
@@ -88,12 +77,12 @@ class SignalRService {
     }
     
     
-    private func joinMessageGroup(connectionId: String) {
+    public func joinMessageGroup() {
         let body: [String: AnyHashable] = [
-            "connectionId": connectionId,
+            "connectionId": self.connectionId,
         ]
-        
-        svc.postReq(body: body, url: Constants.API_BASE_URL + "joinGrp");
+
+        apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "joinGrp")
     }
 
     
