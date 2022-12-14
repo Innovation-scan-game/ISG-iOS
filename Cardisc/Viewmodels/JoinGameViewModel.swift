@@ -1,19 +1,24 @@
 //
-//  SessionViewModel.swift
+//  JoinGameViewModel.swift
 //  Cardisc
 //
-//  Created by Tim van Kesteren on 26/11/2022.
+//  Created by Tim van Kesteren on 12/12/2022.
 //
 
 import Foundation
-import SignalRClient
 
-class SessionViewModel: ObservableObject {
-    private let sessionManager = SessionManager()
-    @Published var joinGameIsLoading: Bool = false
-    @Published var hostGameIsLoading: Bool = false
-    @Published var howToPlayIsLoading: Bool = false
-    @Published var accountSettingsIsLoading: Bool = false
+class JoinGameViewModel: ObservableObject {
+    
+    private let gameManager = GameManager()
+    private var isLoading = false
+    @Published var lobbyResponseDto: lobbyResponseDto?
+    @Published var gameId = ""
+    
+    init() {
+        self.gameManager.createGame() { data in
+            self.lobbyResponseDto = data
+        }
+    }
     
     func submitSession() {
         //..
@@ -40,9 +45,7 @@ class SessionViewModel: ObservableObject {
     }
     
     func createGame() {
-        sessionManager.createGame() { data in
-            print (data)
-        }
+        
     }
     
     func startGame() {

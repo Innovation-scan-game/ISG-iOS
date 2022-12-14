@@ -8,24 +8,13 @@
 import Foundation
 
 class MainMenuViewModel: ObservableObject {
-    private let sessionManager = SessionManager()
     private let userManager = UserManager()
+    @Published var gameViewModel = GameViewModel()
     
     @Published var hostGameIsLoading: Bool = false
     @Published var sessionCreated: Bool = false
     @Published var logOffIsLoading: Bool = false
     @Published var isLoggedOff: Bool = false
-    
-    func hostGame() {
-        self.hostGameIsLoading = true
-        
-        //execute code
-        sessionManager.createGame() { data in
-            print (data)
-        }
-        self.hostGameIsLoading = false
-        self.sessionCreated = true
-    }
     
     func logOff() {
         self.logOffIsLoading = true
@@ -37,5 +26,16 @@ class MainMenuViewModel: ObservableObject {
     func resetButtonStates() {
         isLoggedOff = false
         sessionCreated = false
+    }
+    
+    func hostGame() -> GameViewModel {
+        if(!sessionCreated) {
+            DispatchQueue.main.async {
+                print("hostGame")
+                self.gameViewModel.createGame()
+                self.sessionCreated = true
+            }
+        }
+        return self.gameViewModel
     }
 }

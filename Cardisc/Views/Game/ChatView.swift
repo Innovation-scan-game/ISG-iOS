@@ -12,7 +12,6 @@ import SwiftUI
 
 struct ChatView: View {
     @State private var msg: String = ""
-    private let vm = SessionViewModel()
     
     var body: some View {
         NavigationStack {

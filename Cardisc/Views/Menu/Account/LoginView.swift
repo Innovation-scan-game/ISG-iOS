@@ -9,11 +9,7 @@ import Foundation
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject var vm = LoginViewModel()
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State var isActive: Bool = false
-    @State var isRequestInProgress: Bool = false
+    @StateObject private var vm = LoginViewModel()
     
     var body: some View {
         GeometryReader { geometry in
@@ -23,67 +19,56 @@ struct LoginView: View {
                     .aspectRatio(geometry.size, contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
                 NavigationStack {
-                    VStack {
-                        VStack{
-                            HStack {
-                                Image(systemName: "person.badge.key.fill")
-                                    .resizable()
-                                    .frame(width: 30, height: 28)
-                                    .foregroundColor(Color.white)
-                                    .padding(.trailing, 5)
-                                Text("Login").font(.system(size: 24)).foregroundColor(Color.white).bold()
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            
+                    VStack{
+                        HStack {
+                            Image(systemName: "person.crop.circle.badge.plus.fill")
+                                .resizable()
+                                .frame(width: 30, height: 28)
+                                .foregroundColor(Color.white)
+                                .padding(.trailing, 5)
+                            Text("Login").font(.system(size: 24)).foregroundColor(Color.white).bold()
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
+                        
+                        VStack {
                             HStack {
                                 Text("Login to your Cardisc-Account to gain access to the game.")
                                     .foregroundColor(Color.white).padding(.bottom, 20)
                             }.frame(maxWidth: .infinity, alignment: .leading)
-                            
-                            VStack {
-                                Text("Username").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
-                                TextField(
-                                    "...",
-                                    text: $username
-                                )
-                                .padding(.vertical, 10)
-                                .padding(.horizontal, 15)
-                                .autocapitalization(.none)
-                                .background(Color.white)
-                                .cornerRadius(10)
-                            }.padding(.bottom, 15)
-                            
-                            VStack {
-                                Text("Password").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
-                                TextField(
-                                    "...",
-                                    text: $password
-                                )
-                                .padding(.vertical, 10)
-                                .padding(.horizontal, 15)
-                                .autocapitalization(.none)
-                                .background(Color.white)
-                                .cornerRadius(10)
-                            }
-                            
-                        }.padding(.horizontal, 50)
+                            Text("Username").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
+                            TextField(
+                                "...",
+                                text: $vm.username
+                            )
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 15)
+                            .background(Color.white)
+                            .autocapitalization(.none)
+                            .cornerRadius(10)
+                        }.padding(.bottom, 10)
                         
-                        NavigationLink("", destination: MainMenuView(), isActive: $isActive)
-                        MenuItem(menuIcon: "lock.fill" , iconHeight: 26, iconWidth: 20, menuTitle: "Login", menuColor: UIColor.systemBlue, menuPaddingRight: 30).padding(.top, 20).onTapGesture {
-                            self.isRequestInProgress = true
-                            if(vm.loginUser(username: username, password: password)) {
-                                isActive = true
-                                self.isRequestInProgress = false
-                            }
-                        }
-                        
-                        
-                        
+                        VStack {
+                            Text("Password").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
+                            SecureField(
+                                "...",
+                                text: $vm.password
+                            )
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 15)
+                            .autocapitalization(.none)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                        }.padding(.bottom, 10)
+                    }.padding(.horizontal, 30)
+                    
+                    NavigationLink("", destination: StartView(), isActive: $vm.isActive)
+                    MenuItem(menuIcon: "lock.open.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Login", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
+                        vm.loginUser(username: vm.username, password: vm.password)
                     }
-                    .padding(.top, 40)
-                    .frame(maxHeight: .infinity, alignment: .top)
                 }
+                .padding(.top, 15)
+                .frame(maxHeight: .infinity, alignment: .top)
             }
         }
     }

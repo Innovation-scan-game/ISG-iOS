@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct GameLobbyView: View {
+    @ObservedObject var vm: GameViewModel
+    
     var body: some View {
         NavigationStack {
             GeometryReader { geometry in
@@ -17,35 +19,63 @@ struct GameLobbyView: View {
                         .resizable()
                         .aspectRatio(geometry.size, contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
-                
-                    VStack{
-                        HStack {
-                            Image(systemName: "person.2.fill")
-                                .resizable()
-                                .frame(width: 38, height: 22)
-                                .foregroundColor(Color.white)
-                                .padding(.trailing, 1)
-                            Text("Game lobby (1BB4)").font(.system(size: 20)).bold().foregroundColor(Color.white)
-                            Spacer()
-                            Image(systemName: "square.and.arrow.up").foregroundColor(Color.white).padding(.trailing, 20)
+                    VStack {
+                        VStack{
+                            HStack {
+                                Image(systemName: "person.2.fill")
+                                    .resizable()
+                                    .frame(width: 38, height: 22)
+                                    .foregroundColor(Color.white)
+                                    .padding(.trailing, 1)
+                                Text("Game lobby (\(vm.lobbyResponseDto?.sessionCode ?? "0000"))").font(.system(size: 20)).bold().foregroundColor(Color.white)
+                                Spacer()
+                                Image(systemName: "square.and.arrow.up").foregroundColor(Color.white).padding(.trailing, 20)
+                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            if let players = vm.lobbyResponseDto?.players {
+                                PlayerList(players: players)
+                            }
+                            
+                            HStack {
+                                //                                    Picker("Number of cards", selection: $amountSelected) {
+                                //                                            ForEach(1 ..< 10) {
+                                //                                                Text("\($0) round(s)")
+                                //                                            }
+                                //                                    }
+                                //                                    .padding(.vertical, 5)
+                                //                                    .padding(.horizontal, 50)
+                                //                                    .background(Color.white)
+                                //                                    .frame(maxWidth: .infinity)
+                                //                                    .cornerRadius(25, corners: [.allCorners])
+                            }
+                            .background(Color.white)
+                            .cornerRadius(10, corners: [.allCorners])
+                            .shadow(radius: 5)
+                            .padding(.bottom, 10)
+                            
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal, 35)
                         
-                        HStack {
-                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed dictum eros, quis aliquet tellus.")
-                                .foregroundColor(Color.white)
+                        
+                        MenuItem(
+                            menuIcon: "person.crop.circle.badge.checkmark",
+                            iconHeight: 30,
+                            iconWidth: 35,
+                            menuTitle: "Ready/unready",
+                            menuColor: UIColor.systemGreen,
+                            menuPaddingRight: 30
+                        ).onTapGesture {
+                            vm.changeState()
                         }
+                        
                     }
-                    .padding(.horizontal, 35)
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    .padding(.top, 30)
+                }.onAppear {
+                    vm.createGame()
                 }
             }
         }
-    }
-}
-
-
-struct GameLobbyView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameLobbyView()
     }
 }

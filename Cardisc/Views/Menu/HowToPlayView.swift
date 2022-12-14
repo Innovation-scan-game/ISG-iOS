@@ -16,6 +16,7 @@ struct HowToPlayView: View {
                     .resizable()
                     .aspectRatio(geometry.size, contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
+                    .brightness(-0.2)
                 VStack {
                     VStack{
                         HStack {

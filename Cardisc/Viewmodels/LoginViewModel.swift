@@ -9,29 +9,19 @@ import Foundation
 
 class LoginViewModel: ObservableObject {
     
-    private let loginManager = LoginManager()
+    private let accountManager = AccountManager()
     
-    func loginUser(username: String, password: String) -> Bool {
-        var loggedIn = false
+    @Published var username: String = ""
+    @Published var password: String = ""
+    @Published var isActive: Bool = false
+    @Published var isRequestInProgress: Bool = false
+    
+    func loginUser(username: String, password: String) {
+        DispatchQueue.main.async {
+            self.accountManager.loginUser(username: username, password: password) { data in
+                self.isActive = true
+            }
+        }
         
-        loginManager.loginUser(username: username, password: password) { data in
-            print (data)
-            loggedIn = true
-            
-        }
-        sleep(1)
-        return loggedIn
     }
-    
-    func registerUser(username: String, password: String, email: String) -> Bool {
-        var registered = false
-        loginManager.registerUser(username: username, password: password, emailadress: email) { data in
-            print (data)
-            registered = true
-            
-        }
-        sleep(1)
-        return registered
-    }
-    
 }

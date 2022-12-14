@@ -53,7 +53,7 @@ class ApiService {
         token: String?,
         body: Dictionary<String, AnyHashable>?,
         url: String,
-        model: T.Type,
+        model: T.Type?,
         completion:@escaping(T) -> (),
         failure:@escaping(Error) -> ()
     )
@@ -82,7 +82,6 @@ class ApiService {
             guard let data = data, error == nil else {
                 return
             }
-            
             do {
                 let response = try JSONDecoder().decode(T.self, from: data)
                 completion(response)
@@ -91,6 +90,7 @@ class ApiService {
                 print(error)
             }
         }
+        
         task.resume()
     }
 }

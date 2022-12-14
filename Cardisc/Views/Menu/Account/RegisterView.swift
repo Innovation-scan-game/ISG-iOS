@@ -9,13 +9,7 @@ import Foundation
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var username: String = ""
-    @State private var emailaddress: String = ""
-    @State private var password: String = ""
-    @State private var passwordRepeated: String = ""
-    @State private var isActive: Bool = false
-    
-    private var vm = LoginViewModel()
+    @StateObject private var vm = RegisterViewModel()
     
     var body: some View {
         GeometryReader { geometry in
@@ -45,7 +39,7 @@ struct RegisterView: View {
                             Text("Username").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
                             TextField(
                                 "...",
-                                text: $username
+                                text: $vm.username
                             )
                             .padding(.vertical, 10)
                             .padding(.horizontal, 15)
@@ -58,7 +52,7 @@ struct RegisterView: View {
                             Text("Emailadress").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
                             TextField(
                                 "...",
-                                text: $emailaddress
+                                text: $vm.emailaddress
                             )
                             .padding(.vertical, 10)
                             .padding(.horizontal, 15)
@@ -69,9 +63,9 @@ struct RegisterView: View {
                         
                         VStack {
                             Text("Password").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
-                            TextField(
+                            SecureField(
                                 "...",
-                                text: $password
+                                text: $vm.password
                             )
                             .padding(.vertical, 10)
                             .padding(.horizontal, 15)
@@ -82,9 +76,9 @@ struct RegisterView: View {
                         
                         VStack {
                             Text("Password repeated").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
-                            TextField(
+                            SecureField(
                                 "...",
-                                text: $passwordRepeated
+                                text: $vm.passwordRepeated
                             )
                             .padding(.vertical, 10)
                             .padding(.horizontal, 15)
@@ -95,12 +89,13 @@ struct RegisterView: View {
                         
                     }.padding(.horizontal, 30)
                     
-                    NavigationLink("", destination: StartView(), isActive: $isActive)
+                    NavigationLink("", destination: StartView(), isActive: $vm.isActive)
                     MenuItem(menuIcon: "person.crop.circle.badge.plus.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Register", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
-                        if(password == passwordRepeated) {
-                            if(vm.registerUser(username: username, password: password, email: emailaddress)) {
-                                print("User created")
-                                isActive = true
+                        if(vm.password == vm.passwordRepeated) {
+                            if(vm.registerUser(username: vm.username, password: vm.password, email: vm.emailaddress)) {
+                                vm.isActive = true
+                            }
+                            else {
                             }
                         }
                     }

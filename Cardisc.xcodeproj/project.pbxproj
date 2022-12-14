@@ -19,6 +19,7 @@
 		22801DCF2938F03300E7F825 /* SignalRClient in Frameworks */ = {isa = PBXBuildFile; productRef = 22801DCE2938F03300E7F825 /* SignalRClient */; };
 		2281CDD2292B9C1200106B12 /* EditAccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281CDD1292B9C1200106B12 /* EditAccountSettingsView.swift */; };
 		22939309292ADE1D0010F0FD /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22939308292ADE1D0010F0FD /* MenuItem.swift */; };
+		229A7BB42944EC460089CC02 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A7BB32944EC460089CC02 /* RegisterViewModel.swift */; };
 		22A40E4429313EAA00FF7952 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E4329313EAA00FF7952 /* CardType.swift */; };
 		22A40E4729313F3F00FF7952 /* SessionResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E4629313F3F00FF7952 /* SessionResponseType.swift */; };
 		22A40E4929313F8400FF7952 /* SessionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E4829313F8400FF7952 /* SessionStatus.swift */; };
@@ -37,11 +38,10 @@
 		22A40E6A29316AB400FF7952 /* changeReadinessDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E6929316AB400FF7952 /* changeReadinessDto.swift */; };
 		22A40E6C29316AEF00FF7952 /* cardListDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E6B29316AEF00FF7952 /* cardListDto.swift */; };
 		22A40E6E29316B1B00FF7952 /* cardDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E6D29316B1B00FF7952 /* cardDto.swift */; };
-		22A40E702932CC4100FF7952 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E6F2932CC4100FF7952 /* LoginManager.swift */; };
-		22A40E722932CCB800FF7952 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E712932CCB800FF7952 /* SessionManager.swift */; };
-		22A40E742932CEDF00FF7952 /* SessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E732932CEDF00FF7952 /* SessionViewModel.swift */; };
+		22A40E702932CC4100FF7952 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E6F2932CC4100FF7952 /* AccountManager.swift */; };
+		22A40E722932CCB800FF7952 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E712932CCB800FF7952 /* GameManager.swift */; };
+		22A40E742932CEDF00FF7952 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E732932CEDF00FF7952 /* GameViewModel.swift */; };
 		22A40E762932CEEF00FF7952 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E752932CEEF00FF7952 /* LoginViewModel.swift */; };
-		22A40E782932CF3E00FF7952 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E772932CF3E00FF7952 /* CardViewModel.swift */; };
 		22A40E7A2932CF6C00FF7952 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E792932CF6C00FF7952 /* UserViewModel.swift */; };
 		22A40E7C2932DD8600FF7952 /* registerResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E7B2932DD8600FF7952 /* registerResponseDto.swift */; };
 		22A80AAC292A722D003CD018 /* CardiscApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AAB292A722D003CD018 /* CardiscApp.swift */; };
@@ -66,6 +66,7 @@
 		22A80B06292A842D003CD018 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B05292A842D003CD018 /* CardManager.swift */; };
 		22A80B0C292A8549003CD018 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B0B292A8549003CD018 /* Constants.swift */; };
 		22A80B0E292A856C003CD018 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B0D292A856C003CD018 /* ApiService.swift */; };
+		22BB35DD2946940800986383 /* JoinGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB35DC2946940800986383 /* JoinGameManager.swift */; };
 		22E8C752293CE8A7005CCC00 /* SignalRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E8C751293CE8A7005CCC00 /* SignalRService.swift */; };
 		22FD227129302CB000E9A02C /* ChatMessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD227029302CB000E9A02C /* ChatMessageItem.swift */; };
 		B9F38F49C4CC083C02468A7A /* Pods_Cardisc_CardiscUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29D13F3CB9C870FF15F6C57A /* Pods_Cardisc_CardiscUITests.framework */; };
@@ -103,6 +104,7 @@
 		227E57E129436881006A2955 /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
 		2281CDD1292B9C1200106B12 /* EditAccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountSettingsView.swift; sourceTree = "<group>"; };
 		22939308292ADE1D0010F0FD /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		229A7BB32944EC460089CC02 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		22A40E4329313EAA00FF7952 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
 		22A40E4629313F3F00FF7952 /* SessionResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponseType.swift; sourceTree = "<group>"; };
 		22A40E4829313F8400FF7952 /* SessionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionStatus.swift; sourceTree = "<group>"; };
@@ -121,11 +123,10 @@
 		22A40E6929316AB400FF7952 /* changeReadinessDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeReadinessDto.swift; sourceTree = "<group>"; };
 		22A40E6B29316AEF00FF7952 /* cardListDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardListDto.swift; sourceTree = "<group>"; };
 		22A40E6D29316B1B00FF7952 /* cardDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardDto.swift; sourceTree = "<group>"; };
-		22A40E6F2932CC4100FF7952 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
-		22A40E712932CCB800FF7952 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		22A40E732932CEDF00FF7952 /* SessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewModel.swift; sourceTree = "<group>"; };
+		22A40E6F2932CC4100FF7952 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		22A40E712932CCB800FF7952 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		22A40E732932CEDF00FF7952 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		22A40E752932CEEF00FF7952 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		22A40E772932CF3E00FF7952 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		22A40E792932CF6C00FF7952 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		22A40E7B2932DD8600FF7952 /* registerResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerResponseDto.swift; sourceTree = "<group>"; };
 		22A80AA8292A722D003CD018 /* Cardisc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cardisc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +154,7 @@
 		22A80B05292A842D003CD018 /* CardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 		22A80B0B292A8549003CD018 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		22A80B0D292A856C003CD018 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		22BB35DC2946940800986383 /* JoinGameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameManager.swift; sourceTree = "<group>"; };
 		22E8C751293CE8A7005CCC00 /* SignalRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRService.swift; sourceTree = "<group>"; };
 		22FD227029302CB000E9A02C /* ChatMessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageItem.swift; sourceTree = "<group>"; };
 		29D13F3CB9C870FF15F6C57A /* Pods_Cardisc_CardiscUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cardisc_CardiscUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -349,11 +351,11 @@
 		22A80AD8292A727A003CD018 /* Viewmodels */ = {
 			isa = PBXGroup;
 			children = (
-				22A40E772932CF3E00FF7952 /* CardViewModel.swift */,
 				22A40E752932CEEF00FF7952 /* LoginViewModel.swift */,
-				22A40E732932CEDF00FF7952 /* SessionViewModel.swift */,
-				22A40E792932CF6C00FF7952 /* UserViewModel.swift */,
+				229A7BB32944EC460089CC02 /* RegisterViewModel.swift */,
 				227E57E129436881006A2955 /* MainMenuViewModel.swift */,
+				22A40E732932CEDF00FF7952 /* GameViewModel.swift */,
+				22A40E792932CF6C00FF7952 /* UserViewModel.swift */,
 			);
 			path = Viewmodels;
 			sourceTree = "<group>";
@@ -362,9 +364,10 @@
 			isa = PBXGroup;
 			children = (
 				22A80B05292A842D003CD018 /* CardManager.swift */,
-				22A40E6F2932CC4100FF7952 /* LoginManager.swift */,
-				22A40E712932CCB800FF7952 /* SessionManager.swift */,
+				22A40E6F2932CC4100FF7952 /* AccountManager.swift */,
+				22A40E712932CCB800FF7952 /* GameManager.swift */,
 				22A80B03292A8420003CD018 /* UserManager.swift */,
+				22BB35DC2946940800986383 /* JoinGameManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -651,13 +654,14 @@
 				2281CDD2292B9C1200106B12 /* EditAccountSettingsView.swift in Sources */,
 				22A80ADF292A7869003CD018 /* LoginView.swift in Sources */,
 				22A80B04292A8420003CD018 /* UserManager.swift in Sources */,
-				22A40E742932CEDF00FF7952 /* SessionViewModel.swift in Sources */,
+				22A40E742932CEDF00FF7952 /* GameViewModel.swift in Sources */,
 				22A80AF9292A7A90003CD018 /* ConclussionView.swift in Sources */,
-				22A40E702932CC4100FF7952 /* LoginManager.swift in Sources */,
+				22A40E702932CC4100FF7952 /* AccountManager.swift in Sources */,
 				22A80AE7292A7914003CD018 /* MainMenuView.swift in Sources */,
 				22A40E5C2931676200FF7952 /* sessionDto.swift in Sources */,
 				22A40E4B29313FBF00FF7952 /* UserRole.swift in Sources */,
 				22A40E4929313F8400FF7952 /* SessionStatus.swift in Sources */,
+				22BB35DD2946940800986383 /* JoinGameManager.swift in Sources */,
 				226CC87B2930ED00005663C5 /* ScalableQuestionCard.swift in Sources */,
 				22A40E4729313F3F00FF7952 /* SessionResponseType.swift in Sources */,
 				22FD227129302CB000E9A02C /* ChatMessageItem.swift in Sources */,
@@ -676,7 +680,7 @@
 				22A40E7C2932DD8600FF7952 /* registerResponseDto.swift in Sources */,
 				22A40E53293165B400FF7952 /* userDto.swift in Sources */,
 				226B189D2943F72A005BBD06 /* PlayerItem.swift in Sources */,
-				22A40E722932CCB800FF7952 /* SessionManager.swift in Sources */,
+				22A40E722932CCB800FF7952 /* GameManager.swift in Sources */,
 				226CC8792930ECEB005663C5 /* MPCQuestionCard.swift in Sources */,
 				22A80AF3292A7A17003CD018 /* LoadingView.swift in Sources */,
 				22A40E762932CEEF00FF7952 /* LoginViewModel.swift in Sources */,
@@ -689,7 +693,6 @@
 				22A40E6629316A0300FF7952 /* createUserDto.swift in Sources */,
 				22A40E6C29316AEF00FF7952 /* cardListDto.swift in Sources */,
 				22A80AEF292A7992003CD018 /* HowToPlayView.swift in Sources */,
-				22A40E782932CF3E00FF7952 /* CardViewModel.swift in Sources */,
 				22A80AE9292A7928003CD018 /* AccountSettingsView.swift in Sources */,
 				22A40E622931693B00FF7952 /* lobbyPlayerDto.swift in Sources */,
 				22A80AAC292A722D003CD018 /* CardiscApp.swift in Sources */,
@@ -699,6 +702,7 @@
 				22A40E6E29316B1B00FF7952 /* cardDto.swift in Sources */,
 				22A40E6829316A6300FF7952 /* conclusionDto.swift in Sources */,
 				22E8C752293CE8A7005CCC00 /* SignalRService.swift in Sources */,
+				229A7BB42944EC460089CC02 /* RegisterViewModel.swift in Sources */,
 				22A80B0E292A856C003CD018 /* ApiService.swift in Sources */,
 				226B18A02943F9F3005BBD06 /* User.swift in Sources */,
 				22A40E5E293167F900FF7952 /* loginResponseDto.swift in Sources */,

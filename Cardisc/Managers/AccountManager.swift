@@ -7,11 +7,11 @@
 
 import Foundation
 
-class LoginManager {
+class AccountManager {
     let defaults = UserDefaults.standard
     private let apiService = ApiService()
     
-    func loginUser(username: String, password: String, completion:@escaping (loginResponseDto) -> ()) {
+    func loginUser(username: String, password: String, completion:@escaping (loginResponseDto?) -> ()) {
         let body: [String: AnyHashable] = [
             "username": username,
             "password": password
@@ -32,7 +32,7 @@ class LoginManager {
             completion(data)
             
         } failure: { error in
-            print(error)
+            completion(nil)
         }
     }
     

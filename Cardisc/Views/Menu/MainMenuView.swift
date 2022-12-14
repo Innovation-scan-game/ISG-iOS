@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct MainMenuView: View {
-    @ObservedObject private var vm = MainMenuViewModel()
+    @StateObject var vm = MainMenuViewModel()
     
     var body: some View {
         NavigationStack {
@@ -47,7 +47,7 @@ struct MainMenuView: View {
                         Spacer().frame(height: 80)
                         
                         NavigationLink {
-                            JoinGameView()
+                            JoinGameView(vm: vm.gameViewModel)
                         } label: {
                             MenuItem(
                                 menuIcon: "person.2.fill",
@@ -58,17 +58,17 @@ struct MainMenuView: View {
                                 menuPaddingRight: 74)
                         }
                         
-                        NavigationLink("", destination: GameLobbyView(), isActive: $vm.sessionCreated)
-                        MenuItem(
-                            menuIcon: "crown.fill",
-                            iconHeight: 25,
-                            iconWidth: 35,
-                            menuTitle: "Host a Game",
-                            menuColor: UIColor.systemBlue,
-                            menuPaddingRight: 70,
-                            isLoading: vm.hostGameIsLoading)
-                        .onTapGesture {
-                            vm.hostGame()
+                        NavigationLink {
+                            GameLobbyView(vm: vm.gameViewModel)
+                        } label: {
+                            MenuItem(
+                                menuIcon: "crown.fill",
+                                iconHeight: 25,
+                                iconWidth: 35,
+                                menuTitle: "Host a Game",
+                                menuColor: UIColor.systemBlue,
+                                menuPaddingRight: 70,
+                                isLoading: vm.hostGameIsLoading)
                         }
                         
                         NavigationLink {
@@ -99,8 +99,6 @@ struct MainMenuView: View {
                     }
                     .navigationBarHidden(true)
                     .frame(maxHeight: .infinity, alignment: .top)
-                }.onAppear {
-                    vm.resetButtonStates()
                 }
             }
         }

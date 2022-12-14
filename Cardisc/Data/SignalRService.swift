@@ -8,7 +8,7 @@
 import Foundation
 import SignalRClient
 
-public class SignalRService {
+class SignalRService {
     private var connection: HubConnection
     
     public init(url: URL) {
@@ -20,19 +20,20 @@ public class SignalRService {
         connection.on(method: "newConnection", callback: {
             (id: String) in
             print("NEW CONNECTION ACTION PERFORMED")
-            self.onNewConnection(id: id)
+            print(id)
+            //perform action
         })
         
         connection.on(method: "readyStateChange", callback: {
-            (user: userDto) in
-            //JUREK: what is the return type of these functions? Do they even return something?
+            (player: lobbyPlayerDto) in
             print("READY STATE CHANGE ACTION PERFORMED")
-            self.onNewConnection(id: "")
+            print(player.id)
         })
         
         connection.on(method: "newPlayer", callback: {
-            print("NEW PLAYER ACTION PERFORMED")
-            //Method to perform
+            (player: lobbyPlayerDto) in
+            print("NEW PLAYER IN THE ROOM")
+            print(player.id)
         })
         
         connection.on(method: "playerLeft", callback: {
@@ -69,7 +70,7 @@ public class SignalRService {
     }
     
     private func onNewConnection(id: String) {
-        print (id)
+        //..
     }
     
     private func onClose() {

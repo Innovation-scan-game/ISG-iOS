@@ -10,11 +10,13 @@ import SwiftUI
 
 struct PlayerList: View {
     
+    let players: [lobbyPlayerDto]
+    
     var body: some View {
         ZStack {
             VStack {
                 HStack {
-                    Text("Players").bold(true)
+                    Text("Player").bold(true)
                     Spacer()
                     Text("Status").bold(true)
                 }
@@ -23,23 +25,15 @@ struct PlayerList: View {
                 
                 Divider().frame(height: 1).foregroundColor(Color.black).padding(.horizontal, 10)
                 
-                
-                
-                
-                
+                ForEach(players) { player in
+                    PlayerItem(player: player)
+                }
             }
             .frame(maxWidth: .infinity)
+            .frame(minHeight: 350, alignment: .top)
             .background(Color.white)
             .cornerRadius(10, corners: [.allCorners])
             .padding(.vertical, 5)
         }
-        .background(Color.black)
-    }
-        
-}
-
-struct PlayerList_Previews: PreviewProvider{
-    static var previews: some View {
-        PlayerList()
     }
 }

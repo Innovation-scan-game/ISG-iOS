@@ -15,7 +15,6 @@ class UserViewModel: ObservableObject {
     init(currentUser: userDto = userDto(id: "", username: "", email: "", picture: "")) {
         if let currentUser = UserDefaults.standard.data(forKey: "user") {
             do {
-                print(currentUser)
                 let decoder = JSONDecoder()
                 self.currentUser = try decoder.decode(loginResponseDto.self, from: currentUser).user
             } catch {
