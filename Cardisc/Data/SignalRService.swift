@@ -99,10 +99,10 @@ class SignalRService {
     }
     
     private func  onReadyStateChange(player: lobbyPlayerDto) {
-        print("hoioidoaijdoahjckja")
         for var p in self.players ?? [] {
             if(p.id == player.id) {
                 p.ready.toggle()
+                print("\(p.username): \(p.ready)")
             }
         }
     }
