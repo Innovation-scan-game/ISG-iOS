@@ -10,12 +10,13 @@ import SignalRClient
 
 class GameViewModel: ObservableObject {
     
-    private let gameManager = GameManager()
-    private var isLoading = false
+    @Published var gameManager = GameManager()
     @Published var lobbyResponseDto: lobbyResponseDto?
     @Published var gameId = ""
     @Published var joinSucceed = false
     @Published var amountSelected = 0
+    
+    private var isLoading = false
     
     func submitSession() {
         //..
@@ -32,10 +33,16 @@ class GameViewModel: ObservableObject {
     func joinGame() {
         DispatchQueue.main.async {
             self.gameManager.joinGame(sessionAuth: self.gameId) { data in
-                self.lobbyResponseDto = data
-                self.joinSucceed = true
+                if(data.players != nil) {
+                    self.joinSucceed = true
+                    self.lobbyResponseDto = data
+                }
+                else {
+                    print("NEEEEEE")
+                }
             }
         }
+        
     }
     
     func leaveGame() {
@@ -49,6 +56,7 @@ class GameViewModel: ObservableObject {
         DispatchQueue.main.async {
             self.gameManager.startGame()
         }
+        print("START GAME METHOD VIEWMODEL")
     }
     
     func createGame() {
@@ -67,9 +75,7 @@ class GameViewModel: ObservableObject {
     
     func changeState() {
         DispatchQueue.main.async {
-            if let lobbyResponseDto = self.lobbyResponseDto {
-                self.gameManager.changeState(state: lobbyResponseDto.players[0].ready)
-            }
+            self.gameManager.changeState()
         }
     }
 }

@@ -64,11 +64,9 @@ struct JoinGameView: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.top, 40)
 
-                    NavigationLink("", destination: GameLobbyView(vm: self.vm, isHost: false), isActive: $vm.joinSucceed)
+                    NavigationLink("", destination: GameLobbyView(vm: vm, isHost: false), isActive: $vm.joinSucceed)
                     MenuItem(menuIcon: "lock.open.fill", iconHeight: 24, iconWidth: 30, menuTitle: "Join Game", menuColor: UIColor.systemBlue, menuPaddingRight: 40, isLoading: false).onTapGesture {
-                        vm.joinGame()
-                    }.onAppear{
-                        vm.joinSucceed = false
+                        self.vm.joinGame()
                     }
 
                 }

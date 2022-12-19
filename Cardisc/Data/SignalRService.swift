@@ -10,9 +10,10 @@ import SignalRClient
 
 class SignalRService {
     private var connection: HubConnection
-    
     private var apiService = ApiService()
     private var connectionId = ""
+    
+    @Published var players: [lobbyPlayerDto]?
     
     public init(url: URL) {
         
@@ -33,16 +34,17 @@ class SignalRService {
         connection.on(method: "readyStateChanged", callback: {
             (player: lobbyPlayerDto) in
             print("READY STATE CHANGE ACTION PERFORMED")
+            self.onReadyStateChange(player: player)
         })
         
         connection.on(method: "newPlayer", callback: {
             (player: lobbyPlayerDto) in
             print("NEW PLAYER IN THE ROOM")
+            self.onNewPlayer(player: player)
         })
         
         connection.on(method: "playerLeft", callback: {
             print("PLAYER LEFT ACTION PERFORMED")
-            //Method te perform
         })
         
         connection.on(method: "startGame", callback: {
@@ -96,13 +98,28 @@ class SignalRService {
 //      store.setConnection(null);
     }
     
-    private func  onReadyStateChange(user: userDto) {
-//      console.log("onReadyStateChange", user)
-//      store.updatePlayer(user);
+    private func  onReadyStateChange(player: lobbyPlayerDto) {
+        print("hoioidoaijdoahjckja")
+        for var p in self.players ?? [] {
+            if(p.id == player.id) {
+                p.ready.toggle()
+            }
+        }
     }
     
-    private func  onNewPlayer(player: String) {
-//      store.addPlayer(player);
+    private func  onNewPlayer(player: lobbyPlayerDto) {
+        //is there a better way?
+        var contains = false
+        for p in self.players ?? [] {
+            if(player.id == p.id) {
+                contains = true
+                break
+            }
+        }
+        if(!contains) {
+            self.players?.append(player)
+        }
+        
     }
     
     private func  onPlayerLeft(player: String) {

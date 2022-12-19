@@ -58,19 +58,18 @@ struct MainMenuView: View {
                                 menuPaddingRight: 74)
                         }
                         
-                        NavigationLink {
-                            GameLobbyView(vm: vm.gameViewModel, isHost: true)
-                        } label: {
-                            MenuItem(
-                                menuIcon: "crown.fill",
-                                iconHeight: 25,
-                                iconWidth: 35,
-                                menuTitle: "Host a Game",
-                                menuColor: UIColor.systemBlue,
-                                menuPaddingRight: 70,
-                                isLoading: vm.hostGameIsLoading)
+                        NavigationLink("", destination: GameLobbyView(vm: vm.gameViewModel, isHost: true), isActive: $vm.hostSucceed)
+                        MenuItem(
+                            menuIcon: "crown.fill",
+                            iconHeight: 25,
+                            iconWidth: 35,
+                            menuTitle: "Host a Game",
+                            menuColor: UIColor.systemBlue,
+                            menuPaddingRight: 70,
+                            isLoading: vm.hostGameIsLoading).onTapGesture {
+                            vm.hostGame()
                         }
-                        
+    
                         NavigationLink {
                             HowToPlayView()
                         } label: {
@@ -89,7 +88,6 @@ struct MainMenuView: View {
                             AccountSettingsView()
                         } label: {
                             MenuItem(menuIcon: "gearshape.fill", iconHeight: 26, iconWidth: 26, menuTitle: "Account settings", menuColor: UIColor.systemBlue, menuPaddingRight: 40)
-                            
                         }
                         
                         NavigationLink("", destination: StartView(), isActive: $vm.isLoggedOff)

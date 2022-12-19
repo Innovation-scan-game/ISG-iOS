@@ -12,7 +12,7 @@ class MainMenuViewModel: ObservableObject {
     @Published var gameViewModel = GameViewModel()
     
     @Published var hostGameIsLoading: Bool = false
-    @Published var sessionCreated: Bool = false
+    @Published var hostSucceed: Bool = false
     @Published var logOffIsLoading: Bool = false
     @Published var isLoggedOff: Bool = false
     
@@ -23,18 +23,10 @@ class MainMenuViewModel: ObservableObject {
         self.logOffIsLoading = false
     }
     
-    func resetButtonStates() {
-        isLoggedOff = false
-        sessionCreated = false
-    }
-    
     func hostGame() -> GameViewModel {
-        if(!sessionCreated) {
-            DispatchQueue.main.async {
-                print("hostGame")
-                self.gameViewModel.createGame()
-                self.sessionCreated = true
-            }
+        DispatchQueue.main.async {
+            self.gameViewModel.createGame()
+            self.hostSucceed = true
         }
         return self.gameViewModel
     }

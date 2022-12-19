@@ -8,15 +8,29 @@
 import Foundation
 
 class GameManager {
-    private var signalRService: SignalRService?
+    @Published var signalRService: SignalRService?
     private var apiService = ApiService()
     private let defaults = UserDefaults.standard
-    private let leftSession = false
+    
+    private var currentUser: userDto?
     
     init() {
         if let token = defaults.string(forKey: "X-AUTHTOKEN") {
             if let url = URL(string: Constants.SIGNALR_BASE_URL + token){
                 self.signalRService = SignalRService(url: url)
+                
+                if let currentUser = UserDefaults.standard.data(forKey: "user") {
+                    do {
+                        let decoder = JSONDecoder()
+                        self.currentUser = try decoder.decode(loginResponseDto.self, from: currentUser).user
+                    } catch {
+                        print("Unable to Decode Note (\(error))")
+                    }
+                }
+                else {
+                    print("No user found")
+                }
+                
             }
             else {
                 print("incorrect url")
@@ -44,16 +58,19 @@ class GameManager {
     }
     
     func joinGame(sessionAuth: String, completion:@escaping (lobbyResponseDto) -> ()) {
-        print ("join")
         let body: [String: AnyHashable] = [
             "sessionAuth": sessionAuth
         ]
-        
         apiService.postData(body: body, url: Constants.API_BASE_URL + "session/join", model: lobbyResponseDto.self) { data in
+            self.signalRService?.players = data.players
             completion(data)
+            if let signalRService = self.signalRService {
+                signalRService.joinMessageGroup()
+            }
         } failure: { error in
             print(error)
         }
+        
     }
     
     func leaveGame(sessionAuth: String) {
@@ -67,6 +84,7 @@ class GameManager {
     
     func createGame(completion:@escaping (lobbyResponseDto) -> ()) {
         apiService.postData(body: nil, url: "\(Constants.API_BASE_URL)session/create", model: lobbyResponseDto.self) { data in
+            self.signalRService?.players = data.players
             completion(data)
             if let signalRService = self.signalRService {
                 signalRService.joinMessageGroup()
@@ -80,9 +98,9 @@ class GameManager {
         apiService.postDataWithoutReturn(body: nil, url: Constants.API_BASE_URL + "session/start")
     }
     
-    func changeState(state: Bool) {
+    func changeState() {
         let body: [String: AnyHashable] = [
-            "ready": state
+            "ready": true
         ]
         apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/ready")
     }

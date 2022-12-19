@@ -36,7 +36,7 @@ struct GameLobbyView: View {
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             
-                            if let players = vm.lobbyResponseDto?.players {
+                            if let players = vm.gameManager.signalRService?.players {
                                 PlayerList(players: players)
                             }
                             
@@ -88,8 +88,6 @@ struct GameLobbyView: View {
                     }
                     .frame(maxHeight: .infinity, alignment: .top)
                     .padding(.top, 30)
-                }.onAppear {
-                    vm.createGame()
                 }
             }
         }
@@ -99,7 +97,12 @@ struct GameLobbyView: View {
             vm.leaveGame()
             self.presentationMode.wrappedValue.dismiss()
         }){
-            Image(systemName: "chevron.backward")
+            HStack {
+                Image(systemName: "chevron.backward")
+                Text("Leave session").foregroundColor(Color(UIColor.systemBlue))
+            }
+            
+            
         })
     }
 }
