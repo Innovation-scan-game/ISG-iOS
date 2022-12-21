@@ -6,15 +6,27 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 
-class GameManager {
+class GameManager: ObservableObject {
     @Published var signalRService: SignalRService?
     private var apiService = ApiService()
     private let defaults = UserDefaults.standard
     
     private var currentUser: userDto?
     
+    var anyCancellable: AnyCancellable? = nil
+    
     init() {
+        
+        if let signalRService = self.signalRService {
+            anyCancellable = signalRService.objectWillChange.sink { [weak self] (_) in
+                self?.objectWillChange.send()
+            }
+        }
+
+        
         if let token = defaults.string(forKey: "X-AUTHTOKEN") {
             if let url = URL(string: Constants.SIGNALR_BASE_URL + token){
                 self.signalRService = SignalRService(url: url)
@@ -73,10 +85,12 @@ class GameManager {
         
     }
     
-    func leaveGame(sessionAuth: String) {
+    func leaveGame(sessionCode: String) {
         let body: [String: AnyHashable] = [
-            "sessionAuth": sessionAuth
+            "sessionCode": sessionCode
         ]
+        
+        print(sessionCode)
         
         apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/leave")
         

@@ -7,20 +7,11 @@
 
 import Foundation
 
-struct lobbyResponseDto: Decodable {
+class lobbyResponseDto: Identifiable, Decodable, ObservableObject {
     let id: String
     let hostId: String
     let sessionCode: String
     let created: String
     let sessionAuth: String
     let players: [lobbyPlayerDto]
-    
-    enum CodingKeys: String, CodingKey  {
-        case id = "id"
-        case hostId = "hostId"
-        case sessionCode = "sessionCode"
-        case created = "created"
-        case sessionAuth = "sessionAuth"
-        case players = "players"
-    }
 }

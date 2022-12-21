@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StartView: View {
+    
     var body: some View {
         let defaults = UserDefaults.standard
         

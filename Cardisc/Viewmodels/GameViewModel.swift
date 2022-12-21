@@ -7,6 +7,7 @@
 
 import Foundation
 import SignalRClient
+import Combine
 
 class GameViewModel: ObservableObject {
     
@@ -15,6 +16,14 @@ class GameViewModel: ObservableObject {
     @Published var gameId = ""
     @Published var joinSucceed = false
     @Published var amountSelected = 0
+    
+    var anyCancellable: AnyCancellable? = nil
+
+    init() {
+        anyCancellable = gameManager.objectWillChange.sink { [weak self] (_) in
+            self?.objectWillChange.send()
+        }
+    }
     
     private var isLoading = false
     
@@ -47,8 +56,11 @@ class GameViewModel: ObservableObject {
     
     func leaveGame() {
         DispatchQueue.main.async {
-            self.gameManager.leaveGame(sessionAuth: self.gameId)
-            self.lobbyResponseDto = nil
+            if let lobbyResponseDto = self.lobbyResponseDto {
+                self.gameManager.leaveGame(sessionCode: lobbyResponseDto.sessionCode)
+                self.lobbyResponseDto = nil
+            }
+            
         }
     }
     
