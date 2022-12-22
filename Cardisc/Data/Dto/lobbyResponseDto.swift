@@ -7,7 +7,7 @@
 
 import Foundation
 
-class lobbyResponseDto: Identifiable, Decodable, ObservableObject {
+struct lobbyResponseDto: Identifiable, Decodable {
     let id: String
     let hostId: String
     let sessionCode: String

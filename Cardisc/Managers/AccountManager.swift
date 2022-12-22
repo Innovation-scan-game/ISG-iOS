@@ -18,6 +18,7 @@ class AccountManager {
         ]
         
         apiService.postData(body: body, url: Constants.API_BASE_URL + "login", model: loginResponseDto.self) { data in
+            
             self.defaults.set(data.accessToken, forKey: "X-AUTHTOKEN")
 
             do {

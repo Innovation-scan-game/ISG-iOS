@@ -11,18 +11,22 @@ import Combine
 
 class GameViewModel: ObservableObject {
     
-    @Published var gameManager = GameManager()
+    private let gameManager = GameManager()
     @Published var lobbyResponseDto: lobbyResponseDto?
     @Published var gameId = ""
     @Published var joinSucceed = false
     @Published var amountSelected = 0
     
-    var anyCancellable: AnyCancellable? = nil
+    @Published var players: [lobbyPlayerDto] = []
+    
+    private var cancellables: [AnyCancellable] = []
 
     init() {
-        anyCancellable = gameManager.objectWillChange.sink { [weak self] (_) in
-            self?.objectWillChange.send()
-        }
+        self.gameManager.$players
+            .sink(receiveValue: { players in
+                self.players = players
+            })
+            .store(in: &cancellables)
     }
     
     private var isLoading = false

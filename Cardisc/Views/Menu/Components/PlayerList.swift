@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PlayerList: View {
     
-    let players: [lobbyPlayerDto]
+    var players: [lobbyPlayerDto]
     
     var body: some View {
         ZStack {

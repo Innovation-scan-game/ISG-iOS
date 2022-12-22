@@ -10,6 +10,8 @@ import SwiftUI
 import Combine
 
 class GameManager: ObservableObject {
+    
+    @Published var players: [lobbyPlayerDto] = []
     @Published var signalRService: SignalRService?
     private var apiService = ApiService()
     private let defaults = UserDefaults.standard

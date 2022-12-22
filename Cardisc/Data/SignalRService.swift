@@ -107,6 +107,7 @@ class SignalRService: ObservableObject {
                 index+=1
             }
         }
+        print(players.count)
     }
     
     private func onNewPlayer(player: lobbyPlayerDto) {

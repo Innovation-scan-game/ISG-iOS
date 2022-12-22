@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 
 struct GameLobbyView: View {
-    @ObservedObject var vm: GameViewModel
+    @StateObject var vm: GameViewModel
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
     let isHost: Bool
@@ -37,9 +37,8 @@ struct GameLobbyView: View {
                             }
                             .frame(maxWidth: .infinity, alignment: .leading)
                             
-                            if let players = vm.gameManager.signalRService?.players {
-                                PlayerList(players: players)
-                            }
+                            PlayerList(players: vm.players)
+                            
                             
                             if(isHost) {
                                 HStack {
