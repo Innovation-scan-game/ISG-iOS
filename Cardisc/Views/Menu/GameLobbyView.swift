@@ -1,3 +1,4 @@
+
 //
 //  GameLobbyView.swift
 //  Cardisc
@@ -9,150 +10,110 @@ import Foundation
 import SwiftUI
 
 struct GameLobbyView: View {
+    @StateObject var vm: GameViewModel
+    @State private var showConfirmation = false
+    @Environment(\.dismiss) var dismiss
+    
+    let isHost: Bool
+    
     var body: some View {
         VStack {
-            // Back button
-            HStack {
-                HStack {
-                    Image(systemName: "chevron.left").foregroundColor(Color(UIColor.systemBlue))
-                    Text("Back").foregroundColor(Color(UIColor.systemBlue))
-                }
-                .padding(.vertical, 10)
-                .padding(.horizontal, 25)
-                .background(Color.white)
-                .cornerRadius(20, corners: [.topRight, .bottomRight])
-                .shadow(radius: 8)
-                .padding(.top, 10)
-                
-                Spacer()
-                
-                Text("#1234")
-                    .padding(.horizontal, 40)
-                    .foregroundColor(Color(UIColor.white))
-                    .font(.system(size: 28))
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Spacer().frame(height: 50)
-            
             VStack{
-                VStack{
-                    HStack {
-                        Image(systemName: "person.2.fill")
-                            .resizable()
-                            .frame(width: 44, height: 28)
-                            .foregroundColor(Color.white)
-                            .padding(.trailing, 1)
-                        Text("Game lobby").font(.system(size: 24)).bold().foregroundColor(Color.white)
-                        Spacer()
-                        Image(systemName: "square.and.arrow.up").foregroundColor(Color.white).padding(.trailing, 20)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
+                HStack {
+                    Image(systemName: "person.2.fill")
+                        .resizable()
+                        .frame(width: 38, height: 22)
+                        .foregroundColor(Color.white)
+                        .padding(.trailing, 1)
+                    Text("Game lobby (\(vm.lobby?.sessionCode ?? "0000"))").font(.system(size: 20)).bold().foregroundColor(Color.white)
+                    Spacer()
+                    Image(systemName: "square.and.arrow.up").foregroundColor(Color.white).padding(.trailing, 20)
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
-                VStack {
-                    HStack {
-                        Text("Players")
-                        Spacer()
-                        Text("Ready")
-                    }
-                    .bold()
-                    
-                    Divider()
-                    
-                    HStack {
-                        Image("UserIcon").resizable().frame(width: 20, height: 20)
-                        Text("Player1")
-                        Spacer()
-                        Image(systemName: "checkmark.circle.fill").resizable().frame(width: 20, height: 20).foregroundColor(Color(UIColor.systemGreen))
-                    }
-                    HStack {
-                        Image("UserIcon").resizable().frame(width: 20, height: 20)
-                        Text("Player2")
-                        Spacer()
-                        Image(systemName: "checkmark.circle.fill").resizable().frame(width: 20, height: 20).foregroundColor(Color(UIColor.systemGreen))
-                    }
-                    HStack {
-                        Image("UserIcon").resizable().frame(width: 20, height: 20)
-                        Text("Player3")
-                        Spacer()
-                        Image(systemName: "checkmark.circle.fill").resizable().frame(width: 20, height: 20).foregroundColor(Color(UIColor.systemGreen))
-                    }
-                    HStack {
-                        Image("UserIcon").resizable().frame(width: 20, height: 20)
-                        Text("Player4")
-                        Spacer()
-                        Image(systemName: "checkmark.circle.fill").resizable().frame(width: 20, height: 20).foregroundColor(Color(UIColor.systemGreen))
-                    }
-                    HStack {
-                        Image("UserIcon").resizable().frame(width: 20, height: 20)
-                        Text("Player5")
-                        Spacer()
-                        Image(systemName: "checkmark.circle.fill").resizable().frame(width: 20, height: 20).foregroundColor(Color(UIColor.systemGreen))
-                    }
-                    HStack {
-                        Image("UserIcon").resizable().frame(width: 20, height: 20)
-                        Text("Player6")
-                        Spacer()
-                        Image(systemName: "checkmark.circle.fill").resizable().frame(width: 20, height: 20).foregroundColor(Color(UIColor.systemGreen))
-                    }
-                    HStack {
-                        Image("UserIcon").resizable().frame(width: 20, height: 20)
-                        Text("Player7")
-                        Spacer()
-                        Image(systemName: "checkmark.circle.fill").resizable().frame(width: 20, height: 20).foregroundColor(Color(UIColor.systemGreen))
-                    }
-                    HStack {
-                        Image("UserIcon").resizable().frame(width: 20, height: 20)
-                        Text("Player8")
-                        Spacer()
-                        Image(systemName: "checkmark.circle.fill").resizable().frame(width: 20, height: 20).foregroundColor(Color(UIColor.systemGreen))
-                    }
-                }
-                .padding(20)
-                .background(Color.white)
-                .cornerRadius(10)
-                .shadow(radius: 5)
+                PlayerList(players: vm.players)
                 
                 HStack {
-                    Text("3 Rounds")
-                    Spacer()
-                    Image(systemName: "chevron.down").resizable().frame(width: 20, height: 10)
+                    Picker("Number of cards", selection: $vm.rounds) {
+                        ForEach(1 ..< 10) {
+                            Text("\($0) round(s)")
+                        }
+                    }
+                    .padding(.vertical, 5)
+                    .padding(.horizontal, 50)
+                    .background(Color.white)
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(25, corners: [.allCorners])
                 }
-                .padding(.vertical, 15)
-                .padding(.horizontal, 20)
-                .background(Color(UIColor.white))
-                .cornerRadius(10)
+                .background(Color.white)
+                .cornerRadius(10, corners: [.allCorners])
                 .shadow(radius: 5)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .foregroundColor(Color(UIColor.systemGray))
+                .padding(.bottom, 10)
+                
+                HStack {
+                    //change this from static to some list in vm
+                    Picker(selection: $vm.duration, label: Text("Some Label")) {
+                        Text("60 seconds").tag(60)
+                        Text("120 seconds").tag(120)
+                        Text("180 seconds").tag(180)
+                    }.onChange(of: vm.duration) { tag in
+                        vm.duration = tag
+                    }
+                    .padding(.vertical, 5)
+                    .padding(.horizontal, 50)
+                    .background(Color.white)
+                    .frame(maxWidth: .infinity)
+                    .cornerRadius(25, corners: [.allCorners])
+                }
+                .background(Color.white)
+                .cornerRadius(10, corners: [.allCorners])
+                .shadow(radius: 5)
+                .padding(.bottom, 10)
             }
             .padding(.horizontal, 30)
-            .padding(.bottom, 20)
+            
+            NavigationLink("", destination: CardView(vm: vm), isActive: $vm.gameInProgress)
+            
+            MenuItem(
+                menuIcon: "play.fill",
+                iconHeight: 25,
+                iconWidth: 25,
+                menuTitle: "Start game",
+                menuColor: UIColor.systemGreen,
+                menuPaddingRight: 30
+            ).onTapGesture {
+                vm.startGame(rounds: vm.rounds, duration: vm.duration)
+            }
             
             
-            HStack {
-                MenuItem(menuIcon: "play.fill", iconHeight: 25, iconWidth: 23, menuTitle: "Start game", menuColor: UIColor.systemGreen, menuPaddingRight: 40, destination: "")
-            }.frame(maxWidth: .infinity, alignment: .trailing)
-
+            MenuItem(
+                menuIcon: "person.crop.circle.badge.checkmark",
+                iconHeight: 30,
+                iconWidth: 35,
+                menuTitle: "Ready/unready",
+                menuColor: UIColor.systemBlue,
+                menuPaddingRight: 30
+            ).onTapGesture {
+                vm.changeState()
+            }
         }
-        
         .frame(maxHeight: .infinity, alignment: .top)
-        .background(Image("WP1")
-            .resizable()
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+30)
-            .brightness(-0.08)
-        )
-        
-        
-
-    }
-}
-
-
-struct GameLobbyView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameLobbyView()
+        .navigationTitle("")
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: { self.showConfirmation.toggle()}) {
+            Image(systemName: "chevron.left")
+            Text("Leave session")
+        }
+            .alert(isPresented: $showConfirmation) { Alert(
+                    title: Text("Leaving current session"),
+                    message: Text("Are you sure you want to leave this session?"),
+                    primaryButton: .destructive(Text("Leave"))
+                    {
+                        vm.leaveGame()
+                        dismiss()
+                    }, secondaryButton: .cancel())})
+        .background(Image("WP1").resizable()
+            .aspectRatio(contentMode: .fill)
+            .edgesIgnoringSafeArea(.all))
     }
 }

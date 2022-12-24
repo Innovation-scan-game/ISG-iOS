@@ -9,30 +9,10 @@ import Foundation
 import SwiftUI
 
 struct RegisterView: View {
-    @State private var username: String = ""
-    @State private var emailaddress: String = ""
-    @State private var password: String = ""
-    @State private var passwordRepeated: String = ""
+    @StateObject private var vm = RegisterViewModel()
     
     var body: some View {
         VStack {
-            // Logo
-            HStack {
-                HStack {
-                    Image(systemName: "chevron.left").foregroundColor(Color(UIColor.systemBlue))
-                    Text("Back").foregroundColor(Color(UIColor.systemBlue))
-                }
-                .padding(.vertical, 10)
-                .padding(.horizontal, 25)
-                .background(Color.white)
-                .cornerRadius(20, corners: [.topRight, .bottomRight])
-                .shadow(radius: 8)
-                .padding(.top, 10)
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Spacer().frame(height: 50)
-            
             VStack{
                 HStack {
                     Image(systemName: "person.crop.circle.badge.plus.fill")
@@ -44,7 +24,7 @@ struct RegisterView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-    
+                
                 VStack {
                     HStack {
                         Text("Login to your Cardisc-Account to gain access to the game.")
@@ -53,66 +33,74 @@ struct RegisterView: View {
                     Text("Username").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
                     TextField(
                         "...",
-                        text: $username
+                        text: $vm.username
                     )
                     .padding(.vertical, 10)
                     .padding(.horizontal, 15)
                     .background(Color.white)
+                    .autocapitalization(.none)
                     .cornerRadius(10)
                 }.padding(.bottom, 10)
                 
                 VStack {
-                    Text("Emailaddress").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
+                    Text("Emailadress").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
                     TextField(
                         "...",
-                        text: $emailaddress
+                        text: $vm.emailaddress
                     )
                     .padding(.vertical, 10)
                     .padding(.horizontal, 15)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                }.padding(.bottom, 10)
-                
-                VStack {
-                    Text("Username").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
-                    TextField(
-                        "...",
-                        text: $password
-                    )
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 15)
+                    .autocapitalization(.none)
                     .background(Color.white)
                     .cornerRadius(10)
                 }.padding(.bottom, 10)
                 
                 VStack {
                     Text("Password").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
-                    TextField(
+                    SecureField(
                         "...",
-                        text: $passwordRepeated
+                        text: $vm.password
                     )
                     .padding(.vertical, 10)
                     .padding(.horizontal, 15)
+                    .autocapitalization(.none)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                }.padding(.bottom, 10)
+                
+                VStack {
+                    Text("Password repeated").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
+                    SecureField(
+                        "...",
+                        text: $vm.passwordRepeated
+                    )
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 15)
+                    .autocapitalization(.none)
                     .background(Color.white)
                     .cornerRadius(10)
                 }
                 
             }.padding(.horizontal, 30)
             
-            HStack {
-                MenuItem(menuIcon: "person.crop.circle.badge.plus.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Register", menuColor: UIColor.systemBlue, menuPaddingRight: 40, destination: nil)
+            NavigationLink("", destination: StartView(), isActive: $vm.isActive)
+            MenuItem(menuIcon: "person.crop.circle.badge.plus.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Register", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
+                if(vm.password == vm.passwordRepeated) {
+                    if(vm.registerUser(username: vm.username, password: vm.password, email: vm.emailaddress)) {
+                        vm.isActive = true
+                    }
+                    else {
+                    }
+                }
+                
             }
-            .frame(maxWidth: .infinity, alignment: .trailing)
-            .padding(.top, 50)
-            
-            
+            .padding(.top, 15)
+            .frame(maxHeight: .infinity, alignment: .top)
         }
-        .frame(maxHeight: .infinity, alignment: .top)
-        .background(Image("WP1")
-            .resizable()
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+30)
-            .brightness(-0.08)
-        )
+        .background(Image("WP1").resizable()
+            .aspectRatio(contentMode: .fill)
+            .edgesIgnoringSafeArea(.all))
+        
     }
 }
 
