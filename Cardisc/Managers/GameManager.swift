@@ -22,6 +22,7 @@ class GameManager: ObservableObject {
     @Published var game = Game(cards: [], roundDuration: 0)
     @Published var players: [LobbyPlayer] = []
     @Published var answers: [Answer] = []
+    @Published var chatMessages: [ChatMessage] = []
     
     init() {
         self.signalRService.$players
@@ -39,6 +40,12 @@ class GameManager: ObservableObject {
         self.signalRService.$answers
             .sink(receiveValue: { answers in
                 self.answers = answers
+            })
+            .store(in: &cancellables)
+        
+        self.signalRService.$chatMessages
+            .sink(receiveValue: { chatMessages in
+                self.chatMessages = chatMessages
             })
             .store(in: &cancellables)
         
@@ -69,6 +76,7 @@ class GameManager: ObservableObject {
         ]
         
         apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/message")
+        signalRService.chatMessages.append(ChatMessage(username: nil, message: msg))
     }
     
     func nextRound(id: Int, completion:@escaping (userDto) -> ()) {

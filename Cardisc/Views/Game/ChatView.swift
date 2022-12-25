@@ -9,11 +9,8 @@ import Foundation
 import SwiftUI
 
 struct ChatView: View {
-    
     @ObservedObject var vm: GameViewModel
-    
-    @State var isHost = true
-    @State var msg: String = ""
+    var isHost = true
     
     var body: some View {
         VStack {
@@ -67,22 +64,12 @@ struct ChatView: View {
             .padding(15)
             
             
-            ScrollView
-            {
-                ScrollViewReader { value in
-                    ChatMessageItem(name: "User1", message: "Hi!")
-                    ChatMessageItem(name: nil, message: "Hallo")
-                    ChatMessageItem(name: "User1", message: "Hoe is het? Goede vraag he!")
-                    ChatMessageItem(name: nil, message: "Absoluut!")
-                    ChatMessageItem(name: nil, message: "Ben het er mee eens")
-                }
-            }
-            .padding(.top, 10)
+            ChatMessageList(chatMessages: vm.chatMessages)
             
             HStack {
                 TextField(
                     "...",
-                    text: $msg
+                    text: $vm.chatMessage
                 )
                 .padding(.vertical, 10)
                 .padding(.horizontal, 15)
@@ -94,7 +81,7 @@ struct ChatView: View {
                 .padding(.leading, 10)
                 
                 Image(systemName: "paperplane.circle.fill").resizable().frame(width: 35, height: 35).padding(.trailing, 10).foregroundColor(Color(UIColor.systemBlue)).onTapGesture {
-                    //vm.sendmessage(msg)
+                    vm.sendChatMessage()
                 }
             }
             .background(Color(UIColor.systemGray5))

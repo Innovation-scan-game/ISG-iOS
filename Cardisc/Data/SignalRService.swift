@@ -19,6 +19,7 @@ class SignalRService: ObservableObject {
     @Published var players: [LobbyPlayer] = []
     @Published var game: Game = Game(cards: [], roundDuration: 0)
     @Published var answers: [Answer] = []
+    @Published var chatMessages: [ChatMessage] = []
     
     public init() {
         // has to be created after logging in
@@ -57,14 +58,15 @@ class SignalRService: ObservableObject {
         })
         
         connection.on(method: "newMessage", callback: {
+            (user: userDto, cardIndex: Int, message: String) in
             print("NEW MESSAGE ACTION PERFORMED")
-            //Method te perform
+            self.onNewMessage(user: user.toDomainModel(), cardIndex: cardIndex, message: message)
         })
         
         connection.on(method: "newAnswer", callback: {
-            (player: userDto, answer: String) in
-            print("NEW ANSWER ACTION PERFORMED: \(answer) + \(player.id)")
-            self.onNewAnswer(user: player.toDomainModel(), answer: answer)
+            (user: userDto, answer: String) in
+            print("NEW ANSWER ACTION PERFORMED: \(answer) + \(user.id)")
+            self.onNewAnswer(user: user.toDomainModel(), answer: answer)
         })
         
         connection.on(method: "nextRound", callback: {
@@ -90,15 +92,6 @@ class SignalRService: ObservableObject {
         ]
 
         apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "joinGrp")
-    }
-
-    
-    private func onNewConnection(id: String) {
-        //..
-    }
-    
-    private func onClose() {
-        //..
     }
     
     private func onReadyStateChange(player: LobbyPlayer) {
@@ -141,8 +134,12 @@ class SignalRService: ObservableObject {
         self.game = game
     }
     
-    private func onNewMessage(user: userDto, cardIndex: Int, message: String) {
-        //..
+    private func onNewMessage(user: User, cardIndex: Int, message: String) {
+        if(!chatMessages.contains(where: { $0.message == message })) {
+            var message = ChatMessage(username: user.username, message: message)
+            self.chatMessages.append(message)
+            print(message)
+        }
     }
     
     private func onNewAnswer(user: User, answer: String) {

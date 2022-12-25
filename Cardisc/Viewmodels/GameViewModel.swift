@@ -26,6 +26,8 @@ class GameViewModel: ObservableObject {
     @Published var currentCard: Card = Card(id: "", number: 0, name: "", body: "", type: 0)
     @Published var answer: String = ""
     @Published var answers: [Answer] = []
+    @Published var chatMessage: String = ""
+    @Published var chatMessages: [ChatMessage] = []
     @Published var nextView: Bool = false
     
     private var cancellables: [AnyCancellable] = []
@@ -53,6 +55,12 @@ class GameViewModel: ObservableObject {
                 self.answers = answers
             })
             .store(in: &cancellables)
+        
+        self.gameManager.$chatMessages
+            .sink(receiveValue: { chatMessages in
+                self.chatMessages = chatMessages
+            })
+            .store(in: &cancellables)
     }
     
     func submitAnswer() {
@@ -62,10 +70,12 @@ class GameViewModel: ObservableObject {
         }
     }
     
-    func sendChatMessage(msg: String) {
+    func sendChatMessage() {
         DispatchQueue.main.async {
-            self.gameManager.sendChatMessage(msg: msg)
+            self.gameManager.sendChatMessage(msg: self.chatMessage)
+            self.chatMessage = ""
         }
+        
     }
     
     func nextRound() {
