@@ -14,36 +14,51 @@ class GameViewModel: ObservableObject {
     private let gameManager = GameManager()
     
     @Published var isPresentingConfirm: Bool = false
-    @Published var lobby: Lobby?
-    @Published var gameId = ""
-    @Published var joinSucceed = false
+    @Published var showConfirmation: Bool = false
+    @Published var duration = 120
     @Published var rounds = 2
-    @Published var duration = 60
+    @Published var isHost: Bool = false
     
     @Published var players: [LobbyPlayer] = []
     @Published var game = Game(cards: [], roundDuration: 0)
-    @Published var gameInProgress = false
+
+    //Game data
+    @Published var lobby: Lobby?
     @Published var currentCard: Card = Card(id: "", number: 0, name: "", body: "", type: 0)
+    @Published var gameIndex: Int = 0
+    @Published var gameId = ""
     @Published var answer: String = ""
     @Published var answers: [Answer] = []
     @Published var chatMessage: String = ""
     @Published var chatMessages: [ChatMessage] = []
+    @Published var conclusion = ""
     @Published var nextView: Bool = false
+    @Published var startedGame: Bool = false
+    @Published var finishedGame: Bool = false
     
     private var cancellables: [AnyCancellable] = []
-    private var isLoading = false
     
     init() {
+        self.syncVariables()
+    }
+    
+    //Keeps the variables synchronised between the viewmodel and the manager
+    private func syncVariables() {
         self.gameManager.$players
             .sink(receiveValue: { players in
                 self.players = players
             })
             .store(in: &cancellables)
         
+        self.gameManager.$gameIndex
+            .sink(receiveValue: { gameIndex in
+                self.gameIndex = gameIndex
+            })
+            .store(in: &cancellables)
+        
         self.gameManager.$game
             .sink(receiveValue: { game in
                 self.game = game
-                self.gameInProgress = true
                 if(game.cards.count > 0) {
                     self.currentCard = self.game.cards[0]
                 }
@@ -61,6 +76,12 @@ class GameViewModel: ObservableObject {
                 self.chatMessages = chatMessages
             })
             .store(in: &cancellables)
+        
+        self.gameManager.$currentCard
+            .sink(receiveValue: { currentCard in
+                self.currentCard = currentCard
+            })
+            .store(in: &cancellables)
     }
     
     func submitAnswer() {
@@ -71,47 +92,59 @@ class GameViewModel: ObservableObject {
     }
     
     func sendChatMessage() {
-        DispatchQueue.main.async {
-            self.gameManager.sendChatMessage(msg: self.chatMessage)
-            self.chatMessage = ""
+        if(chatMessage != "") {
+            DispatchQueue.main.async {
+                self.gameManager.sendChatMessage(msg: self.chatMessage)
+                self.chatMessage = ""
+            }
         }
-        
     }
     
     func nextRound() {
-        //..
+        DispatchQueue.main.async {
+            self.gameManager.nextRound()
+            self.answer = ""
+            if(self.gameIndex <= self.rounds) {
+                self.nextView = true
+            }
+            else {
+                self.finishedGame = true
+            }
+        }
     }
     
     func joinGame() {
         DispatchQueue.main.async {
             self.gameManager.joinGame(sessionAuth: self.gameId) { data in
-                self.joinSucceed = true
-                self.gameInProgress = false
+                self.isHost = false
                 self.lobby = data
+                self.nextView = true
             }
         }
-        
     }
     
     func leaveGame() {
         DispatchQueue.main.async {
             if let lobby = self.lobby {
                 self.gameManager.leaveGame(sessionCode: lobby.sessionCode)
-                self.lobby = nil
             }
-            
         }
+        self.lobby = nil
+        self.chatMessages = []
     }
     
-    func startGame(rounds: Int, duration: Int) {
-        DispatchQueue.main.async {
-            self.gameManager.startGame(rounds: rounds, duration: duration)
+    func startGame() {
+        self.startedGame = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.gameManager.startGame(rounds: self.rounds, duration: self.duration)
+            self.nextView = true
         }
     }
     
     func createGame() {
         DispatchQueue.main.async {
             self.gameManager.createGame() { data in
+                self.isHost = true
                 self.lobby = data
             }
         }

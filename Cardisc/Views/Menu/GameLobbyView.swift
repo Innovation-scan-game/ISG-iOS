@@ -11,10 +11,7 @@ import SwiftUI
 
 struct GameLobbyView: View {
     @StateObject var vm: GameViewModel
-    @State private var showConfirmation = false
     @Environment(\.dismiss) var dismiss
-    
-    let isHost: Bool
     
     var body: some View {
         VStack {
@@ -33,58 +30,59 @@ struct GameLobbyView: View {
                 
                 PlayerList(players: vm.players)
                 
-                HStack {
-                    Picker("Number of cards", selection: $vm.rounds) {
-                        ForEach(1 ..< 10) {
-                            Text("\($0) round(s)")
+                if(vm.isHost) {
+                    HStack {
+                        Picker("Number of cards", selection: $vm.rounds) {
+                            ForEach(1 ..< 8) {
+                                Text("\($0) round(s)")
+                            }
                         }
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 50)
+                        .background(Color.white)
+                        .frame(maxWidth: .infinity)
+                        .cornerRadius(25, corners: [.allCorners])
                     }
-                    .padding(.vertical, 5)
-                    .padding(.horizontal, 50)
                     .background(Color.white)
-                    .frame(maxWidth: .infinity)
-                    .cornerRadius(25, corners: [.allCorners])
-                }
-                .background(Color.white)
-                .cornerRadius(10, corners: [.allCorners])
-                .shadow(radius: 5)
-                .padding(.bottom, 10)
-                
-                HStack {
-                    //change this from static to some list in vm
-                    Picker(selection: $vm.duration, label: Text("Some Label")) {
-                        Text("60 seconds").tag(60)
-                        Text("120 seconds").tag(120)
-                        Text("180 seconds").tag(180)
-                    }.onChange(of: vm.duration) { tag in
-                        vm.duration = tag
+                    .cornerRadius(10, corners: [.allCorners])
+                    .shadow(radius: 5)
+                    .padding(.bottom, 10)
+                    
+                    HStack {
+                        //SIBTAIN: can we change this to a not static form?
+                        Picker(selection: $vm.duration, label: Text("Some Label")) {
+                            Text("60 seconds").tag(60)
+                            Text("120 seconds").tag(120)
+                            Text("180 seconds").tag(180)
+                        }.onChange(of: vm.duration) { tag in
+                            vm.duration = tag
+                        }
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 50)
+                        .background(Color.white)
+                        .frame(maxWidth: .infinity)
+                        .cornerRadius(25, corners: [.allCorners])
                     }
-                    .padding(.vertical, 5)
-                    .padding(.horizontal, 50)
                     .background(Color.white)
-                    .frame(maxWidth: .infinity)
-                    .cornerRadius(25, corners: [.allCorners])
+                    .cornerRadius(10, corners: [.allCorners])
+                    .shadow(radius: 5)
+                    .padding(.bottom, 10)
                 }
-                .background(Color.white)
-                .cornerRadius(10, corners: [.allCorners])
-                .shadow(radius: 5)
-                .padding(.bottom, 10)
             }
             .padding(.horizontal, 30)
             
-            NavigationLink("", destination: CardView(vm: vm), isActive: $vm.gameInProgress)
-            
-            MenuItem(
-                menuIcon: "play.fill",
-                iconHeight: 25,
-                iconWidth: 25,
-                menuTitle: "Start game",
-                menuColor: UIColor.systemGreen,
-                menuPaddingRight: 30
-            ).onTapGesture {
-                vm.startGame(rounds: vm.rounds, duration: vm.duration)
+            if(vm.isHost) {
+                MenuItem(
+                    menuIcon: "play.fill",
+                    iconHeight: 25,
+                    iconWidth: 25,
+                    menuTitle: "Start game",
+                    menuColor: UIColor.systemGreen,
+                    menuPaddingRight: 30
+                ).onTapGesture {
+                    vm.startGame()
+                }
             }
-            
             
             MenuItem(
                 menuIcon: "person.crop.circle.badge.checkmark",
@@ -96,15 +94,19 @@ struct GameLobbyView: View {
             ).onTapGesture {
                 vm.changeState()
             }
+            
+            NavigationLink("", destination: LoadingView(vm: vm, title: "Starting game", message: "Prepare to answer the first question.."), isActive: $vm.startedGame).onAppear{ vm.startedGame = false }
         }
         .frame(maxHeight: .infinity, alignment: .top)
         .navigationTitle("")
         .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: Button(action: { self.showConfirmation.toggle()}) {
+        
+        //SIBTAIN: is this a good location for an alert? or better in a seperate file?
+        .navigationBarItems(leading: Button(action: { vm.showConfirmation.toggle()}) {
             Image(systemName: "chevron.left")
             Text("Leave session")
         }
-            .alert(isPresented: $showConfirmation) { Alert(
+            .alert(isPresented: $vm.showConfirmation) { Alert(
                     title: Text("Leaving current session"),
                     message: Text("Are you sure you want to leave this session?"),
                     primaryButton: .destructive(Text("Leave"))

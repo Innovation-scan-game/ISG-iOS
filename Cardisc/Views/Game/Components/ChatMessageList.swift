@@ -12,13 +12,18 @@ struct ChatMessageList: View {
     var chatMessages: [ChatMessage]
     
     var body: some View {
-        ScrollView {
-            ScrollViewReader { value in
-                ForEach(chatMessages) { message in
-                    ChatMessageItem(name: message.username, message: message.message)
+        //SIBTAIN: can you make this auto scrollable? That when it gets reloaded, it automaticly scrolls to bottom?
+        ScrollViewReader { scrollView in
+            ScrollView(.vertical) {
+                LazyVStack {
+                    ForEach(chatMessages) { message in
+                        ChatMessageItem(name: message.username, message: message.message)
+                    }
                 }
             }
+            
         }
         .padding(.top, 10)
+        
     }
 }

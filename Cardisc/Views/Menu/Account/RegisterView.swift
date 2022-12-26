@@ -24,10 +24,9 @@ struct RegisterView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                
                 VStack {
                     HStack {
-                        Text("Login to your Cardisc-Account to gain access to the game.")
+                        Text("Create your own Cardisc-Account")
                             .foregroundColor(Color.white).padding(.bottom, 20)
                     }.frame(maxWidth: .infinity, alignment: .leading)
                     Text("Username").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))

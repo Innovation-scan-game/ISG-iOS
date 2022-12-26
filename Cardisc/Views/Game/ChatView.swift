@@ -28,9 +28,15 @@ struct ChatView: View {
                 .padding(.vertical,30)
                 
                 Spacer()
+                NavigationLink("", destination: NavigationLazyView(MainMenuView()), isActive: $vm.finishedGame).onAppear { vm.nextView = false }
                 
                 if(isHost) {
-                    MenuItem(menuIcon: "arrowtriangle.right.fill", iconHeight: 20, iconWidth: 18, menuTitle: "Play next card", menuColor: UIColor.systemBlue, menuPaddingRight: 10)
+                    NavigationLink {
+                        ConclusionView(vm: vm)
+                    } label: {
+                        MenuItem(menuIcon: "arrowtriangle.right.fill", iconHeight: 20, iconWidth: 18, menuTitle: "Play next card", menuColor: UIColor.systemBlue, menuPaddingRight: 10)
+                    }
+                    
                 }
                 else {
                     MenuItem(menuIcon: "hourglass.tophalf.filled", iconHeight: 26, iconWidth: 18, menuTitle: "Vote continue", menuColor: UIColor.systemBlue, menuPaddingRight: 10)
@@ -42,7 +48,6 @@ struct ChatView: View {
                 HStack {
                     Text("Answers:").bold()
                     Spacer()
-                    Text("Round 1/3").bold()
                 }
                 
                 Divider()

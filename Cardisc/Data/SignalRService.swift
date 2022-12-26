@@ -17,7 +17,9 @@ class SignalRService: ObservableObject {
     
     //Game variables, these change on the actions of any user in the session
     @Published var players: [LobbyPlayer] = []
+    @Published var gameIndex: Int = 0
     @Published var game: Game = Game(cards: [], roundDuration: 0)
+    @Published var currentCard: Card = Card(id: "", number: 0, name: "", body: "", type: 0)
     @Published var answers: [Answer] = []
     @Published var chatMessages: [ChatMessage] = []
     
@@ -53,7 +55,7 @@ class SignalRService: ObservableObject {
         
         connection.on(method: "startGame", callback: {
             (game: startGameDto) in
-            print("START GAME ACTION PERFORMED")
+            print("START GAME ACTION PERFORMED \(game.cards.count) + \(game.roundDuration)")
             self.onGameStarted(game: game.toDomainModel())
         })
         
@@ -71,7 +73,7 @@ class SignalRService: ObservableObject {
         
         connection.on(method: "nextRound", callback: {
             print("NEXT ROUND ACTION PERFORMED")
-            //Method te perform
+            self.onNextRound()
         })
         
         connection.on(method: "endSession", callback: {
@@ -138,7 +140,6 @@ class SignalRService: ObservableObject {
         if(!chatMessages.contains(where: { $0.message == message })) {
             var message = ChatMessage(username: user.username, message: message)
             self.chatMessages.append(message)
-            print(message)
         }
     }
     
@@ -148,7 +149,17 @@ class SignalRService: ObservableObject {
     }
     
     private func onNextRound() {
-        //..
+        self.gameIndex += 1
+        if(game.cards.count > self.gameIndex) {
+            self.currentCard = game.cards[self.gameIndex]
+            self.chatMessages = []
+            self.answers = []
+        }
+        else {
+            self.game = Game(cards: [], roundDuration: 0)
+            self.currentCard = Card(id: "", number: 0, name: "", body: "", type: 0)
+            print("Game done")
+        }
     }
     
     private func onEndSession() {

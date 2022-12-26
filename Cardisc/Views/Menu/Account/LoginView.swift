@@ -25,7 +25,7 @@ struct LoginView: View {
                 
                 
                 HStack {
-                    Text("Login to your Cardisc-Account to gain access to the game.")
+                    Text("Login to your Cardisc-Account")
                         .foregroundColor(Color.white).padding(.bottom, 20)
                 }.frame(maxWidth: .infinity, alignment: .leading)
                 
@@ -51,14 +51,15 @@ struct LoginView: View {
                 .autocapitalization(.none)
                 .background(Color.white)
                 .cornerRadius(10)
+
             }
-            .frame(maxHeight: .infinity, alignment: .top)
             .padding(.horizontal, 30)
             NavigationLink("", destination: StartView(), isActive: $vm.isActive)
             MenuItem(menuIcon: "lock.open.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Login", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
                 vm.loginUser(username: vm.username, password: vm.password)
             }
         }
+        .frame(maxHeight: .infinity, alignment: .top)
         .background(Image("WP1").resizable()
             .aspectRatio(contentMode: .fill)
             .edgesIgnoringSafeArea(.all))

@@ -9,15 +9,14 @@ import Foundation
 import SwiftUI
 
 struct OpenQuestionCard : View {
-    @State private var answer: String = ""
-    
     @ObservedObject var vm: GameViewModel
     
     var body: some View {
         VStack {
             HStack {
-                Text("Question \(vm.currentCard.number)").foregroundColor(Color.black).bold().font(.system(size: 20))
+                Text("Question \(vm.gameIndex)").foregroundColor(Color.black).bold().font(.system(size: 20))
                 Spacer()
+                Text("Round \(vm.gameIndex)/\(vm.rounds)")
             }
             .padding(10)
             HStack {
@@ -37,7 +36,7 @@ struct OpenQuestionCard : View {
         VStack {
             TextField(
                 "Your answer...",
-                text: $answer
+                text: $vm.answer
             )
             .padding(.top, 10)
             .padding(.bottom, 20)
@@ -48,18 +47,9 @@ struct OpenQuestionCard : View {
             .shadow(radius: 10)
         }
         
-        VStack {
-            NavigationLink {
-                ChatView(vm: vm)
-            } label: {
-                HStack {
-                    MenuItem(menuIcon: "play.fill", iconHeight: 22, iconWidth: 22, menuTitle: "Play card", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
-                        vm.submitAnswer()
-                    }
-                }
-                .frame(maxWidth: .infinity, alignment: .trailing)
-            }
-            
+        NavigationLink("", destination: ChatView(vm: vm), isActive: $vm.nextView).onAppear { vm.nextView = false }
+        MenuItem(menuIcon: "play.fill", iconHeight: 22, iconWidth: 22, menuTitle: "Play card", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
+            vm.submitAnswer()
         }
     }
 }

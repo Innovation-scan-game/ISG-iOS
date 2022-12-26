@@ -16,7 +16,7 @@ struct ScalableQuestionCard : View {
     var body: some View {
         VStack {
             HStack {
-                Text("Question 3").foregroundColor(Color.black).bold().font(.system(size: 20))
+                Text("Question \(vm.gameIndex)").foregroundColor(Color.black).bold().font(.system(size: 20))
             }.frame(maxWidth: .infinity, alignment: .leading)
             
             HStack {
@@ -43,7 +43,7 @@ struct ScalableQuestionCard : View {
         .padding(.horizontal, 30)
         .shadow(radius: 10)
         
-        NavigationLink("", destination: ChatView(vm: vm), isActive: $vm.nextView)
+        NavigationLink("", destination: ChatView(vm: vm), isActive: $vm.nextView).onAppear { vm.nextView = false }
         MenuItem(menuIcon: "play.fill", iconHeight: 22, iconWidth: 22, menuTitle: "Play card", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
             vm.submitAnswer()
         }

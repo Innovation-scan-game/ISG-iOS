@@ -37,10 +37,13 @@ struct MainMenuView: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Spacer().frame(height: 80)
+                Spacer().frame(height: 70)
+                
+                NavigationLink("", destination: NavigationLazyView(GameLobbyView(vm: vm.gameViewModel)), isActive: $vm.hostSucceed)
+                NavigationLink("", destination: NavigationLazyView(StartView()), isActive: $vm.isLoggedOff)
                 
                 NavigationLink {
-                    JoinGameView(vm: vm.gameViewModel)
+                    NavigationLazyView(JoinGameView(vm: vm.gameViewModel))
                 } label: {
                     MenuItem(
                         menuIcon: "person.2.fill",
@@ -51,7 +54,6 @@ struct MainMenuView: View {
                         menuPaddingRight: 74)
                 }
                 
-                NavigationLink("", destination: GameLobbyView(vm: vm.gameViewModel, isHost: true), isActive: $vm.hostSucceed)
                 MenuItem(menuIcon: "lock.open.fill", iconHeight: 24, iconWidth: 30, menuTitle: "Host a game", menuColor: UIColor.systemBlue, menuPaddingRight: 75, isLoading: false).onTapGesture {
                     self.vm.hostGame()
                 }
@@ -71,12 +73,11 @@ struct MainMenuView: View {
                 Spacer().frame(height: 50)
                 
                 NavigationLink {
-                    AccountSettingsView()
+                    NavigationLazyView(AccountSettingsView())
                 } label: {
                     MenuItem(menuIcon: "gearshape.fill", iconHeight: 26, iconWidth: 26, menuTitle: "Account settings", menuColor: UIColor.systemBlue, menuPaddingRight: 40)
                 }
                 
-                NavigationLink("", destination: StartView(), isActive: $vm.isLoggedOff)
                 MenuItem(menuIcon: "arrowshape.turn.up.left.fill", iconHeight: 24, iconWidth: 30, menuTitle: "Logoff", menuColor: UIColor.systemRed, menuPaddingRight: 40, isLoading: vm.logOffIsLoading).onTapGesture {
                     vm.logOff()
                 }

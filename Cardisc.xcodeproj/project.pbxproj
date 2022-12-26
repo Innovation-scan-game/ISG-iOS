@@ -25,6 +25,8 @@
 		227E57E229436881006A2955 /* MainMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227E57E129436881006A2955 /* MainMenuViewModel.swift */; };
 		22801DCF2938F03300E7F825 /* SignalRClient in Frameworks */ = {isa = PBXBuildFile; productRef = 22801DCE2938F03300E7F825 /* SignalRClient */; };
 		2281CDD2292B9C1200106B12 /* EditAccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281CDD1292B9C1200106B12 /* EditAccountSettingsView.swift */; };
+		228A749A2959F9F000B6394B /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A74992959F9EF00B6394B /* NavigationLazyView.swift */; };
+		228A749F295A21D100B6394B /* ExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228A749E295A21D100B6394B /* ExitView.swift */; };
 		22939309292ADE1D0010F0FD /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22939308292ADE1D0010F0FD /* MenuItem.swift */; };
 		229A7BB42944EC460089CC02 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A7BB32944EC460089CC02 /* RegisterViewModel.swift */; };
 		229D09B429587D0300F9EB49 /* ChatMessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229D09B329587D0300F9EB49 /* ChatMessageList.swift */; };
@@ -70,7 +72,7 @@
 		22A80AF3292A7A17003CD018 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AF2292A7A17003CD018 /* LoadingView.swift */; };
 		22A80AF5292A7A34003CD018 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AF4292A7A34003CD018 /* CardView.swift */; };
 		22A80AF7292A7A63003CD018 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AF6292A7A63003CD018 /* ChatView.swift */; };
-		22A80AF9292A7A90003CD018 /* ConclussionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AF8292A7A90003CD018 /* ConclussionView.swift */; };
+		22A80AF9292A7A90003CD018 /* ConclusionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80AF8292A7A90003CD018 /* ConclusionView.swift */; };
 		22A80B04292A8420003CD018 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B03292A8420003CD018 /* UserManager.swift */; };
 		22A80B06292A842D003CD018 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B05292A842D003CD018 /* CardManager.swift */; };
 		22A80B0C292A8549003CD018 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B0B292A8549003CD018 /* Constants.swift */; };
@@ -119,6 +121,8 @@
 		226CC87A2930ED00005663C5 /* ScalableQuestionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalableQuestionCard.swift; sourceTree = "<group>"; };
 		227E57E129436881006A2955 /* MainMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewModel.swift; sourceTree = "<group>"; };
 		2281CDD1292B9C1200106B12 /* EditAccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountSettingsView.swift; sourceTree = "<group>"; };
+		228A74992959F9EF00B6394B /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
+		228A749E295A21D100B6394B /* ExitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitView.swift; sourceTree = "<group>"; };
 		22939308292ADE1D0010F0FD /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		229A7BB32944EC460089CC02 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		229D09B329587D0300F9EB49 /* ChatMessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageList.swift; sourceTree = "<group>"; };
@@ -164,10 +168,10 @@
 		22A80AEA292A7944003CD018 /* JoinGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameView.swift; sourceTree = "<group>"; };
 		22A80AEE292A7992003CD018 /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
 		22A80AF0292A79CE003CD018 /* GameLobbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLobbyView.swift; sourceTree = "<group>"; };
-		22A80AF2292A7A17003CD018 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		22A80AF2292A7A17003CD018 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = ../Game/LoadingView.swift; sourceTree = "<group>"; };
 		22A80AF4292A7A34003CD018 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		22A80AF6292A7A63003CD018 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		22A80AF8292A7A90003CD018 /* ConclussionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConclussionView.swift; sourceTree = "<group>"; };
+		22A80AF8292A7A90003CD018 /* ConclusionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConclusionView.swift; sourceTree = "<group>"; };
 		22A80B03292A8420003CD018 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		22A80B05292A842D003CD018 /* CardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 		22A80B0B292A8549003CD018 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -235,6 +239,16 @@
 				229D09B529589D3B00F9EB49 /* ChatMessage.swift */,
 			);
 			path = DomainModels;
+			sourceTree = "<group>";
+		};
+		228A749B295A021500B6394B /* General */ = {
+			isa = PBXGroup;
+			children = (
+				22A80AF2292A7A17003CD018 /* LoadingView.swift */,
+				228A74992959F9EF00B6394B /* NavigationLazyView.swift */,
+				228A749E295A21D100B6394B /* ExitView.swift */,
+			);
+			path = General;
 			sourceTree = "<group>";
 		};
 		22939307292ADE070010F0FD /* Components */ = {
@@ -364,6 +378,7 @@
 		22A80AD7292A7270003CD018 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				228A749B295A021500B6394B /* General */,
 				22A80ADB292A774C003CD018 /* Game */,
 				22A80ADA292A7734003CD018 /* Menu */,
 				22A80AAD292A722D003CD018 /* StartView.swift */,
@@ -412,10 +427,9 @@
 			isa = PBXGroup;
 			children = (
 				22FD226F29302C7400E9A02C /* Components */,
-				22A80AF2292A7A17003CD018 /* LoadingView.swift */,
 				22A80AF4292A7A34003CD018 /* CardView.swift */,
 				22A80AF6292A7A63003CD018 /* ChatView.swift */,
-				22A80AF8292A7A90003CD018 /* ConclussionView.swift */,
+				22A80AF8292A7A90003CD018 /* ConclusionView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -682,7 +696,7 @@
 				22A80ADF292A7869003CD018 /* LoginView.swift in Sources */,
 				22A80B04292A8420003CD018 /* UserManager.swift in Sources */,
 				22A40E742932CEDF00FF7952 /* GameViewModel.swift in Sources */,
-				22A80AF9292A7A90003CD018 /* ConclussionView.swift in Sources */,
+				22A80AF9292A7A90003CD018 /* ConclusionView.swift in Sources */,
 				22A40E702932CC4100FF7952 /* AccountManager.swift in Sources */,
 				22A80AE7292A7914003CD018 /* MainMenuView.swift in Sources */,
 				22A40E5C2931676200FF7952 /* sessionDto.swift in Sources */,
@@ -691,6 +705,7 @@
 				22BB35DD2946940800986383 /* JoinGameManager.swift in Sources */,
 				226CC87B2930ED00005663C5 /* ScalableQuestionCard.swift in Sources */,
 				2203C9272957585500FD2921 /* PlayerAnswerList.swift in Sources */,
+				228A749F295A21D100B6394B /* ExitView.swift in Sources */,
 				22A40E4729313F3F00FF7952 /* SessionResponseType.swift in Sources */,
 				22FD227129302CB000E9A02C /* ChatMessageItem.swift in Sources */,
 				2203C92329572F7B00FD2921 /* MPCButton.swift in Sources */,
@@ -716,6 +731,7 @@
 				226CC8792930ECEB005663C5 /* MPCQuestionCard.swift in Sources */,
 				22A80AF3292A7A17003CD018 /* LoadingView.swift in Sources */,
 				22A40E762932CEEF00FF7952 /* LoginViewModel.swift in Sources */,
+				228A749A2959F9F000B6394B /* NavigationLazyView.swift in Sources */,
 				226B18A22943FA68005BBD06 /* Lobby.swift in Sources */,
 				22A80AE3292A78C1003CD018 /* RegisterView.swift in Sources */,
 				22A80AF5292A7A34003CD018 /* CardView.swift in Sources */,

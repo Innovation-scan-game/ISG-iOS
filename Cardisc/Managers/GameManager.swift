@@ -20,14 +20,39 @@ class GameManager: ObservableObject {
     
     //Game variables, these change on the actions of any user in the session
     @Published var game = Game(cards: [], roundDuration: 0)
+    @Published var gameIndex: Int = 0
+    @Published var currentCard: Card = Card(id: "", number: 0, name: "", body: "", type: 0)
     @Published var players: [LobbyPlayer] = []
     @Published var answers: [Answer] = []
     @Published var chatMessages: [ChatMessage] = []
     
     init() {
+        self.syncVariables()
+        
+        if let currentUser = UserDefaults.standard.data(forKey: "user") {
+            do {
+                let decoder = JSONDecoder()
+                self.currentUser = try decoder.decode(loginResponseDto.self, from: currentUser).user
+            } catch {
+                print("Unable to Decode Note (\(error))")
+            }
+        }
+        else {
+            print("No user found")
+        }
+    }
+    
+    //Keeps the variables synchronised between the manager and the SignalR Client
+    private func syncVariables() {
         self.signalRService.$players
             .sink(receiveValue: { players in
                 self.players = players
+            })
+            .store(in: &cancellables)
+        
+        self.signalRService.$gameIndex
+            .sink(receiveValue: { gameIndex in
+                self.gameIndex = gameIndex+1
             })
             .store(in: &cancellables)
         
@@ -49,17 +74,11 @@ class GameManager: ObservableObject {
             })
             .store(in: &cancellables)
         
-        if let currentUser = UserDefaults.standard.data(forKey: "user") {
-            do {
-                let decoder = JSONDecoder()
-                self.currentUser = try decoder.decode(loginResponseDto.self, from: currentUser).user
-            } catch {
-                print("Unable to Decode Note (\(error))")
-            }
-        }
-        else {
-            print("No user found")
-        }
+        self.signalRService.$currentCard
+            .sink(receiveValue: { currentCard in
+                self.currentCard = currentCard
+            })
+            .store(in: &cancellables)
     }
     
     func submitAnswer(answer: String) {
@@ -79,8 +98,12 @@ class GameManager: ObservableObject {
         signalRService.chatMessages.append(ChatMessage(username: nil, message: msg))
     }
     
-    func nextRound(id: Int, completion:@escaping (userDto) -> ()) {
+    func nextRound() {
+        let body: [String: AnyHashable] = [
+            "conclussion": ""
+        ]
         
+        apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/next")
     }
     
     func endGame() {
@@ -125,6 +148,7 @@ class GameManager: ObservableObject {
         }
     }
     
+    //SIBTAIN: is there a way to do this better? rounds+1 (because of index of the dropdown in view/viewmodel
     func startGame(rounds: Int, duration: Int) {
         let body: [String: AnyHashable] = [
             "rounds": rounds+1,

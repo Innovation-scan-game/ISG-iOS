@@ -26,9 +26,8 @@ class MainMenuViewModel: ObservableObject {
     func hostGame() -> GameViewModel {
         DispatchQueue.main.async {
             self.gameViewModel.createGame()
-            self.gameViewModel.gameInProgress = false
+            self.hostSucceed = true
         }
-        self.hostSucceed = true
         return self.gameViewModel
     }
 }
