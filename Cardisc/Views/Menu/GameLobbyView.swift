@@ -22,7 +22,7 @@ struct GameLobbyView: View {
                         .frame(width: 38, height: 22)
                         .foregroundColor(Color.white)
                         .padding(.trailing, 1)
-                    Text("Game lobby (\(vm.lobby?.sessionCode ?? "0000"))").font(.system(size: 20)).bold().foregroundColor(Color.white)
+                    Text("Game lobby (\(vm.lobby.sessionCode ?? "0000"))").font(.system(size: 20)).bold().foregroundColor(Color.white)
                     Spacer()
                     Image(systemName: "square.and.arrow.up").foregroundColor(Color.white).padding(.trailing, 20)
                 }

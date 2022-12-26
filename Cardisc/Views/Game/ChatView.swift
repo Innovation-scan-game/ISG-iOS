@@ -28,6 +28,7 @@ struct ChatView: View {
                 .padding(.vertical,30)
                 
                 Spacer()
+                
                 NavigationLink("", destination: NavigationLazyView(MainMenuView()), isActive: $vm.finishedGame).onAppear { vm.nextView = false }
                 
                 if(isHost) {
@@ -41,7 +42,6 @@ struct ChatView: View {
                 else {
                     MenuItem(menuIcon: "hourglass.tophalf.filled", iconHeight: 26, iconWidth: 18, menuTitle: "Vote continue", menuColor: UIColor.systemBlue, menuPaddingRight: 10)
                 }
-                
             }
             
             VStack {

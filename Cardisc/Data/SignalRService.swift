@@ -8,8 +8,10 @@
 import Foundation
 import SignalRClient
 import Combine
+import SwiftUI
 
 class SignalRService: ObservableObject {
+    //SignalR variables
     private let defaults = UserDefaults.standard
     private var connection: HubConnection
     private var apiService = ApiService()
@@ -22,9 +24,9 @@ class SignalRService: ObservableObject {
     @Published var currentCard: Card = Card(id: "", number: 0, name: "", body: "", type: 0)
     @Published var answers: [Answer] = []
     @Published var chatMessages: [ChatMessage] = []
+    @Published var startedGame: Bool = false
     
     public init() {
-        // has to be created after logging in
         self.connection = HubConnectionBuilder(url: URL(string: Constants.SIGNALR_BASE_URL + defaults.string(forKey: "X-AUTHTOKEN")!)!)
             .withLogging(minLogLevel: .error)
             .build()
@@ -36,15 +38,15 @@ class SignalRService: ObservableObject {
         })
         
         connection.on(method: "readyStateChanged", callback: {
-            (player: LobbyPlayer) in
+            (player: lobbyPlayerDto) in
             print("READY STATE CHANGE ACTION PERFORMED")
-            self.onReadyStateChange(player: player)
+            self.onReadyStateChange(player: player.toDomainModel())
         })
         
         connection.on(method: "newPlayer", callback: {
-            (player: LobbyPlayer) in
+            (player: lobbyPlayerDto) in
             print("NEW PLAYER IN THE ROOM")
-            self.onNewPlayer(player: player)
+            self.onNewPlayer(player: player.toDomainModel())
         })
         
         connection.on(method: "playerLeft", callback: {
@@ -67,7 +69,7 @@ class SignalRService: ObservableObject {
         
         connection.on(method: "newAnswer", callback: {
             (user: userDto, answer: String) in
-            print("NEW ANSWER ACTION PERFORMED: \(answer) + \(user.id)")
+            print("NEW ANSWER ACTION PERFORMED")
             self.onNewAnswer(user: user.toDomainModel(), answer: answer)
         })
         
@@ -78,11 +80,11 @@ class SignalRService: ObservableObject {
         
         connection.on(method: "endSession", callback: {
             print("END SESSION ACTION PERFORMED")
-            //Method te perform
+            //TODO: @TIM add method for ending a session/game
         })
+        
         connection.on(method: "close", callback: {
             print("CONN CLOSED")
-            //Method te perform
         })
         connection.start()
     }
@@ -105,19 +107,10 @@ class SignalRService: ObservableObject {
             }
             index+=1
         }
-        
     }
     
     private func onNewPlayer(player: LobbyPlayer) {
-        //is there a better way?
-        var contains = false
-        for p in self.players {
-            if(player.id == p.id) {
-                contains = true
-                break
-            }
-        }
-        if(!contains) {
+        if(!players.contains(where: { $0.username == player.username })) {
             self.players.append(player)
         }
     }
@@ -134,18 +127,17 @@ class SignalRService: ObservableObject {
     
     private func onGameStarted(game: Game) {
         self.game = game
+        self.startedGame = true
     }
     
     private func onNewMessage(user: User, cardIndex: Int, message: String) {
         if(!chatMessages.contains(where: { $0.message == message })) {
-            var message = ChatMessage(username: user.username, message: message)
-            self.chatMessages.append(message)
+            self.chatMessages.append(ChatMessage(username: user.username, message: message))
         }
     }
     
     private func onNewAnswer(user: User, answer: String) {
-        let answer = Answer(id: user.id, username: user.username, answer: answer)
-        self.answers.append(answer)
+        self.answers.append(Answer(id: user.id, username: user.username, answer: answer))
     }
     
     private func onNextRound() {
@@ -163,6 +155,6 @@ class SignalRService: ObservableObject {
     }
     
     private func onEndSession() {
-        //..
+        //TODO: ...
     }
 }

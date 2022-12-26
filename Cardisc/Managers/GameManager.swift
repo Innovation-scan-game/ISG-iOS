@@ -25,6 +25,8 @@ class GameManager: ObservableObject {
     @Published var players: [LobbyPlayer] = []
     @Published var answers: [Answer] = []
     @Published var chatMessages: [ChatMessage] = []
+    @Published var startedGame: Bool = false
+    
     
     init() {
         self.syncVariables()
@@ -41,6 +43,7 @@ class GameManager: ObservableObject {
             print("No user found")
         }
     }
+    
     
     //Keeps the variables synchronised between the manager and the SignalR Client
     private func syncVariables() {
@@ -79,8 +82,15 @@ class GameManager: ObservableObject {
                 self.currentCard = currentCard
             })
             .store(in: &cancellables)
+        
+        self.signalRService.$startedGame
+            .sink(receiveValue: { startedGame in
+                self.startedGame = startedGame
+            })
+            .store(in: &cancellables)
     }
     
+    //Submits an answer to the API
     func submitAnswer(answer: String) {
         let body: [String: AnyHashable] = [
             "answer": answer
@@ -89,6 +99,7 @@ class GameManager: ObservableObject {
         apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/submit")
     }
     
+    //Sends a chatmessage to the API
     func sendChatMessage(msg: String) {
         let body: [String: AnyHashable] = [
             "message": msg
@@ -98,6 +109,7 @@ class GameManager: ObservableObject {
         signalRService.chatMessages.append(ChatMessage(username: nil, message: msg))
     }
     
+    //Tells the API that the next round is ready to start
     func nextRound() {
         let body: [String: AnyHashable] = [
             "conclussion": ""
@@ -106,10 +118,12 @@ class GameManager: ObservableObject {
         apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/next")
     }
     
+    //Tells the API that the game is completed
     func endGame() {
         apiService.postDataWithoutReturn(body: nil, url: Constants.API_BASE_URL + "session/end")
     }
     
+    //Joins a session and gets the lobby object from the API
     func joinGame(sessionAuth: String, completion:@escaping (Lobby) -> ()) {
         let body: [String: AnyHashable] = [
             "sessionAuth": sessionAuth
@@ -125,17 +139,17 @@ class GameManager: ObservableObject {
         
     }
     
+    //Let the current user leave the session he is in
     func leaveGame(sessionCode: String) {
         let body: [String: AnyHashable] = [
             "sessionCode": sessionCode
         ]
         
-        print(sessionCode)
-        
         apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/leave")
         
     }
     
+    //Creates a new session
     func createGame(completion:@escaping (Lobby) -> ()) {
         apiService.postData(body: nil, url: "\(Constants.API_BASE_URL)session/create", model: lobbyResponseDto.self)
         { data in
@@ -148,7 +162,7 @@ class GameManager: ObservableObject {
         }
     }
     
-    //SIBTAIN: is there a way to do this better? rounds+1 (because of index of the dropdown in view/viewmodel
+    //Tells the API that the session/game is ready to start
     func startGame(rounds: Int, duration: Int) {
         let body: [String: AnyHashable] = [
             "rounds": rounds+1,
@@ -157,6 +171,7 @@ class GameManager: ObservableObject {
         apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/start")
     }
     
+    //Changes the state of the player
     func changeState() {
         for p in players {
             if(p.username == currentUser.username) {

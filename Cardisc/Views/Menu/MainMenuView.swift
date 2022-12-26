@@ -54,7 +54,7 @@ struct MainMenuView: View {
                         menuPaddingRight: 74)
                 }
                 
-                MenuItem(menuIcon: "lock.open.fill", iconHeight: 24, iconWidth: 30, menuTitle: "Host a game", menuColor: UIColor.systemBlue, menuPaddingRight: 75, isLoading: false).onTapGesture {
+                MenuItem(menuIcon: "crown.fill", iconHeight: 24, iconWidth: 36, menuTitle: "Host a game", menuColor: UIColor.systemBlue, menuPaddingRight: 68, isLoading: false).onTapGesture {
                     self.vm.hostGame()
                 }
                 

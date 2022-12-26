@@ -23,7 +23,7 @@ class GameViewModel: ObservableObject {
     @Published var game = Game(cards: [], roundDuration: 0)
 
     //Game data
-    @Published var lobby: Lobby?
+    @Published var lobby: Lobby = Lobby(id: "", hostId: "", sessionCode: "", created: "", sessionAuth: "", players: [])
     @Published var currentCard: Card = Card(id: "", number: 0, name: "", body: "", type: 0)
     @Published var gameIndex: Int = 0
     @Published var gameId = ""
@@ -82,6 +82,12 @@ class GameViewModel: ObservableObject {
                 self.currentCard = currentCard
             })
             .store(in: &cancellables)
+        
+        self.gameManager.$startedGame
+            .sink(receiveValue: { startedGame in
+                self.startGame()
+            })
+            .store(in: &cancellables)
     }
     
     func submitAnswer() {
@@ -125,11 +131,9 @@ class GameViewModel: ObservableObject {
     
     func leaveGame() {
         DispatchQueue.main.async {
-            if let lobby = self.lobby {
-                self.gameManager.leaveGame(sessionCode: lobby.sessionCode)
-            }
+            self.gameManager.leaveGame(sessionCode: self.lobby.sessionCode)
         }
-        self.lobby = nil
+        self.lobby = Lobby(id: "", hostId: "", sessionCode: "", created: "", sessionAuth: "", players: [])
         self.chatMessages = []
     }
     

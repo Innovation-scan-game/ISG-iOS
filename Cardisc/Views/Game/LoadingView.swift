@@ -30,7 +30,6 @@ struct LoadingView: View {
             .padding(.horizontal, 30)
             .padding(.bottom, 30)
         }
-        //SIBTAIN: I would like to have a full screen background on (almost) every view in the form of an image. Is this the best way to do that?
         .frame(maxHeight: .infinity, alignment: .center)
         .padding(.horizontal, 30)
         .background(Image("WP2")

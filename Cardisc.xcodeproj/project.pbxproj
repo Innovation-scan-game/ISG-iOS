@@ -43,7 +43,6 @@
 		22A40E5E293167F900FF7952 /* loginResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E5D293167F900FF7952 /* loginResponseDto.swift */; };
 		22A40E602931686E00FF7952 /* lobbyResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E5F2931686E00FF7952 /* lobbyResponseDto.swift */; };
 		22A40E622931693B00FF7952 /* lobbyPlayerDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E612931693B00FF7952 /* lobbyPlayerDto.swift */; };
-		22A40E64293169D500FF7952 /* joinRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E63293169D500FF7952 /* joinRequestDto.swift */; };
 		22A40E6629316A0300FF7952 /* createUserDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E6529316A0300FF7952 /* createUserDto.swift */; };
 		22A40E6829316A6300FF7952 /* conclusionDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E6729316A6300FF7952 /* conclusionDto.swift */; };
 		22A40E6A29316AB400FF7952 /* changeReadinessDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A40E6929316AB400FF7952 /* changeReadinessDto.swift */; };
@@ -139,7 +138,6 @@
 		22A40E5D293167F900FF7952 /* loginResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginResponseDto.swift; sourceTree = "<group>"; };
 		22A40E5F2931686E00FF7952 /* lobbyResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lobbyResponseDto.swift; sourceTree = "<group>"; };
 		22A40E612931693B00FF7952 /* lobbyPlayerDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lobbyPlayerDto.swift; sourceTree = "<group>"; };
-		22A40E63293169D500FF7952 /* joinRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = joinRequestDto.swift; sourceTree = "<group>"; };
 		22A40E6529316A0300FF7952 /* createUserDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createUserDto.swift; sourceTree = "<group>"; };
 		22A40E6729316A6300FF7952 /* conclusionDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = conclusionDto.swift; sourceTree = "<group>"; };
 		22A40E6929316AB400FF7952 /* changeReadinessDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changeReadinessDto.swift; sourceTree = "<group>"; };
@@ -281,7 +279,6 @@
 				22A40E5D293167F900FF7952 /* loginResponseDto.swift */,
 				22A40E5F2931686E00FF7952 /* lobbyResponseDto.swift */,
 				22A40E612931693B00FF7952 /* lobbyPlayerDto.swift */,
-				22A40E63293169D500FF7952 /* joinRequestDto.swift */,
 				22A40E6529316A0300FF7952 /* createUserDto.swift */,
 				22A40E6729316A6300FF7952 /* conclusionDto.swift */,
 				22A40E6929316AB400FF7952 /* changeReadinessDto.swift */,
@@ -723,7 +720,6 @@
 				226B189B2943F71F005BBD06 /* PlayerList.swift in Sources */,
 				229D09B629589D3B00F9EB49 /* ChatMessage.swift in Sources */,
 				22A80AEB292A7944003CD018 /* JoinGameView.swift in Sources */,
-				22A40E64293169D500FF7952 /* joinRequestDto.swift in Sources */,
 				22A40E7C2932DD8600FF7952 /* registerResponseDto.swift in Sources */,
 				22A40E53293165B400FF7952 /* userDto.swift in Sources */,
 				226B189D2943F72A005BBD06 /* PlayerItem.swift in Sources */,

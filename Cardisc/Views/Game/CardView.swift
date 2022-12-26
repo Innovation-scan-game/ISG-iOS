@@ -21,6 +21,7 @@ struct CardView: View {
             .padding(.leading, 30)
             .padding(.bottom, 30)
             
+            //JUREK: What cardtype is what number?
             if(vm.currentCard.type == 1) {
                 ScalableQuestionCard(vm: vm)
             }
