@@ -16,22 +16,19 @@ struct JoinGameView: View {
         VStack {
             VStack{
                 HStack {
-                    Image(systemName: "person.fill.questionmark.rtl")
+                    Image(systemName: "person.2.fill")
                         .resizable()
-                        .frame(width: 30, height: 28)
+                        .frame(width: 36, height: 22)
                         .foregroundColor(Color.white)
                         .padding(.trailing, 5)
                     Text("Join a game").font(.system(size: 24)).foregroundColor(Color.white).bold()
+                    Spacer()
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
                 
                 HStack {
                     Text("Join a game by entering the Game ID you received from the game host.").foregroundColor(Color.white)
+                    Spacer()
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                
-                
             }
             .padding(.horizontal, 30)
             .padding(.vertical, 20)
@@ -39,8 +36,8 @@ struct JoinGameView: View {
             VStack{
                 HStack {
                     Text("Enter game id.").foregroundColor(Color(UIColor.white)).bold()
+                    Spacer()
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.top, 20)
                 
                 HStack {
@@ -58,22 +55,24 @@ struct JoinGameView: View {
             HStack {
                 
             }
-            .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(.top, 40)
             
-            NavigationLink("", destination: GameLobbyView(vm: vm), isActive: $vm.nextView).onAppear {
-                vm.nextView = false
-                vm.startedGame = false
-            }
-            MenuItem(menuIcon: "lock.open.fill", iconHeight: 24, iconWidth: 30, menuTitle: "Join Game", menuColor: UIColor.systemBlue, menuPaddingRight: 40, isLoading: false).onTapGesture {
+            MenuItem(
+                menuIcon: "person.wave.2.fill",
+                iconHeight: 24,
+                iconWidth: 30,
+                menuTitle: "Join Game",
+                menuColor: UIColor.systemBlue,
+                menuPaddingRight: 40,
+                isLoading: vm.isLoadingJoinSession
+            ).onTapGesture {
                 self.vm.joinGame()
             }
             
+            Spacer()
         }
-        .frame(maxHeight: .infinity, alignment: .top)
-        .background(Image("WP1").resizable()
-        .aspectRatio(contentMode: .fill)
-        .edgesIgnoringSafeArea(.all))
+        .backgroundImage()
+        .navigationDestination(isPresented: $vm.joinedGame) { GameLobbyView(vm: vm) }
     }
 }
 

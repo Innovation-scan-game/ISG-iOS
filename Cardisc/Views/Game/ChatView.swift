@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ChatView: View {
     @ObservedObject var vm: GameViewModel
-    var isHost = true
     
     var body: some View {
         VStack {
@@ -29,48 +28,23 @@ struct ChatView: View {
                 
                 Spacer()
                 
-                NavigationLink("", destination: NavigationLazyView(MainMenuView()), isActive: $vm.finishedGame).onAppear { vm.nextView = false }
-                
-                if(isHost) {
+                if(vm.isHost) {
                     NavigationLink {
                         ConclusionView(vm: vm)
                     } label: {
-                        MenuItem(menuIcon: "arrowtriangle.right.fill", iconHeight: 20, iconWidth: 18, menuTitle: "Play next card", menuColor: UIColor.systemBlue, menuPaddingRight: 10)
+                        MenuItem(menuIcon: "arrowtriangle.right.fill", iconHeight: 20, iconWidth: 18, menuTitle: "Continue", menuColor: UIColor.systemBlue, menuPaddingRight: 10)
                     }
-                    
                 }
                 else {
                     MenuItem(menuIcon: "hourglass.tophalf.filled", iconHeight: 26, iconWidth: 18, menuTitle: "Vote continue", menuColor: UIColor.systemBlue, menuPaddingRight: 10)
                 }
             }
             
-            VStack {
-                HStack {
-                    Text("Answers:").bold()
-                    Spacer()
-                }
-                
-                Divider()
-                
-                PlayerAnswerList(answers: vm.answers)
-                
-                VStack {
-                    Image(systemName: "chevron.down")
-                }.onTapGesture {
-                    
-                }
-            }
+            //TODO: Dit even ergens anders neerzetten
+            PlayerAnswerList(answers: vm.answers)
             
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(15)
-            .shadow(radius: 5)
-            .background(Color(UIColor.white))
-            .cornerRadius(10, corners: [.allCorners])
-            .padding(15)
-            
-            
-            ChatMessageList(chatMessages: vm.chatMessages)
-            
+            ChatMessageList(chatMessages: $vm.chatMessages)
+
             HStack {
                 TextField(
                     "...",
@@ -89,15 +63,17 @@ struct ChatView: View {
                     vm.sendChatMessage()
                 }
             }
+            .padding(.bottom, 20)
             .background(Color(UIColor.systemGray5))
-            
+            Spacer()
         }
-        .frame(maxHeight: .infinity, alignment: .top)
-        .background(Image("WP1")
-            .resizable()
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+30)
-            .brightness(-0.08)
-        )
+        .backgroundImage(imageName: "WP3")
+        .ignoresSafeArea(.all, edges: .bottom)
         .navigationBarHidden(true)
+        .navigationDestination(isPresented: $vm.nextRoundStarted) { CardView(vm: vm) }
+        .navigationDestination(isPresented: $vm.finishedGame) { NavigationLazyView(MainMenuView()) }
+        .fullScreenCover(isPresented: $vm.isLoadingMainMenu) {
+            LoadingView(title: "Game finished", message: "The gamehost thanks you for playing this game!", icon: "flag.2.crossed.fill")
+        }
     }
 }

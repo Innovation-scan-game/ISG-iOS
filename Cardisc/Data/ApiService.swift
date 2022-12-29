@@ -50,21 +50,22 @@ class ApiService {
     }
     
     //POST request
-    func postData<T: Decodable>
+    func httpRequest<T: Decodable>
     (
         body: Dictionary<String, AnyHashable>?,
         url: String,
         model: T.Type?,
+        httpMethod: String,
         completion:@escaping(T) -> (),
         failure:@escaping(Error) -> ()
     )
     {
-        guard let url = URL(string: url) else {
+        guard let url = URL(string: Constants.API_BASE_URL + url) else {
             return
         }
         var request = URLRequest(url: url)
         
-        request.httpMethod = "POST"
+        request.httpMethod = httpMethod
         request.setValue("application/json", forHTTPHeaderField: "content-type")
         
         //if token is given with at the manager
@@ -77,15 +78,13 @@ class ApiService {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
         }
         
-        let task = URLSession.shared.dataTask(with: request) { data, _, error in
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 return
             }
             do {
-                if (model != nil) {
-                    let response = try JSONDecoder().decode(T.self, from: data)
-                    completion(response)
-                }
+                let response = try JSONDecoder().decode(T.self, from: data)
+                completion(response)
             }
             catch{
                 print(error)
@@ -96,18 +95,19 @@ class ApiService {
     }
     
     //POST request
-    func postDataWithoutReturn
+    func httpRequestWithoutReturn
     (
         body: Dictionary<String, AnyHashable>?,
-        url: String
+        url: String,
+        httpMethod: String
     )
     {
-        guard let url = URL(string: url) else {
+        guard let url = URL(string: Constants.API_BASE_URL + url) else {
             return
         }
         var request = URLRequest(url: url)
         
-        request.httpMethod = "POST"
+        request.httpMethod = httpMethod
         request.setValue("application/json", forHTTPHeaderField: "content-type")
         
         //if token is given with at the manager

@@ -14,33 +14,9 @@ struct MainMenuView: View {
     var body: some View {
         VStack {
             VStack {
-                HStack {
-                    HStack {
-                        Image("Logo")
-                            .resizable()
-                            .frame(width: 70, height: 70)
-                        VStack (
-                            alignment: .leading
-                        ) {
-                            Text("Cardisc").font(.system(size: 32)).bold()
-                            Text("An idea developing tool").font(.system(size: 18))
-                        }
-                    }
-                    .padding(.vertical, 35)
-                    .padding(.leading, 10)
-                    .padding(.trailing, 20)
-                    .background(Color.white)
-                    .cornerRadius(20, corners: [.topRight, .bottomRight])
-                    
-                    .shadow(radius: 8)
-                    .padding(.top, 20)
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                Logo()
                 
                 Spacer().frame(height: 70)
-                
-                NavigationLink("", destination: NavigationLazyView(GameLobbyView(vm: vm.gameViewModel)), isActive: $vm.hostSucceed)
-                NavigationLink("", destination: NavigationLazyView(StartView()), isActive: $vm.isLoggedOff)
                 
                 NavigationLink {
                     NavigationLazyView(JoinGameView(vm: vm.gameViewModel))
@@ -54,7 +30,15 @@ struct MainMenuView: View {
                         menuPaddingRight: 74)
                 }
                 
-                MenuItem(menuIcon: "crown.fill", iconHeight: 24, iconWidth: 36, menuTitle: "Host a game", menuColor: UIColor.systemBlue, menuPaddingRight: 68, isLoading: false).onTapGesture {
+                MenuItem(
+                    menuIcon: "crown.fill",
+                    iconHeight: 24,
+                    iconWidth: 36,
+                    menuTitle: "Host a game",
+                    menuColor: UIColor.systemBlue,
+                    menuPaddingRight: 68,
+                    isLoading: vm.hostGameIsLoading
+                ).onTapGesture {
                     self.vm.hostGame()
                 }
                 
@@ -84,10 +68,13 @@ struct MainMenuView: View {
             }
             .navigationBarHidden(true)
             .frame(maxHeight: .infinity, alignment: .top)
+            .navigationDestination(isPresented: $vm.hostSucceed) {
+                NavigationLazyView(GameLobbyView(vm: vm.gameViewModel))
+            }
+            .navigationDestination(isPresented: $vm.hostSucceed) { NavigationLazyView(GameLobbyView(vm: vm.gameViewModel)) }
+            .navigationDestination(isPresented: $vm.isLoggedOff) { StartView() }
         }
-        .background(Image("WP1").resizable()
-        .aspectRatio(contentMode: .fill)
-        .edgesIgnoringSafeArea(.all))
+        .backgroundImage()
     }
 }
 
@@ -96,3 +83,6 @@ struct MainMenuView_Previews: PreviewProvider {
         MainMenuView()
     }
 }
+
+
+

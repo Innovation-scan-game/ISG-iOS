@@ -10,6 +10,8 @@ import Foundation
 class UserViewModel: ObservableObject {
     private let userManager = UserManager()
     @Published var currentUser = userDto(id: "", username: "", email: "", picture: "")
+    @Published var showDeleteUserComfirmation: Bool = false
+    @Published var userDeleted: Bool = false
     
     
     init(currentUser: userDto = userDto(id: "", username: "", email: "", picture: "")) {
@@ -30,17 +32,14 @@ class UserViewModel: ObservableObject {
         userManager.logoffUser()
     }
     
-    
-    func getUserById() {
-        //..
-    }
-    
-    func deleteUserById() {
-        //..
-    }
-    
-    func createNewUser() {
-        //..
+    func deleteUser() {
+        DispatchQueue.main.async {
+            self.userManager.deleteUserById(id: self.currentUser.id)
+            UserDefaults.standard.removeObject(forKey: "X-AUTHTOKEN")
+            UserDefaults.standard.removeObject(forKey: "user")
+            self.userDeleted = true
+        }
+        
     }
     
     func updateUser() {
@@ -49,13 +48,6 @@ class UserViewModel: ObservableObject {
     
     func uploadAvatar() {
         //..
-    }
-    
-    func getInfo(userDefaults: String) -> String {
-        if let info = userManager.defaults.string(forKey: userDefaults) {
-            return info
-        }
-        return ""
     }
 }
 

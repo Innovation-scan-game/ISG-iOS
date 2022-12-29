@@ -27,7 +27,6 @@ class GameManager: ObservableObject {
     @Published var chatMessages: [ChatMessage] = []
     @Published var startedGame: Bool = false
     
-    
     init() {
         self.syncVariables()
         
@@ -96,7 +95,7 @@ class GameManager: ObservableObject {
             "answer": answer
         ]
         
-        apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/submit")
+        apiService.httpRequestWithoutReturn(body: body, url: "session/submit", httpMethod: "POST")
     }
     
     //Sends a chatmessage to the API
@@ -105,22 +104,26 @@ class GameManager: ObservableObject {
             "message": msg
         ]
         
-        apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/message")
+        apiService.httpRequestWithoutReturn(body: body, url: "session/message", httpMethod: "POST")
         signalRService.chatMessages.append(ChatMessage(username: nil, message: msg))
     }
     
     //Tells the API that the next round is ready to start
-    func nextRound() {
+    func nextRound(conclusion: String) {
         let body: [String: AnyHashable] = [
-            "conclussion": ""
+            "conclussion": conclusion
         ]
         
-        apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/next")
+        apiService.httpRequestWithoutReturn(body: body, url: "session/next", httpMethod: "POST")
     }
     
     //Tells the API that the game is completed
-    func endGame() {
-        apiService.postDataWithoutReturn(body: nil, url: Constants.API_BASE_URL + "session/end")
+    func endGame(conclusion: String) {
+        let body: [String: AnyHashable] = [
+            "conclussion": conclusion
+        ]
+        
+        apiService.httpRequestWithoutReturn(body: body, url: "session/end", httpMethod: "POST")
     }
     
     //Joins a session and gets the lobby object from the API
@@ -128,7 +131,7 @@ class GameManager: ObservableObject {
         let body: [String: AnyHashable] = [
             "sessionAuth": sessionAuth
         ]
-        apiService.postData(body: body, url: Constants.API_BASE_URL + "session/join", model: lobbyResponseDto.self) { data in
+        apiService.httpRequest(body: body, url: "session/join", model: lobbyResponseDto.self, httpMethod: "POST") { data in
             let lobby = data.toDomainModel()
             self.signalRService.players = lobby.players
             self.signalRService.joinMessageGroup()
@@ -145,13 +148,12 @@ class GameManager: ObservableObject {
             "sessionCode": sessionCode
         ]
         
-        apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/leave")
-        
+        apiService.httpRequestWithoutReturn(body: body, url: "session/leave", httpMethod: "POST")
     }
     
     //Creates a new session
     func createGame(completion:@escaping (Lobby) -> ()) {
-        apiService.postData(body: nil, url: "\(Constants.API_BASE_URL)session/create", model: lobbyResponseDto.self)
+        apiService.httpRequest(body: nil, url: "session/create", model: lobbyResponseDto.self, httpMethod: "POST")
         { data in
             let lobby = data.toDomainModel()
             self.signalRService.players = lobby.players
@@ -163,12 +165,12 @@ class GameManager: ObservableObject {
     }
     
     //Tells the API that the session/game is ready to start
-    func startGame(rounds: Int, duration: Int) {
+    func startGame(rounds: Int, completion:@escaping () -> Void) {
         let body: [String: AnyHashable] = [
-            "rounds": rounds+1,
-            "duration": duration
+            "rounds": rounds+1
         ]
-        apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/start")
+        apiService.httpRequestWithoutReturn(body: body, url: "session/start", httpMethod: "POST")
+        completion()
     }
     
     //Changes the state of the player
@@ -178,7 +180,7 @@ class GameManager: ObservableObject {
                 let body: [String: AnyHashable] = [
                     "ready": !p.ready
                 ]
-                apiService.postDataWithoutReturn(body: body, url: Constants.API_BASE_URL + "session/ready")
+                apiService.httpRequestWithoutReturn(body: body, url: "session/ready", httpMethod: "POST")
             }
         }
     }

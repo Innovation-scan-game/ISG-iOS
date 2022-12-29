@@ -12,8 +12,6 @@ struct ConclusionView: View {
     @ObservedObject var vm: GameViewModel
     
     var body: some View {
-        NavigationLink("", destination: NavigationLazyView(MainMenuView()), isActive: $vm.finishedGame)
-        NavigationLink("", destination: CardView(vm: vm), isActive: $vm.nextView).onAppear{ vm.nextView = false }
         
         VStack {
             HStack {
@@ -44,16 +42,19 @@ struct ConclusionView: View {
             }
             MenuItem(menuIcon: "play.fill", iconHeight: 20, iconWidth: 18, menuTitle: "Continue", menuColor: UIColor.systemBlue, menuPaddingRight: 10).onTapGesture {
                 vm.nextRound()
+            }.onAppear {
+                vm.nextRoundStarted = false
+                vm.finishedGame = false
             }
         }
         .frame(maxHeight: .infinity, alignment: .top)
         .padding(.top, 40)
-        .background(Image("WP2")
-            .resizable()
-            .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height+70)
-        )
+        .backgroundImage(imageName: "WP3")
         .navigationBarHidden(true)
-        
-        
+        .navigationDestination(isPresented: $vm.finishedGame) { NavigationLazyView(MainMenuView()) }
+        .navigationDestination(isPresented: $vm.nextRoundStarted) { CardView(vm: vm) }
+        .fullScreenCover(isPresented: $vm.isLoadingMainMenu) {
+            LoadingView(title: "Game finished", message: "The gamehost thanks you for playing this game!", icon: "flag.2.crossed.fill")
+        }
     }
 }

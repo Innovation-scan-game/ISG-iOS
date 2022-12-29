@@ -17,23 +17,19 @@ class UserManager {
     }
     
     func getUserById(id: Int, completion:@escaping (userDto) -> ()) {
-        apiService.getData(body: nil, url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
+        apiService.httpRequest(body: nil, url: "users/\(id)", model: userDto.self, httpMethod: "POST") { data in
             completion(data)
         } failure: { error in
             print(error)
         }
     }
     
-    func deleteUserById(id: Int, completion:@escaping (userDto) -> ()) {
-        apiService.getData(body: nil, url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
-            completion(data)
-        } failure: { error in
-            print(error)
-        }
+    func deleteUserById(id: String) {
+        apiService.httpRequestWithoutReturn(body: nil, url: "user/\(id)", httpMethod: "DELETE")
     }
     
     func updateUser(id: Int, completion:@escaping (userDto) -> ()) {
-        apiService.getData(body: nil, url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
+        apiService.httpRequest(body: nil, url: "users/\(id)", model: userDto.self, httpMethod: "POST") { data in
             completion(data)
         } failure: { error in
             print(error)
@@ -41,7 +37,7 @@ class UserManager {
     }
     
     func uploadAvatar(id: Int, completion:@escaping (userDto) -> ()) {
-        apiService.getData(body: nil, url: Constants.API_BASE_URL + "users/\(id)", model: userDto.self) { data in
+        apiService.httpRequest(body: nil, url: "users/\(id)", model: userDto.self, httpMethod: "POST") { data in
             completion(data)
         } failure: { error in
             print(error)
