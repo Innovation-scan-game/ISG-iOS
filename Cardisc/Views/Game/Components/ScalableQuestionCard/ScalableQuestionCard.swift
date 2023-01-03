@@ -9,30 +9,32 @@ import Foundation
 import SwiftUI
 
 struct ScalableQuestionCard : View {
-    @State private var answer: Double = 1
-    
-    @ObservedObject var vm: GameViewModel
+    @StateObject var vm: GameViewModel
     
     var body: some View {
         VStack {
             HStack {
-                Text("Question \(vm.gameIndex)").foregroundColor(Color.black).bold().font(.system(size: 20))
-            }.frame(maxWidth: .infinity, alignment: .leading)
+                Text("\(vm.currentCard.name)").foregroundColor(Color.black).bold().font(.system(size: 20))
+                Spacer()
+                Text("Round \(vm.gameIndex+1)/\(vm.rounds+1)")
+            }.padding(.bottom, 10)
             
             HStack {
-                Text(vm.currentCard.body).foregroundColor(Color.black)
+                Text(vm.currentCard.body)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             
             VStack {
-                Text("**Score:** \(Int(answer))")
-                Slider(value: $answer, in: 1...10, step: 1) { value in
-                    vm.answer = String(answer)
-                }.padding(.horizontal, 10)
+                Text("**Score:** \(Int(vm.scalableAnswer))")
+                Slider(value: $vm.scalableAnswer, in: 1...5, step: 1) { value in
+                    vm.answer = String(vm.scalableAnswer)
+                }.padding(.horizontal, 10).onAppear{
+                    vm.answer = String(vm.scalableAnswer)
+                }
                 HStack {
-                    Text("Agree")
-                    Spacer()
                     Text("Disagree")
+                    Spacer()
+                    Text("Agree")
                 }
             }
             .padding(.top, 50)
@@ -42,6 +44,7 @@ struct ScalableQuestionCard : View {
         .cornerRadius(20, corners: [.allCorners])
         .padding(.horizontal, 30)
         .shadow(radius: 10)
+        .foregroundColor(Color.black)
         
         MenuItem(menuIcon: "play.fill", iconHeight: 22, iconWidth: 22, menuTitle: "Play card", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
             vm.submitAnswer()

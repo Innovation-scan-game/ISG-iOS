@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftUI
+import UIKit
 
 struct GameLobbyView: View {
     @StateObject var vm: GameViewModel
@@ -23,9 +24,11 @@ struct GameLobbyView: View {
                         .frame(width: 38, height: 22)
                         .foregroundColor(Color.white)
                         .padding(.trailing, 1)
-                    Text("Game lobby #\(vm.lobby.sessionCode))").font(.system(size: 20)).bold().foregroundColor(Color.white)
+                    Text("Game lobby: \(vm.lobby.sessionCode)").font(.system(size: 20)).bold().foregroundColor(Color.white)
                     Spacer()
-                    Image(systemName: "square.and.arrow.up").foregroundColor(Color.white).padding(.trailing, 20)
+                    Image(systemName: "square.and.arrow.up").foregroundColor(Color.white).padding(.trailing, 20).onTapGesture {
+                        vm.shareGame()
+                    }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
@@ -34,7 +37,7 @@ struct GameLobbyView: View {
                 if(vm.isHost) {
                     HStack {
                         Picker("Number of cards", selection: $vm.rounds) {
-                            ForEach(1 ..< 8) {
+                            ForEach(3 ..< 10) {
                                 Text("\($0) round(s)")
                             }
                         }
@@ -48,36 +51,11 @@ struct GameLobbyView: View {
                     .cornerRadius(10, corners: [.allCorners])
                     .shadow(radius: 5)
                     .padding(.bottom, 10)
+                    .shadow(radius: 5)
                 }
             }
             .padding(.horizontal, 30)
             .padding(.top, 20)
-            
-            if(vm.playerReady) {
-                MenuItem(
-                    menuIcon: "person.fill.xmark",
-                    iconHeight: 30,
-                    iconWidth: 35,
-                    menuTitle: "Unready",
-                    menuColor: UIColor.systemRed,
-                    menuPaddingRight: 30
-                ).onTapGesture {
-                    vm.changeState()
-                }
-            }
-            else {
-                MenuItem(
-                    menuIcon: "person.crop.circle.badge.checkmark",
-                    iconHeight: 30,
-                    iconWidth: 35,
-                    menuTitle: "Ready",
-                    menuColor: UIColor.systemGreen,
-                    menuPaddingRight: 30
-                ).onTapGesture {
-                    vm.changeState()
-                }
-            }
-
             if(vm.isHost) {
                 MenuItem(
                     menuIcon: "play.fill",
@@ -91,11 +69,35 @@ struct GameLobbyView: View {
                     vm.startGame()
                 }
             }
+            if(vm.playerReady) {
+                MenuItem(
+                    menuIcon: "person.fill.xmark",
+                    iconHeight: 25,
+                    iconWidth: 35,
+                    menuTitle: "Unready",
+                    menuColor: UIColor.systemRed,
+                    menuPaddingRight: 30
+                ).onTapGesture {
+                    vm.changeState()
+                }
+            }
+            else {
+                MenuItem(
+                    menuIcon: "person.crop.circle.badge.checkmark",
+                    iconHeight: 25,
+                    iconWidth: 30,
+                    menuTitle: "Ready",
+                    menuColor: UIColor.systemGreen,
+                    menuPaddingRight: 30
+                ).onTapGesture {
+                    vm.changeState()
+                }
+            }
         }
         .frame(maxHeight: .infinity, alignment: .top)
         .navigationTitle("")
         .fullScreenCover(isPresented: $vm.isLoadingStartingSession) {
-            LoadingView(title: "Starting session", message: "Prepare to answer the first questioncard..", icon: "hourglass.tophalf.filled")
+            LoadingView(title: "Starting session", message: "Prepare to answer the first questioncard..", icon: "hourglass.tophalf.filled", iconWidth: 25)
         }
         .navigationDestination(isPresented: $vm.startedGame, destination: { CardView(vm: vm) })
 

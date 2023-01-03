@@ -20,6 +20,7 @@ struct PlayerList: View {
                     Spacer()
                     Text("Status").bold(true)
                 }
+                .foregroundColor(Color.black)
                 .padding(.horizontal, 15)
                 .padding(.top, 10)
                 
@@ -34,6 +35,7 @@ struct PlayerList: View {
             .background(Color.white)
             .cornerRadius(10, corners: [.allCorners])
             .padding(.vertical, 5)
+            .shadow(radius: 5)
         }
     }
 }

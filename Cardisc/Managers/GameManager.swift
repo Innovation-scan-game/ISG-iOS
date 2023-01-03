@@ -21,11 +21,9 @@ class GameManager: ObservableObject {
     //Game variables, these change on the actions of any user in the session
     @Published var game = Game(cards: [], roundDuration: 0)
     @Published var gameIndex: Int = 0
-    @Published var currentCard: Card = Card(id: "", number: 0, name: "", body: "", type: 0)
     @Published var players: [LobbyPlayer] = []
     @Published var answers: [Answer] = []
     @Published var chatMessages: [ChatMessage] = []
-    @Published var startedGame: Bool = false
     
     init() {
         self.syncVariables()
@@ -52,12 +50,6 @@ class GameManager: ObservableObject {
             })
             .store(in: &cancellables)
         
-        self.signalRService.$gameIndex
-            .sink(receiveValue: { gameIndex in
-                self.gameIndex = gameIndex+1
-            })
-            .store(in: &cancellables)
-        
         self.signalRService.$game
             .sink(receiveValue: { game in
                 self.game = game
@@ -76,15 +68,9 @@ class GameManager: ObservableObject {
             })
             .store(in: &cancellables)
         
-        self.signalRService.$currentCard
-            .sink(receiveValue: { currentCard in
-                self.currentCard = currentCard
-            })
-            .store(in: &cancellables)
-        
-        self.signalRService.$startedGame
-            .sink(receiveValue: { startedGame in
-                self.startedGame = startedGame
+        self.signalRService.$gameIndex
+            .sink(receiveValue: { gameIndex in
+                self.gameIndex = gameIndex
             })
             .store(in: &cancellables)
     }
@@ -153,7 +139,8 @@ class GameManager: ObservableObject {
     
     //Creates a new session
     func createGame(completion:@escaping (Lobby) -> ()) {
-        apiService.httpRequest(body: nil, url: "session/create", model: lobbyResponseDto.self, httpMethod: "POST")
+        
+        self.apiService.httpRequest(body: nil, url: "session/create", model: lobbyResponseDto.self, httpMethod: "POST")
         { data in
             let lobby = data.toDomainModel()
             self.signalRService.players = lobby.players
@@ -162,15 +149,16 @@ class GameManager: ObservableObject {
         } failure: { error in
             print(error)
         }
+        
     }
     
     //Tells the API that the session/game is ready to start
-    func startGame(rounds: Int, completion:@escaping () -> Void) {
+    func startGame(rounds: Int) {
         let body: [String: AnyHashable] = [
             "rounds": rounds+1
         ]
-        apiService.httpRequestWithoutReturn(body: body, url: "session/start", httpMethod: "POST")
-        completion()
+
+        self.apiService.httpRequestWithoutReturn(body: body, url: "session/start", httpMethod: "POST")
     }
     
     //Changes the state of the player

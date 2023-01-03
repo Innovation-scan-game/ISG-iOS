@@ -39,14 +39,13 @@ struct ConclusionView: View {
                 .cornerRadius(15, corners: [.allCorners])
                 .padding(.horizontal, 30)
                 .shadow(radius: 10)
+                .padding(.bottom, 20)
             }
             MenuItem(menuIcon: "play.fill", iconHeight: 20, iconWidth: 18, menuTitle: "Continue", menuColor: UIColor.systemBlue, menuPaddingRight: 10).onTapGesture {
                 vm.nextRound()
-            }.onAppear {
-                vm.nextRoundStarted = false
-                vm.finishedGame = false
             }
         }
+        .foregroundColor(Color.black)
         .frame(maxHeight: .infinity, alignment: .top)
         .padding(.top, 40)
         .backgroundImage(imageName: "WP3")
@@ -54,7 +53,7 @@ struct ConclusionView: View {
         .navigationDestination(isPresented: $vm.finishedGame) { NavigationLazyView(MainMenuView()) }
         .navigationDestination(isPresented: $vm.nextRoundStarted) { CardView(vm: vm) }
         .fullScreenCover(isPresented: $vm.isLoadingMainMenu) {
-            LoadingView(title: "Game finished", message: "The gamehost thanks you for playing this game!", icon: "flag.2.crossed.fill")
+            LoadingView(title: "Game finished", message: "The gamehost thanks you for playing this game!", icon: "flag.2.crossed.fill", iconWidth: 45)
         }
     }
 }
