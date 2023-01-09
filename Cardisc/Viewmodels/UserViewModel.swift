@@ -29,6 +29,7 @@ class UserViewModel: ObservableObject {
     @Published var changedUserDetails = ""
     @Published var updatedUser: Bool = false
     @Published var imageLoading: Bool = false
+    @Published var editingUserCredentials: Bool = false
     
     @Published var imageSelection: PhotosPickerItem? {
         didSet {
@@ -116,6 +117,10 @@ class UserViewModel: ObservableObject {
                     }
                 }
             }
+        }
+        
+        if(self.changedUserDetails == "") {
+            self.changedUserDetails = "None"
         }
     }
     

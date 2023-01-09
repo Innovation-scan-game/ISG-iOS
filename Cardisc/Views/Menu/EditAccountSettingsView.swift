@@ -28,7 +28,7 @@ struct EditAccountSettingsView: View {
                         
                         
                         HStack {
-                            Text("Edit your profile information bellow.\n*NOTE:* You must log in again when you change your account credentials.")
+                            Text("Edit your profile information bellow.\nNOTE: You must log in again when you change your account credentials.")
                                 .foregroundColor(Color.white).padding(.bottom, 20)
                             Spacer()
                         }
@@ -57,12 +57,25 @@ struct EditAccountSettingsView: View {
             .padding(.vertical, 20)
             
             MenuItem(menuIcon: "checkmark", iconHeight: 22, iconWidth: 26, menuTitle: "Confirm", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
-                vm.updateUser()
+                vm.editingUserCredentials.toggle()
             }
             .navigationDestination(isPresented: $vm.updatedUser) { StartView() }
             
             Spacer()
         }
         .backgroundImage()
+        .foregroundColor(Color.black)
+        .alert(isPresented: $vm.editingUserCredentials) { Alert(
+            title: Text("Editing user credentials"),
+            message: Text("Confirm all changes? This will cause the app to log off."),
+            primaryButton: .destructive(Text("Confirm"))
+            {
+                vm.updateUser()
+            }, secondaryButton: .cancel()
+            {
+                vm.editingUserCredentials.toggle()
+            }
+        )
+        }
     }
 }

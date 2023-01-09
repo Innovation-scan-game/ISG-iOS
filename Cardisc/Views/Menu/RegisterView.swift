@@ -105,6 +105,7 @@ struct RegisterView: View {
         .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(isPresented: $vm.userRegistered, destination: { StartView() })
         .backgroundImage()
+        .foregroundColor(Color.black)
         
     }
 }

@@ -38,9 +38,6 @@ struct ChatView: View {
                         MenuItem(menuIcon: "arrowtriangle.right.fill", iconHeight: 20, iconWidth: 18, menuTitle: "Continue", menuColor: UIColor.systemBlue, menuPaddingRight: 10)
                     }
                 }
-                else {
-                    MenuItem(menuIcon: "hourglass.tophalf.filled", iconHeight: 26, iconWidth: 18, menuTitle: "Vote continue", menuColor: UIColor.systemBlue, menuPaddingRight: 10)
-                }
             }
             
             if(vm.currentCard.type == 1) {

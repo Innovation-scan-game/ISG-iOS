@@ -8,7 +8,6 @@
 import Foundation
 
 class AccountManager {
-    let defaults = UserDefaults.standard
     private let apiService = ApiService()
     
     func loginUser(username: String, password: String, completion:@escaping (loginResponseDto?) -> ()) {
@@ -19,12 +18,12 @@ class AccountManager {
         
         apiService.httpRequest(body: body, url: "login", model: loginResponseDto.self, httpMethod: "POST") { data in
             
-            self.defaults.set(data.accessToken, forKey: "X-AUTHTOKEN")
+            UserDefaults.standard.set(data.accessToken, forKey: "X-AUTHTOKEN")
 
             do {
                 let encoder = JSONEncoder()
                 let user = try encoder.encode(data)
-                self.defaults.set(user, forKey: "user")
+                UserDefaults.standard.set(user, forKey: "user")
             } catch {
                 print("Unable to Encode Note (\(error))")
             }

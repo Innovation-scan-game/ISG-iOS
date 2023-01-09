@@ -12,7 +12,6 @@ import UIKit
 
 struct GameLobbyView: View {
     @StateObject var vm: GameViewModel
-    @Environment(\.dismiss) var dismiss
     @State private var showingActionSheet = false
     
     var body: some View {
@@ -105,6 +104,9 @@ struct GameLobbyView: View {
         .navigationDestination(isPresented: $vm.startedGame, destination: { CardView(vm: vm) })
 
         .navigationBarTitleDisplayMode(.inline)
+        .navigationDestination(isPresented: $vm.leftGame, destination: {
+            MainMenuView()
+        })
         .navigationBarBackButtonHidden(true)
         .backgroundImage(imageName: "WP3")
         .navigationBarItems(leading: Button(action: { vm.showConfirmation.toggle()}) {
@@ -117,7 +119,6 @@ struct GameLobbyView: View {
                 primaryButton: .destructive(Text("Leave"))
                 {
                     vm.leaveGame()
-                    dismiss()
                 }, secondaryButton: .cancel())})
 
     }

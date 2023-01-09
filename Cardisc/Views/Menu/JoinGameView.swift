@@ -72,6 +72,7 @@ struct JoinGameView: View {
             Spacer()
         }
         .backgroundImage()
+        .foregroundColor(Color.black)
         .navigationDestination(isPresented: $vm.joinedGame) { GameLobbyView(vm: vm) }
     }
 }

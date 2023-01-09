@@ -12,7 +12,6 @@ import Combine
 class GameManager: ObservableObject {
     
     private var apiService = ApiService()
-    private let defaults = UserDefaults.standard
     @Published var signalRService = SignalRService()
     
     private var currentUser = userDto(id: "", username: "", email: "", picture: "")

@@ -50,12 +50,13 @@ struct AccountSettingsView: View {
                         else {
                             Image(systemName: "person.circle.fill")
                                 .resizable()
-                                .frame(width: 80, height: 80)
+                                .frame(width: 70, height: 70)
                                 .foregroundColor(Color.black)
+                                .padding(.horizontal, 20)
                         }
                         VStack {
                             HStack {
-                                Text(vm.currentUser.username)
+                                Text(vm.currentUser.username).lineLimit(1)
                                     .bold()
                                     .font(.system(size: 16))
                                     .foregroundColor(Color.black)
@@ -66,7 +67,7 @@ struct AccountSettingsView: View {
                                 HStack {
                                     Text("Email:")
                                     Spacer()
-                                    Text(vm.currentUser.email)
+                                    Text(vm.currentUser.email).lineLimit(1)
                                 }
                                 HStack {
                                     Text("Password:")
@@ -120,6 +121,7 @@ struct AccountSettingsView: View {
         }
         .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
+        .foregroundColor(Color.black)
         .backgroundImage()
         .navigationDestination(isPresented: $vm.userDeleted, destination: {
             StartView()
