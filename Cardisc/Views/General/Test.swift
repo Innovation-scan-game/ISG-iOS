@@ -20,30 +20,10 @@ struct TestView: View {
             }
             
             Button(action: {
-                // Maak de URL voor de request
-                let url = URL(string: Constants.API_BASE_URL + "user/avatar")!
                 
-                let formData = MultipartForm(parts: [
-                    MultipartForm.Part(name: "file", data: imageData!, filename: "avatarPlayer.png", contentType: "image/png"),
-                ])
-
-                var request = URLRequest(url: URL(string: Constants.API_BASE_URL + "user/avatar")!)
-                request.httpMethod = "POST"
-                request.setValue(formData.contentType, forHTTPHeaderField: "Content-Type")
-
-                let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                    guard let data = data, error == nil else {
-                        return
-                    }
-                    do {
-                        let response = try JSONDecoder().decode(userDto.self, from: data)
-                    }
-                    catch{
-                        print("error: \(error.localizedDescription)")
-                    }
-                }
+                uploadImage()
+                return
                 
-                task.resume()
             }) {
                 Text("Verstuur Afbeelding")
             }
@@ -89,4 +69,40 @@ struct TestView: View {
             Coordinator(self)
         }
     }
+    
 }
+
+extension TestView {
+    
+    func uploadImage() {
+        
+        let form = MultipartForm(parts: [
+        MultipartForm.Part(name: "a", value: "1"),
+        MultipartForm.Part(name: "b", value: "2"),
+        MultipartForm.Part(name: "c", data: imageData!, filename: "3.png", contentType: "image/png"),
+        ])
+
+        let url = URL(string: Constants.API_BASE_URL + "user/avatar")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue(form.contentType, forHTTPHeaderField: "Content-Type")
+        if let token = UserDefaults.standard.string(forKey: "X-AUTHTOKEN") {
+            request.setValue("bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+
+        let task = URLSession.shared.uploadTask(with: request, from: form.bodyData, completionHandler: { responseData, response, error in
+            if error == nil {
+                let jsonData = try? JSONSerialization.jsonObject(with: responseData!, options: .allowFragments)
+                if let json = jsonData as? [String: Any] {
+                    print(json)
+                    
+                }
+            }
+        })
+        task.resume()
+        
+    }
+    
+}
+    
