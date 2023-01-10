@@ -14,7 +14,7 @@ class SignalRService: ObservableObject {
     //SignalR variables
     private let defaults = UserDefaults.standard
     private var connection: HubConnection
-    private var connectionDelegation = ConnectionDelegation()
+    private var connectionDelegation: ConnectionDelegation = ConnectionDelegation()
     private var apiService = ApiService()
     private var connectionId = ""
     private var cancellables: [AnyCancellable] = []
@@ -29,9 +29,8 @@ class SignalRService: ObservableObject {
     
     public init() {
         self.connection = HubConnectionBuilder(url: URL(string: Constants.SIGNALR_BASE_URL + defaults.string(forKey: "X-AUTHTOKEN")!)!)
-            .withHubConnectionDelegate(delegate: self.connectionDelegation)
-            .withLogging(minLogLevel: .error)
-            .withAutoReconnect()
+            .withLogging(minLogLevel: .warning)
+            .withHubConnectionOptions(configureHubConnectionOptions: {options in options.keepAliveInterval = 20 })
             .build()
         
         connection.on(method: "newConnection", callback: {

@@ -114,7 +114,7 @@ class GameManager: ObservableObject {
         let body: [String: AnyHashable] = [
             "conclussion": conclusion
         ]
-        
+        UserDefaults.standard.removeObject(forKey: "connectionId")
         apiService.httpRequestWithoutReturn(body: body, url: "session/end", httpMethod: "POST")
     }
     
@@ -140,6 +140,7 @@ class GameManager: ObservableObject {
             "sessionCode": sessionCode
         ]
         
+        UserDefaults.standard.removeObject(forKey: "connectionId")
         apiService.httpRequestWithoutReturn(body: body, url: "session/leave", httpMethod: "POST")
     }
     

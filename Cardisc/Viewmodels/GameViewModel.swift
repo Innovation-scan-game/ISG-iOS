@@ -28,6 +28,7 @@ class GameViewModel: ObservableObject {
     @Published var joinedGame: Bool = false
     @Published var isReconnecting: Bool = false
     @Published var leftGame: Bool = false
+    @Published var loadingState: Bool = false
     
     //Game data
     @Published var isHost: Bool = false
@@ -197,6 +198,7 @@ class GameViewModel: ObservableObject {
             self.lobby = Lobby(id: "", hostId: "", sessionCode: "", created: "", sessionAuth: "", players: [])
             self.chatMessages = []
             self.leftGame = true
+            UserDefaults.standard.removeObject(forKey: "connectionId")
         }
     }
     
@@ -248,9 +250,11 @@ class GameViewModel: ObservableObject {
     
     // Changes the players state
     func changeState() {
-        DispatchQueue.main.async {
+        self.loadingState = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.gameManager.changeState()
             self.playerReady.toggle()
+            self.loadingState = false
         }
     }
     

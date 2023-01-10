@@ -14,12 +14,14 @@ class ConnectionDelegation: HubConnectionDelegate {
     
     func connectionDidReconnect() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            let body: [String: AnyHashable] = [
-                "connectionId": UserDefaults.standard.string(forKey: "connectionId"),
-            ]
+            if let connectionId = UserDefaults.standard.string(forKey: "connectionId") {
+                let body: [String: AnyHashable] = [
+                    "connectionId": connectionId,
+                ]
 
-            self.apiService.httpRequestWithoutReturn(body: body, url: "joinGrp", httpMethod: "POST")
-            self.isReconnecting = false
+                self.apiService.httpRequestWithoutReturn(body: body, url: "joinGrp", httpMethod: "POST")
+                self.isReconnecting = false
+            }
         }
     }
     
@@ -29,10 +31,10 @@ class ConnectionDelegation: HubConnectionDelegate {
     
     func connectionDidOpen(hubConnection: SignalRClient.HubConnection) { }
     
-    func connectionDidFailToOpen(error: Error) { }
+    func connectionDidFailToOpen(error: Error) {}
     
-    func connectionDidClose(error: Error?) { }
+    func connectionDidClose(error: Error?) {}
     
-    func didReceiveData(data: Data) { }
+    func didReceiveData(data: Data) {}
 
 }

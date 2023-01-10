@@ -12,7 +12,6 @@ import UIKit
 
 struct GameLobbyView: View {
     @StateObject var vm: GameViewModel
-    @State private var showingActionSheet = false
     
     var body: some View {
         VStack {
@@ -75,7 +74,8 @@ struct GameLobbyView: View {
                     iconWidth: 35,
                     menuTitle: "Unready",
                     menuColor: UIColor.systemRed,
-                    menuPaddingRight: 30
+                    menuPaddingRight: 30,
+                    isLoading: vm.loadingState
                 ).onTapGesture {
                     vm.changeState()
                 }
@@ -87,7 +87,8 @@ struct GameLobbyView: View {
                     iconWidth: 30,
                     menuTitle: "Ready",
                     menuColor: UIColor.systemGreen,
-                    menuPaddingRight: 30
+                    menuPaddingRight: 30,
+                    isLoading: vm.loadingState
                 ).onTapGesture {
                     vm.changeState()
                 }
@@ -105,7 +106,7 @@ struct GameLobbyView: View {
 
         .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(isPresented: $vm.leftGame, destination: {
-            MainMenuView()
+            NavigationLazyView(MainMenuView())
         })
         .navigationBarBackButtonHidden(true)
         .backgroundImage(imageName: "WP3")
