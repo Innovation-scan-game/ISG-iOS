@@ -29,7 +29,8 @@ class SignalRService: ObservableObject {
     
     public init() {
         self.connection = HubConnectionBuilder(url: URL(string: Constants.SIGNALR_BASE_URL + defaults.string(forKey: "X-AUTHTOKEN")!)!)
-            .withLogging(minLogLevel: .warning)
+            .withHubConnectionDelegate(delegate: self.connectionDelegation)
+            .withAutoReconnect()
             .withHubConnectionOptions(configureHubConnectionOptions: {options in options.keepAliveInterval = 20 })
             .build()
         
