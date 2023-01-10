@@ -13,7 +13,7 @@ class ConnectionDelegation: HubConnectionDelegate {
     @Published var isReconnecting: Bool = false
     
     func connectionDidReconnect() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             let body: [String: AnyHashable] = [
                 "connectionId": UserDefaults.standard.string(forKey: "connectionId"),
             ]

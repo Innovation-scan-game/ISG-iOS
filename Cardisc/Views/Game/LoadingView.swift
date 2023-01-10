@@ -22,7 +22,9 @@ struct LoadingView: View {
                 Text(title).font(.system(size: 28)).foregroundColor(Color.white).bold()
             }
             
-            VStack {
+            HStack {
+                ProgressView()
+                Spacer()
                 Text(message)
             }
             .foregroundColor(Color.white)

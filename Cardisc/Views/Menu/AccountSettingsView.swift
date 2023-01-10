@@ -11,7 +11,6 @@ import PhotosUI
 
 struct AccountSettingsView: View {
     @ObservedObject var vm = UserViewModel()
-    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
@@ -95,11 +94,7 @@ struct AccountSettingsView: View {
                 NavigationLink {
                     EditAccountSettingsView(vm: vm)
                 } label: {
-                    HStack {
-                        MenuItem(menuIcon: "square.and.pencil", iconHeight: 26, iconWidth: 26, menuTitle: "Edit account info", menuColor: UIColor.systemBlue, menuPaddingRight: 40)
-                    }
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.top, 50)
+                    MenuItem(menuIcon: "square.and.pencil", iconHeight: 26, iconWidth: 26, menuTitle: "Edit account info", menuColor: UIColor.systemBlue, menuPaddingRight: 40).padding(.top, 60)
                 }
                 
                 PhotosPicker(
@@ -119,7 +114,6 @@ struct AccountSettingsView: View {
             }
             .padding(.top, 20)
         }
-        .navigationTitle("")
         .navigationBarTitleDisplayMode(.inline)
         .foregroundColor(Color.black)
         .backgroundImage()

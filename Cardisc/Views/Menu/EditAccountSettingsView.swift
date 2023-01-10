@@ -24,16 +24,16 @@ struct EditAccountSettingsView: View {
                             Text("Edit account settings").font(.system(size: 24)).foregroundColor(Color.white).bold()
                             Spacer()
                         }
-                        
-                        
-                        
+
+
+
                         HStack {
                             Text("Edit your profile information bellow.\nNOTE: You must log in again when you change your account credentials.")
                                 .foregroundColor(Color.white).padding(.bottom, 20)
                             Spacer()
                         }
-                        
-                        
+
+
                         CardiscTextfield(value: $vm.username, label: "Username")
                         
                         CardiscTextfield(value: $vm.email, label: "Emailadress")
@@ -46,21 +46,21 @@ struct EditAccountSettingsView: View {
                             Text(vm.errorMsg).foregroundColor(Color.white)
                             Spacer()
                         }
-                        
+
                     }
                 }
-                
+
             }
             .navigationTitle("")
             .navigationBarTitleDisplayMode(.inline)
             .padding(.horizontal, 30)
             .padding(.vertical, 20)
-            
+
             MenuItem(menuIcon: "checkmark", iconHeight: 22, iconWidth: 26, menuTitle: "Confirm", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
                 vm.editingUserCredentials.toggle()
             }
             .navigationDestination(isPresented: $vm.updatedUser) { StartView() }
-            
+
             Spacer()
         }
         .backgroundImage()
