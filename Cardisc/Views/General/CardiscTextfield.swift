@@ -10,16 +10,17 @@ import SwiftUI
 
 struct CardiscTextfield: View {
     @State var value: Binding<String>
-    let label: String
+    let label: Text
+    let placeholder: String?
     
     var body: some View {
         VStack {
-            Text(label)
+            label
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .bold()
                 .foregroundColor(Color(UIColor.white))
             TextField(
-                "...",
+                placeholder ?? "...",
                 text: value
             )
             .foregroundColor(Color.black)

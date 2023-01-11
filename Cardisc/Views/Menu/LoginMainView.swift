@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct LoginMainView: View {
     var body: some View {
@@ -15,24 +16,41 @@ struct LoginMainView: View {
             
             Spacer().frame(height: 100)
             
-            // Menu
             HStack
             {
                 VStack(
                     alignment: .trailing
                 ) {
                     NavigationLink(destination: LoginView()) {
-                        MenuItem(menuIcon: "person.badge.key.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Login", menuColor: UIColor.systemBlue, menuPaddingRight: nil)
+                        MenuItem(
+                            menuIcon: "person.badge.key.fill",
+                            iconHeight: 26,
+                            iconWidth: 30,
+                            menuTitle: Text("start_title_1"),
+                            menuColor: UIColor.systemBlue,
+                            minWidth: 200
+                        )
                     }
                     
                     NavigationLink(destination: RegisterView()) {
-                        MenuItem(menuIcon: "person.crop.circle.fill.badge.plus", iconHeight: 26, iconWidth: 30, menuTitle: "Register", menuColor: UIColor.systemBlue, menuPaddingRight: 46)
+                        MenuItem(
+                            menuIcon: "person.crop.circle.fill.badge.plus",
+                            iconHeight: 26,
+                            iconWidth: 30,
+                            menuTitle: Text("start_title_2"),
+                            menuColor: UIColor.systemBlue,
+                            minWidth: 200
+                        )
                     }
                     
-                    Spacer().frame(height: 30)
-                    
-                    
-                    MenuItem(menuIcon: "arrowshape.turn.up.backward.fill", iconHeight: 26, iconWidth: 30,menuTitle: "Exit", menuColor: UIColor.systemRed, menuPaddingRight: 30).onTapGesture {
+                    MenuItem(
+                        menuIcon: "arrowshape.turn.up.backward.fill",
+                        iconHeight: 26,
+                        iconWidth: 30,
+                        menuTitle: Text("start_title_3"),
+                        menuColor: UIColor.systemRed,
+                        minWidth: nil
+                    ).onTapGesture {
                         exit(0)
                     }
                 }

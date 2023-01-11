@@ -10,11 +10,11 @@ import SwiftUI
 
 struct CardiscPasswordfield: View {
     @State var value: Binding<String>
-    let label: String
+    let label: Text
     
     var body: some View {
         VStack {
-            Text(label)
+            label
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .bold()
                 .foregroundColor(Color(UIColor.white))

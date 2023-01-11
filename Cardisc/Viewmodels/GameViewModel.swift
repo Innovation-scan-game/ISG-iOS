@@ -51,6 +51,7 @@ class GameViewModel: ObservableObject {
     @Published var keyboardHeigtChat: CGFloat = 0
     @Published var chatting: Bool = false
     @Published var conclusion = ""
+    @Published var joinSessionError = ""
     
     private var cancellables: [AnyCancellable] = []
     
@@ -180,13 +181,20 @@ class GameViewModel: ObservableObject {
     
     // Joins an existing game with a gameId
     func joinGame() {
+        self.joinSessionError = ""
         DispatchQueue.main.async {
             self.isLoadingJoinSession = true
             self.gameManager.joinGame(sessionAuth: self.gameId) { data in
-                self.isHost = false
-                self.lobby = data
-                self.joinedGame = true
-                self.isLoadingJoinSession = false
+                if let lobby = data {
+                    self.isHost = false
+                    self.lobby = lobby
+                    self.joinedGame = true
+                    self.isLoadingJoinSession = false
+                }
+                else {
+                    self.joinSessionError = "Game ID not recognised.."
+                    self.isLoadingJoinSession = false
+                }
             }
         }
     }
@@ -250,11 +258,13 @@ class GameViewModel: ObservableObject {
     
     // Changes the players state
     func changeState() {
-        self.loadingState = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.gameManager.changeState()
-            self.playerReady.toggle()
-            self.loadingState = false
+        if(!loadingState) {
+            self.loadingState = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.gameManager.changeState()
+                self.playerReady.toggle()
+                self.loadingState = false
+            }
         }
     }
     

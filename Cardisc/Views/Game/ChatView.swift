@@ -22,7 +22,7 @@ struct ChatView: View {
                         .resizable()
                         .frame(width: 40, height: 30)
                         .foregroundColor(Color.white)
-                    Text("Chat")
+                    Text("chatroom_title_1")
                         .foregroundColor(Color.white)
                         .font(.system(size: 24))
                 }
@@ -35,9 +35,17 @@ struct ChatView: View {
                     NavigationLink {
                         ConclusionView(vm: vm)
                     } label: {
-                        MenuItem(menuIcon: "arrowtriangle.right.fill", iconHeight: 20, iconWidth: 18, menuTitle: "Continue", menuColor: UIColor.systemBlue, menuPaddingRight: 10)
+                        MenuItem(
+                            menuIcon: "arrowtriangle.right.fill",
+                            iconHeight: 20,
+                            iconWidth: 18,
+                            menuTitle: Text("chatroom_title_2"),
+                            menuColor: UIColor.systemBlue,
+                            minWidth: nil
+                        )
                     }
                 }
+
             }
             
             if(vm.currentCard.type == 1) {
@@ -67,6 +75,8 @@ struct ChatView: View {
                     .shadow(radius: 0.5)
                     .padding(.vertical, 15)
                     .padding(.leading, 10)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
                     
                     Image(systemName: "paperplane.circle.fill").resizable().frame(width: 35, height: 35).padding(.trailing, 10).foregroundColor(Color(UIColor.systemBlue)).onTapGesture {
                         vm.sendChatMessage()
@@ -97,19 +107,19 @@ struct ChatView: View {
         .navigationDestination(isPresented: $vm.finishedGame) { NavigationLazyView(MainMenuView()) }
         .navigationDestination(isPresented: $vm.leftGame) { NavigationLazyView(MainMenuView()) }
         .fullScreenCover(isPresented: $vm.isLoadingMainMenu) {
-            LoadingView(title: "Game finished", message: "The gamehost thanks you for playing this game!", icon: "flag.2.crossed.fill", iconWidth: 45)
+            LoadingView(title: Text("loading_title_2"), message: Text("loading_subtitle_2"), icon: "flag.2.crossed.fill", iconWidth: 45)
         }
         .navigationBarItems(
             leading:
                 Button(action: { vm.showConfirmation.toggle()}) {
                     Image(systemName: "chevron.left")
-                    Text("Leave session")
+                    Text("host_menu_backbutton_text")
                 }
         .alert(isPresented: $vm.showConfirmation) {
             Alert(
-                title: Text("Leaving current session"),
-                message: Text("Are you sure you want to leave this session?"),
-                primaryButton: .destructive(Text("Leave")) { vm.leaveGame()},
+                title: Text("host_menu_title_7"),
+                message: Text("host_menu_subtitle_1"),
+                primaryButton: .destructive(Text("host_menu_title_8")) { vm.leaveGame()},
                 secondaryButton: .cancel())
         })
 

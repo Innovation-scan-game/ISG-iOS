@@ -16,11 +16,11 @@ struct ConclusionView: View {
         VStack {
             HStack {
                 Image(systemName: "highlighter").resizable().foregroundColor(Color.white).frame(width: 25, height: 30)
-                Text("Conclusion (optional)").font(.system(size: 28)).foregroundColor(Color.white).bold()
+                Text("conclusion_title_1").font(.system(size: 28)).foregroundColor(Color.white).bold()
             }.frame(maxWidth: .infinity, alignment: .leading).padding(.leading, 30)
             
             HStack {
-                Text("Add a conclussion to the conversation in the previous view")
+                Text("conclusion_text_1")
             }
             .foregroundColor(Color.white)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -41,7 +41,14 @@ struct ConclusionView: View {
                 .shadow(radius: 10)
                 .padding(.bottom, 20)
             }
-            MenuItem(menuIcon: "play.fill", iconHeight: 20, iconWidth: 18, menuTitle: "Continue", menuColor: UIColor.systemBlue, menuPaddingRight: 10).onTapGesture {
+            MenuItem(
+                menuIcon: "play.fill",
+                iconHeight: 20,
+                iconWidth: 18,
+                menuTitle: Text("conclusion_title_2"),
+                menuColor: UIColor.systemBlue,
+                minWidth: nil
+            ).onTapGesture {
                 vm.nextRound()
             }
         }
@@ -52,7 +59,7 @@ struct ConclusionView: View {
         .navigationDestination(isPresented: $vm.finishedGame) { NavigationLazyView(MainMenuView()) }
         .navigationDestination(isPresented: $vm.nextRoundStarted) { CardView(vm: vm) }
         .fullScreenCover(isPresented: $vm.isLoadingMainMenu) {
-            LoadingView(title: "Game finished", message: "The gamehost thanks you for playing this game!", icon: "flag.2.crossed.fill", iconWidth: 45)
+            LoadingView(title: Text("loading_title_2"), message: Text("loading_subtitle_2"), icon: "flag.2.crossed.fill", iconWidth: 45)
         }
     }
 }

@@ -119,7 +119,7 @@ class GameManager: ObservableObject {
     }
     
     //Joins a session and gets the lobby object from the API
-    func joinGame(sessionAuth: String, completion:@escaping (Lobby) -> ()) {
+    func joinGame(sessionAuth: String, completion:@escaping (Lobby?) -> ()) {
         let body: [String: AnyHashable] = [
             "sessionAuth": sessionAuth
         ]
@@ -129,7 +129,7 @@ class GameManager: ObservableObject {
             self.signalRService.joinMessageGroup()
             completion(lobby)
         } failure: { error in
-            print(error)
+            completion(nil)
         }
         
     }

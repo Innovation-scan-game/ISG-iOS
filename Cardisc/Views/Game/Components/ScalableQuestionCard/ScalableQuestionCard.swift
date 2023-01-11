@@ -16,7 +16,7 @@ struct ScalableQuestionCard : View {
             HStack {
                 Text("\(vm.currentCard.name)").foregroundColor(Color.black).bold().font(.system(size: 20))
                 Spacer()
-                Text("Round \(vm.gameIndex+1)/\(vm.game.cards.count)")
+                Text("questionroom_title_3") + Text(" \(vm.gameIndex+1)/\(vm.game.cards.count)")
             }.padding(.bottom, 10)
             
             HStack {
@@ -47,7 +47,13 @@ struct ScalableQuestionCard : View {
         .foregroundColor(Color.black)
         .padding(.bottom, 20)
         
-        MenuItem(menuIcon: "play.fill", iconHeight: 22, iconWidth: 22, menuTitle: "Play card", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
+        MenuItem(
+            menuIcon: "play.fill",
+            iconHeight: 22,
+            iconWidth: 22,
+            menuTitle: Text("questionroom_title_4"),
+            menuColor: UIColor.systemBlue,
+            minWidth: nil).onTapGesture {
             vm.submitAnswer()
         }
         .navigationDestination(isPresented: $vm.submittedAnswer) { ChatView(vm: vm) }

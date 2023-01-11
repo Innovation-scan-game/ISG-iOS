@@ -22,7 +22,7 @@ struct AccountSettingsView: View {
                             .frame(width: 30, height: 28)
                             .foregroundColor(Color.white)
                         
-                        Text("Account settings").font(.system(size: 24)).foregroundColor(Color.white).bold()
+                        Text("accountsettings_title_1").font(.system(size: 24)).foregroundColor(Color.white).bold()
                         
                         Spacer()
                     }
@@ -64,12 +64,12 @@ struct AccountSettingsView: View {
                             Divider().frame(height: 0.2)
                             VStack {
                                 HStack {
-                                    Text("Email:")
+                                    Text("accountsettings_subtitle_1")
                                     Spacer()
                                     Text(vm.currentUser.email).lineLimit(1)
                                 }
                                 HStack {
-                                    Text("Password:")
+                                    Text("accountsettings_subtitle_2")
                                     Spacer()
                                     Text("********")
                                 }
@@ -94,7 +94,14 @@ struct AccountSettingsView: View {
                 NavigationLink {
                     EditAccountSettingsView(vm: vm)
                 } label: {
-                    MenuItem(menuIcon: "square.and.pencil", iconHeight: 26, iconWidth: 26, menuTitle: "Edit account info", menuColor: UIColor.systemBlue, menuPaddingRight: 40).padding(.top, 60)
+                    MenuItem(
+                        menuIcon: "square.and.pencil",
+                        iconHeight: 26,
+                        iconWidth: 26,
+                        menuTitle: Text("accountsettings_title_2"),
+                        menuColor: UIColor.systemBlue,
+                        minWidth: nil
+                    ).padding(.top, 60)
                 }
                 
                 PhotosPicker(
@@ -102,11 +109,25 @@ struct AccountSettingsView: View {
                     matching: .images,
                     photoLibrary: .shared()
                 ) {
-                    MenuItem(menuIcon: "camera.fill", iconHeight: 22, iconWidth: 30, menuTitle: "Change picture", menuColor: UIColor.systemBlue, menuPaddingRight: 40)
+                    MenuItem(
+                        menuIcon: "camera.fill",
+                        iconHeight: 22,
+                        iconWidth: 30,
+                        menuTitle: Text("accountsettings_title_3"),
+                        menuColor: UIColor.systemBlue,
+                        minWidth: nil
+                    )
                 }
                 
                 
-                MenuItem(menuIcon: "trash.fill", iconHeight: 26, iconWidth: 26, menuTitle: "Delete account", menuColor: UIColor.systemRed, menuPaddingRight: 40).onTapGesture {
+                MenuItem(
+                    menuIcon: "trash.fill",
+                    iconHeight: 26,
+                    iconWidth: 26,
+                    menuTitle: Text("accountsettings_title_4"),
+                    menuColor: UIColor.systemRed,
+                    minWidth: nil)
+                .onTapGesture {
                     vm.showDeleteUserComfirmation = true
                 }
                 
@@ -121,9 +142,9 @@ struct AccountSettingsView: View {
             StartView()
         })
         .alert(isPresented: $vm.showDeleteUserComfirmation) { Alert(
-            title: Text("Deleting account permanently"),
-            message: Text("Are you sure you want to delete your account? There is no way back from that point."),
-            primaryButton: .destructive(Text("Delete")) {
+            title: Text("accountsettings_title_5"),
+            message: Text("accountsettings_subtitle_3"),
+            primaryButton: .destructive(Text("accountsettings_title_6")) {
                 vm.deleteUser()
             }, secondaryButton: .cancel())}
     }

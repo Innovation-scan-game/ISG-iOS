@@ -1,0 +1,117 @@
+/*
+  Localizable.strings
+  Cardisc
+
+  Created by Tim van Kesteren on 11/01/2023.
+  
+*/
+
+"app_title" = "Cardisc";
+"app_subtitle" = "Een idee ontwikkel platform";
+
+"main_menu_title_1" = "Join a game";
+"main_menu_title_2" = "Host a game";
+"main_menu_title_3" = "Settings";
+"main_menu_title_4" = "How-to-play";
+"main_menu_title_5" = "Log off";
+
+"join_menu_title_1" = "Join a game";
+"join_menu_decription" = "Join a game by entering the Game ID you received from the game host. A GameID is a key that exists of 4 digits. this could be numeric and/or letters.";
+"join_menu_title_2" = "Enter game id";
+"join_menu_button_text" = "Join Game";
+
+"host_menu_backbutton_text" = "Leave session";
+"host_menu_title_1" = "Game lobby: ";
+"host_menu_title_2" = "Player";
+"host_menu_title_3" = "Status";
+"host_menu_itempicker_name" = "round(s)";
+"host_menu_title_4" = "Start Game";
+"host_menu_title_5" = "Ready";
+"host_menu_title_6" = "Unready";
+"share_message" = "Join my Cardisc game via the following Game ID: ";
+"host_menu_title_7" = "Leaving current session";
+"host_menu_subtitle_1" = "Are you sure you want to leave this session?";
+"host_menu_title_8" = "Leave";
+
+"htp_title_1" = "How-to-play";
+"htp_subtitle_1" = "Joining a game";
+"htp_subtitle_2" = "Hosting a game";
+"htp_subtitle_3" = "Playing a game";
+
+"htp_text_1" = "Joining a game is simple. You only need to enter the Game ID in the textfield in the “Join Game” view. The Game ID is a 4-digit code that you received from a game host. This can be via Whatsapp, email or any other social media-platform. Change your play-status to “Ready” to let the gamehost know that your ready to play the game.";
+
+"htp_text_2" = "Hosting a game can be done by selecting the “Host a Game” option in the main menu. This will bring you in a Game Lobby where you can invite other plays by sending them the Game ID manually, or generate a automated message via the share-button in the top-right corner and send this via any of your favorite social media-platform. \n\n  When a player joins the game he or she wil be shown in the players-overview in the middle of the screen. This is basicly a list of players that are ready to play the game.";
+
+"htp_text_3" = "When the game starts, one card is handled per round: \n\n
+
+If the playing card contains a multiple-choice question, the player is asked to answer it individually. The player reads the question on the card and then enters A, B, C or D. After this, the player is moved to the chat room where the player's answer and that of his fellow players are shown on the screen and the player is given the opportunity to discuss the answers through the chat functionality. After a certain time, the game host determines that the discussion is finished and the next card may be played/answered. \n\n
+
+If the playing card contains a scalable question, the player is asked to answer it individually. The player reads the question on the card and adjusts the scale according to the player's opinion. After this, the player is moved to the chat room where the player's answer and that of his fellow players are displayed on the screen and the player is given the opportunity to discuss the answers through the chat functionality. After a certain time, the game host determines that the discussion is finished and the next card may be played/answered. \n\n
+
+If the playing card contains an open question, the player is asked to answer it individually. The player is then moved to the chat room and given the opportunity to view the answers the player and of his or her fellow players and have a discussion/discussion about them via the chat functionality. The game host decides after a certain time that the discussion is finished and the next card may be played/answered.";
+
+"accountsettings_title_1" = "Account settings";
+"accountsettings_subtitle_1" = "Email:";
+"accountsettings_subtitle_2" = "Password:";
+"accountsettings_title_2" = "Edit account info";
+"accountsettings_title_3" = "Change avatar";
+"accountsettings_title_4" = "Delete account";
+"accountsettings_title_5" = "Deleting account permanently";
+"accountsettings_subtitle_3" = "Are you sure you want to delete you account? There is no way back from that point.";
+"accountsettings_title_6" = "Delete";
+
+"editaccountinfo_title_1" = "Edit account info";
+"editaccountinfo_title_1" = "Edit your profile information bellow.";
+"editaccountinfo_title_2" = "Username";
+"editaccountinfo_title_4" = "Emailadress";
+"editaccountinfo_title_5" = "New password (optional)";
+"editaccountinfo_title_6" = "New password repeated (optional)";
+"editaccountinfo_title_7" = "Confirm";
+
+"start_title_1" = "Login";
+"start_title_2" = "Register";
+"start_title_3" = "Exit";
+
+"login_title_1" = "Login";
+"login_text" = "Login to your Cardisc-Account";
+"login_title_2" = "Username";
+"login_title_3" = "Password";
+"login_title_4" = "Login";
+
+"register_title_1" = "Register";
+"register_text" = "Create your own Cardisc-Account";
+"register_title_2" = "Username";
+"register_title_3" = "Emailadress";
+"register_title_4" = "Password";
+"register_title_5" = "Password repeated";
+"register_title_6" = "Register";
+
+"loading_title_1" = "Starting game";
+"loading_title_2" = "Game finished";
+"loading_subtitle_1" = "Prepare for the first question..";
+"loading_subtitle_2" = "The gamehost thanks you for playing the game!";
+
+"questionroom_title_1" = "Question Room";
+"questionroom_subtitle_1" = "Answer the question bellow.";
+"questionroom_subtitle_2" = "Disagree";
+"questionroom_subtitle_3" = "Agree";
+"questionroom_title_2" = "Your answer:";
+"questionroom_title_3" = "Round";
+"questionroom_title_4" = "Play card";
+"questionroom_title_5" = "Pick an answer:";
+
+"chatroom_title_1" = "Chat";
+"chatroom_subtitle_1" = "Discuss your answer bellow and wait for the game host to continue the game.";
+"chatroom_title_2" = "Continue";
+"chatroom_title_3" = "Answers";
+"chatroom_title_4" = "Completed";
+
+"conclusion_title_1" = "Conclusion (optional)";
+"conclusion_text_1" = "Add a conclusion to the conversation in the pervious view if that applies.";
+"conclusion_title_2" = "Continue";
+
+
+
+
+
+

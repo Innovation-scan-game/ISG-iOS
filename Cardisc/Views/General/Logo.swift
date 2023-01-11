@@ -19,11 +19,11 @@ struct Logo: View {
                 VStack (
                     alignment: .leading
                 ) {
-                    Text("Cardisc")
+                    Text("app_title")
                         .font(.system(size: 32))
                         .bold()
                         .foregroundColor(Color.black)
-                    Text("An idea developing tool").font(.system(size: 18))
+                    Text("app_subtitle").font(.system(size: 18))
                         .foregroundColor(Color.black)
                 }
             }

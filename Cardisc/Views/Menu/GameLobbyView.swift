@@ -22,7 +22,7 @@ struct GameLobbyView: View {
                         .frame(width: 38, height: 22)
                         .foregroundColor(Color.white)
                         .padding(.trailing, 1)
-                    Text("Game lobby: \(vm.lobby.sessionCode)").font(.system(size: 20)).bold().foregroundColor(Color.white)
+                    Text("host_menu_title_1").font(.system(size: 20)).bold().foregroundColor(Color.white) + Text(vm.lobby.sessionCode).font(.system(size: 20)).bold().foregroundColor(Color.white)
                     Spacer()
                     Image(systemName: "square.and.arrow.up").foregroundColor(Color.white).padding(.trailing, 20).onTapGesture {
                         vm.shareGame()
@@ -34,9 +34,9 @@ struct GameLobbyView: View {
                 
                 if(vm.isHost) {
                     HStack {
-                        Picker("Number of cards", selection: $vm.rounds) {
+                        Picker("", selection: $vm.rounds) {
                             ForEach(3 ..< 10) {
-                                Text("\($0) round(s)")
+                                Text("\($0) ") + Text("host_menu_itempicker_name")
                             }
                         }
                         .padding(.vertical, 5)
@@ -59,9 +59,9 @@ struct GameLobbyView: View {
                     menuIcon: "play.fill",
                     iconHeight: 25,
                     iconWidth: 25,
-                    menuTitle: "Start game",
+                    menuTitle: Text("host_menu_title_4"),
                     menuColor: UIColor.systemBlue,
-                    menuPaddingRight: 30,
+                    minWidth: nil,
                     isLoading: vm.isLoadingStartingSession
                 ).onTapGesture {
                     vm.startGame()
@@ -72,9 +72,9 @@ struct GameLobbyView: View {
                     menuIcon: "person.fill.xmark",
                     iconHeight: 25,
                     iconWidth: 35,
-                    menuTitle: "Unready",
+                    menuTitle: Text("host_menu_title_6"),
                     menuColor: UIColor.systemRed,
-                    menuPaddingRight: 30,
+                    minWidth: nil,
                     isLoading: vm.loadingState
                 ).onTapGesture {
                     vm.changeState()
@@ -85,9 +85,9 @@ struct GameLobbyView: View {
                     menuIcon: "person.crop.circle.badge.checkmark",
                     iconHeight: 25,
                     iconWidth: 30,
-                    menuTitle: "Ready",
+                    menuTitle: Text("host_menu_title_5"),
                     menuColor: UIColor.systemGreen,
-                    menuPaddingRight: 30,
+                    minWidth: nil,
                     isLoading: vm.loadingState
                 ).onTapGesture {
                     vm.changeState()
@@ -97,10 +97,10 @@ struct GameLobbyView: View {
         .frame(maxHeight: .infinity, alignment: .top)
         .navigationTitle("")
         .fullScreenCover(isPresented: $vm.isLoadingStartingSession) {
-            LoadingView(title: "Starting session", message: "Prepare to answer the first questioncard..", icon: "hourglass.tophalf.filled", iconWidth: 25)
+            LoadingView(title: Text("loading_title_1"), message: Text("loading_subtitle_1"), icon: "hourglass.tophalf.filled", iconWidth: 25)
         }
         .fullScreenCover(isPresented: $vm.isReconnecting) {
-            LoadingView(title: "Reconnecting", message: "Reconnecting to last session..", icon: "network", iconWidth: 30)
+            LoadingView(title: Text("loading_title_3"), message: Text("loading_subtitle_3"), icon: "network", iconWidth: 30)
         }
         .navigationDestination(isPresented: $vm.startedGame, destination: { CardView(vm: vm) })
 
@@ -115,9 +115,9 @@ struct GameLobbyView: View {
             Text("Leave session")
         }
             .alert(isPresented: $vm.showConfirmation) { Alert(
-                title: Text("Leaving current session"),
-                message: Text("Are you sure you want to leave this session?"),
-                primaryButton: .destructive(Text("Leave"))
+                title: Text("host_menu_title_7"),
+                message: Text("host_menu_subtitle_1"),
+                primaryButton: .destructive(Text("host_menu_title_8"))
                 {
                     vm.leaveGame()
                 }, secondaryButton: .cancel())})

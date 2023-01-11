@@ -15,7 +15,13 @@ struct CardView: View {
         VStack {
             HStack {
                 Image(systemName: "iphone.badge.play").resizable().foregroundColor(Color.white).frame(width: 25, height: 30)
-                Text("Question Room").font(.system(size: 28)).foregroundColor(Color.white).bold()
+                Text("questionroom_title_1").font(.system(size: 28)).foregroundColor(Color.white).bold()
+                Spacer()
+            }
+            .padding(.leading, 30)
+            
+            HStack {
+                Text("questionroom_subtitle_1").font(.system(size: 20)).foregroundColor(Color.white).bold()
                 Spacer()
             }
             .padding(.leading, 30)

@@ -25,18 +25,19 @@ struct MainMenuView: View {
                         menuIcon: "person.2.fill",
                         iconHeight: 22,
                         iconWidth: 36,
-                        menuTitle: "Join a game",
+                        menuTitle: Text("main_menu_title_1"),
                         menuColor: UIColor.systemBlue,
-                        menuPaddingRight: 74)
+                        minWidth: 220
+                    )
                 }
                 
                 MenuItem(
                     menuIcon: "crown.fill",
                     iconHeight: 24,
                     iconWidth: 34,
-                    menuTitle: "Host a game",
+                    menuTitle: Text("main_menu_title_2"),
                     menuColor: UIColor.systemBlue,
-                    menuPaddingRight: 68,
+                    minWidth: 220,
                     isLoading: vm.hostGameIsLoading
                 ).onTapGesture {
                     self.vm.hostGame()
@@ -49,9 +50,10 @@ struct MainMenuView: View {
                         menuIcon: "questionmark.circle.fill",
                         iconHeight: 26,
                         iconWidth: 26,
-                        menuTitle: "How-to-play",
+                        menuTitle: Text("main_menu_title_4"),
                         menuColor: UIColor.systemBlue,
-                        menuPaddingRight: 77)
+                        minWidth: 220
+                    )
                 }
                 
                 Spacer().frame(height: 50)
@@ -59,10 +61,25 @@ struct MainMenuView: View {
                 NavigationLink {
                     NavigationLazyView(AccountSettingsView())
                 } label: {
-                    MenuItem(menuIcon: "gearshape.fill", iconHeight: 26, iconWidth: 26, menuTitle: "Account settings", menuColor: UIColor.systemBlue, menuPaddingRight: 40)
+                    MenuItem(
+                        menuIcon: "gearshape.fill",
+                        iconHeight: 26,
+                        iconWidth: 26,
+                        menuTitle: Text("main_menu_title_3"),
+                        menuColor: UIColor.systemBlue,
+                        minWidth: nil
+                    )
                 }
                 
-                MenuItem(menuIcon: "arrowshape.turn.up.left.fill", iconHeight: 24, iconWidth: 30, menuTitle: "Logoff", menuColor: UIColor.systemRed, menuPaddingRight: 40, isLoading: vm.logOffIsLoading).onTapGesture {
+                MenuItem(
+                    menuIcon: "arrowshape.turn.up.left.fill",
+                    iconHeight: 24,
+                    iconWidth: 30,
+                    menuTitle: Text("main_menu_title_5"),
+                    menuColor: UIColor.systemRed,
+                    minWidth: nil,
+                    isLoading: vm.logOffIsLoading
+                ).onTapGesture {
                     vm.logOff()
                 }
             }

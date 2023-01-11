@@ -16,9 +16,9 @@ struct PlayerList: View {
         ZStack {
             VStack {
                 HStack {
-                    Text("Player").bold(true)
+                    Text("host_menu_title_2").bold(true)
                     Spacer()
-                    Text("Status").bold(true)
+                    Text("host_menu_title_3").bold(true)
                 }
                 .foregroundColor(Color.black)
                 .padding(.horizontal, 15)

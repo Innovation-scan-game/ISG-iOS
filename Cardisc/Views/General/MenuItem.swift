@@ -13,13 +13,14 @@ struct MenuItem: View {
     let menuIcon: String
     let iconHeight: CGFloat
     let iconWidth: CGFloat
-    let menuTitle: String
+    let menuTitle: Text
     let menuColor: UIColor
-    let menuPaddingRight: CGFloat?
+    let minWidth: CGFloat?
     var isLoading: Bool = false
     
     var body: some View {
         HStack {
+            Spacer()
             HStack{
                 if (isLoading) {
                     ProgressView()
@@ -34,16 +35,17 @@ struct MenuItem: View {
                         .padding(.trailing, 5)
                 }
                 
-                Text(menuTitle).font(.system(size: 18)).bold()
+                menuTitle
+                    .font(.system(size: 18)).bold()
             }
-            .padding(.trailing, menuPaddingRight ?? 70)
-            .padding(.leading, 20)
+            .padding(.horizontal, 20)
             .padding(.vertical, 15)
-            .background(Color(menuColor))
             .foregroundColor(Color.white)
-            .cornerRadius(13, corners: [.topLeft, .bottomLeft])
             .shadow(radius: 15)
+            .frame(minWidth: minWidth ?? nil, alignment: .leading)
+            .background(Color(menuColor))
+            .cornerRadius(13, corners: [.topLeft, .bottomLeft])
             .padding(.vertical, 10)
-        }.frame(maxWidth: .infinity, alignment: .trailing)
+        }
     }
 }

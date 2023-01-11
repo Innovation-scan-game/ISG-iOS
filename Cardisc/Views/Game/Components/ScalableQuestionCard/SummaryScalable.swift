@@ -15,9 +15,9 @@ struct SummaryScalable: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Answers: ").bold()
+                Text("chatroom_title_3").bold()
                 Spacer()
-                Text("Completed \(vm.answers.count)/\(vm.players.count)")
+                Text("chatroom_title_4") + Text(" \(vm.answers.count)/\(vm.players.count)")
             }
 
             HStack {

@@ -20,65 +20,17 @@ struct RegisterView: View {
                         .frame(width: 30, height: 26)
                         .foregroundColor(Color.white)
                         .padding(.trailing, 5)
-                    Text("Register").font(.system(size: 24)).foregroundColor(Color.white).bold()
+                    Text("register_title_1").font(.system(size: 24)).foregroundColor(Color.white).bold()
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 
-                VStack {
-                    HStack {
-                        Text("Create your own Cardisc-Account")
-                            .foregroundColor(Color.white).padding(.bottom, 20)
-                    }.frame(maxWidth: .infinity, alignment: .leading)
-                    Text("Username").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
-                    TextField(
-                        "JohnDoe123",
-                        text: $vm.username
-                    )
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 15)
-                    .background(Color.white)
-                    .autocapitalization(.none)
-                    .cornerRadius(10)
-                }.padding(.bottom, 10)
+                CardiscTextfield(value: $vm.username, label: Text("register_title_2"), placeholder: "JohnDoe123")
                 
-                VStack {
-                    Text("Emailadress").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
-                    TextField(
-                        "johndoe123@bakmail.nl",
-                        text: $vm.emailaddress
-                    )
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 15)
-                    .autocapitalization(.none)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                }.padding(.bottom, 10)
+                CardiscTextfield(value: $vm.emailaddress, label: Text("register_title_3"), placeholder: "JohnDoe@bakmail.com")
                 
-                VStack {
-                    Text("Password").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
-                    SecureField(
-                        "*********",
-                        text: $vm.password
-                    )
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 15)
-                    .autocapitalization(.none)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                }.padding(.bottom, 10)
+                CardiscPasswordfield(value: $vm.password, label: Text("register_title_4"))
                 
-                VStack {
-                    Text("Password repeated").frame(maxWidth: .infinity, alignment: .leading).bold().foregroundColor(Color(UIColor.white))
-                    SecureField(
-                        "*********",
-                        text: $vm.passwordRepeated
-                    )
-                    .padding(.vertical, 10)
-                    .padding(.horizontal, 15)
-                    .autocapitalization(.none)
-                    .background(Color.white)
-                    .cornerRadius(10)
-                }
+                CardiscPasswordfield(value: $vm.passwordRepeated, label: Text("register_title_5"))
                 
                 HStack {
                     Text(vm.errorMsg).foregroundColor(Color.white)
@@ -92,7 +44,14 @@ struct RegisterView: View {
 
             
             
-            MenuItem(menuIcon: "person.crop.circle.badge.plus.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Register", menuColor: UIColor.systemBlue, menuPaddingRight: 40).onTapGesture {
+            MenuItem(
+                menuIcon: "person.crop.circle.badge.plus.fill",
+                iconHeight: 26,
+                iconWidth: 30,
+                menuTitle: Text("register_title_6"),
+                menuColor: UIColor.systemBlue,
+                minWidth: nil
+            ).onTapGesture {
                 vm.registerUser()
             }
             .padding(.top, 15)

@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 struct LoadingView: View {
-    let title: String
-    let message: String
+    let title: Text
+    let message: Text
     let icon: String
     let iconWidth: CGFloat
     
@@ -19,13 +19,11 @@ struct LoadingView: View {
             Spacer()
             HStack {
                 Image(systemName: icon).resizable().foregroundColor(Color.white).frame(width: iconWidth, height: 30)
-                Text(title).font(.system(size: 28)).foregroundColor(Color.white).bold()
+                title.font(.system(size: 28)).foregroundColor(Color.white).bold()
             }
             
             HStack {
-                ProgressView()
-                Spacer()
-                Text(message)
+                message
             }
             .foregroundColor(Color.white)
             .padding(.horizontal, 90)
@@ -38,6 +36,6 @@ struct LoadingView: View {
 
 struct LoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        LoadingView(title: "Loading view", message: "Please wait while the next view is being loaded..", icon: "hourglass.tophalf.filled", iconWidth: 25)
+        LoadingView(title: Text("Loading view"), message: Text("Please wait while the next view is being loaded.."), icon: "hourglass.tophalf.filled", iconWidth: 25)
     }
 }

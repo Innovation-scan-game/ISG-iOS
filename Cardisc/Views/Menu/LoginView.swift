@@ -20,47 +20,19 @@ struct LoginView: View {
                         .frame(width: 32, height: 28)
                         .foregroundColor(Color.white)
                         .padding(.trailing, 5)
-                    Text("Login").font(.system(size: 24)).foregroundColor(Color.white).bold()
+                    Text("login_title_1").font(.system(size: 24)).foregroundColor(Color.white).bold()
                     Spacer()
                 }
                 
                 
                 HStack {
-                    Text("Login to your Cardisc-Account").foregroundColor(Color.white).padding(.bottom, 20)
+                    Text("login_text").foregroundColor(Color.white).padding(.bottom, 20)
                     Spacer()
                 }
                 
-                HStack {
-                    Text("Username").bold().foregroundColor(Color(UIColor.white))
-                    Spacer()
-                }
+                CardiscTextfield(value: $vm.username, label: Text("login_title_2"), placeholder: "JohnDoe123")
                 
-                TextField(
-                    "JohnDoe123",
-                    text: $vm.username
-                )
-                .padding(.vertical, 10)
-                .padding(.horizontal, 15)
-                .background(Color.white)
-                .foregroundColor(Color(vm.usernameFieldColor))
-                .autocapitalization(.none)
-                .cornerRadius(10)
-                
-                HStack {
-                    Text("Password").bold().foregroundColor(Color(UIColor.white))
-                    Spacer()
-                }
-                
-                SecureField(
-                    "*********",
-                    text: $vm.password
-                )
-                .padding(.vertical, 10)
-                .padding(.horizontal, 15)
-                .autocapitalization(.none)
-                .background(Color.white)
-                .foregroundColor(Color(vm.passwordFieldColor))
-                .cornerRadius(10)
+                CardiscPasswordfield(value: $vm.password, label: Text("login_title_3"))
                 
                 HStack {
                     Text(vm.errorMessage).foregroundColor(Color.white)
@@ -72,7 +44,14 @@ struct LoginView: View {
             .padding(.horizontal, 30)
             .padding(.vertical, 20)
             
-            MenuItem(menuIcon: "lock.open.fill", iconHeight: 26, iconWidth: 30, menuTitle: "Login", menuColor: UIColor.systemBlue, menuPaddingRight: 40, isLoading: vm.isRequestInProgress
+            MenuItem(
+                menuIcon: "lock.open.fill",
+                iconHeight: 26,
+                iconWidth: 30,
+                menuTitle: Text("login_title_4"),
+                menuColor: UIColor.systemBlue,
+                minWidth: nil,
+                isLoading: vm.isRequestInProgress
             ).onTapGesture {
                 vm.loginUser()
             }
