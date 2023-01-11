@@ -42,6 +42,7 @@ struct CardView: View {
         }
         .padding(.top, 30)
         .navigationBarHidden(true)
+        .navigationDestination(isPresented: $vm.finishedGame) { NavigationLazyView(MainMenuView()) }
         .backgroundImage(imageName: "WP2")
     }
 }

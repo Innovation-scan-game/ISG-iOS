@@ -27,7 +27,7 @@ struct MPCQuestionCard : View {
             .padding(.top, 5)
             
             HStack {
-                Text("Pick an answer: ")
+                Text("questionroom_title_5")
                 Text(vm.answer).bold()
             }
             .frame(maxWidth: .infinity, alignment: .leading)
