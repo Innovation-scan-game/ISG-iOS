@@ -12,7 +12,6 @@ import Combine
 struct ChatView: View {
     @ObservedObject var vm: GameViewModel
     @FocusState private var chatFocussed: Bool
-    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         VStack {
