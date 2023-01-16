@@ -8,9 +8,9 @@
 	<array>
 		<string>location</string>
 	</array>
-	<key>UISceneConfigurationDictionaryName</key>
-	<string></string>
 	<key>UISceneConfigurationDictionary</key>
+	<string></string>
+	<key>UISceneConfigurationDictionaryName</key>
 	<string></string>
 </dict>
 </plist>

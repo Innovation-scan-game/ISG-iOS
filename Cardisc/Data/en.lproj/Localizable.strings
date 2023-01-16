@@ -61,12 +61,13 @@ If the playing card contains an open question, the player is asked to answer it 
 "accountsettings_title_6" = "Delete";
 
 "editaccountinfo_title_1" = "Edit account info";
-"editaccountinfo_title_1" = "Edit your profile information bellow.";
+"editaccountinfo_text" = "Edit your profile information bellow.";
 "editaccountinfo_title_2" = "Username";
-"editaccountinfo_title_4" = "Emailadress";
-"editaccountinfo_title_5" = "New password (optional)";
-"editaccountinfo_title_6" = "New password repeated (optional)";
+"editaccountinfo_title_3" = "Emailadress";
+"editaccountinfo_title_4" = "New password (optional)";
+"editaccountinfo_title_5" = "New password repeated (optional)";
 "editaccountinfo_title_7" = "Confirm";
+"editaccountinfo_text_2" = "Confirm all changes? This will cause the app to log off.";
 
 "start_title_1" = "Login";
 "start_title_2" = "Register";

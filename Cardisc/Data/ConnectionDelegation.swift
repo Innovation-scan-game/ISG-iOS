@@ -21,20 +21,30 @@ class ConnectionDelegation: HubConnectionDelegate {
 
                 self.apiService.httpRequestWithoutReturn(body: body, url: "joinGrp", httpMethod: "POST")
                 self.isReconnecting = false
+                print("Connection did reconnect")
             }
         }
     }
     
     func connectionWillReconnect(error: Error) {
+        print("Connection wil reconnect: \(error.localizedDescription)")
         self.isReconnecting = true
     }
     
-    func connectionDidOpen(hubConnection: SignalRClient.HubConnection) { }
+    func connectionDidOpen(hubConnection: SignalRClient.HubConnection) {
+        print("Connection did open")
+    }
     
-    func connectionDidFailToOpen(error: Error) {}
+    func connectionDidFailToOpen(error: Error) {
+        print("Connection failed to open")
+    }
     
-    func connectionDidClose(error: Error?) {}
+    func connectionDidClose(error: Error?) {
+        print("Connection did close?")
+    }
     
-    func didReceiveData(data: Data) {}
+    func didReceiveData(data: Data) {
+        print("We did receive any data")
+    }
 
 }

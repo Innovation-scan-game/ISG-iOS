@@ -116,6 +116,7 @@ class GameManager: ObservableObject {
         ]
         UserDefaults.standard.removeObject(forKey: "connectionId")
         apiService.httpRequestWithoutReturn(body: body, url: "session/end", httpMethod: "POST")
+        signalRService.stopConnection()
     }
     
     //Joins a session and gets the lobby object from the API
@@ -142,6 +143,7 @@ class GameManager: ObservableObject {
         
         UserDefaults.standard.removeObject(forKey: "connectionId")
         apiService.httpRequestWithoutReturn(body: body, url: "session/leave", httpMethod: "POST")
+        signalRService.stopConnection()
     }
     
     //Creates a new session

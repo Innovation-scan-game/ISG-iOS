@@ -59,7 +59,7 @@ struct ConclusionView: View {
         .navigationDestination(isPresented: $vm.finishedGame) { NavigationLazyView(MainMenuView()) }
         .navigationDestination(isPresented: $vm.nextRoundStarted) { CardView(vm: vm) }
         .fullScreenCover(isPresented: $vm.isLoadingMainMenu) {
-            LoadingView(title: Text("loading_title_2"), message: Text("loading_subtitle_2"), icon: "flag.2.crossed.fill", iconWidth: 45)
+            LoadingView(title: Text("loading_title_2"), message: Text("loading_subtitle_2"), icon: "flag.2.crossed.fill", iconWidth: 45, returnButton: false)
         }
     }
 }

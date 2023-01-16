@@ -97,10 +97,10 @@ struct GameLobbyView: View {
         .frame(maxHeight: .infinity, alignment: .top)
         .navigationTitle("")
         .fullScreenCover(isPresented: $vm.isLoadingStartingSession) {
-            LoadingView(title: Text("loading_title_1"), message: Text("loading_subtitle_1"), icon: "hourglass.tophalf.filled", iconWidth: 25)
+            LoadingView(title: Text("loading_title_1"), message: Text("loading_subtitle_1"), icon: "hourglass.tophalf.filled", iconWidth: 25, returnButton: false)
         }
         .fullScreenCover(isPresented: $vm.isReconnecting) {
-            LoadingView(title: Text("loading_title_3"), message: Text("loading_subtitle_3"), icon: "network", iconWidth: 30)
+            LoadingView(title: Text("loading_title_3"), message: Text("loading_subtitle_3"), icon: "network", iconWidth: 30, returnButton: true)
         }
         .navigationDestination(isPresented: $vm.startedGame, destination: { CardView(vm: vm) })
 

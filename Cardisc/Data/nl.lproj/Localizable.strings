@@ -65,9 +65,9 @@ Als de kaart een open vraag bevat, wordt de speler gevraagd om deze individueel 
 "editaccountinfo_title_1" = "Accountinfo wijzigen";
 "editaccountinfo_text" = "Bewerk uw profielinformatie hieronder.";
 "editaccountinfo_title_2" = "Gebruikersnaam";
-"editaccountinfo_title_4" = "E-mailadres";
-"editaccountinfo_title_5" = "Nieuw wachtwoord (optioneel)";
-"editaccountinfo_title_6" = "Nieuw wachtwoord (bevestiging)";
+"editaccountinfo_title_3" = "E-mailadres";
+"editaccountinfo_title_4" = "Nieuw wachtwoord (optioneel)";
+"editaccountinfo_title_5" = "Nieuw wachtwoord bevestigen (optioneel)";
 "editaccountinfo_title_7" = "Bevestigen";
 "editaccountinfo_title_8" = "Bevestig aangepaste wijzigingen";
 "editaccountinfo_text_2" = "Bevestig alle wijzigingen? Dit zal leiden tot uitloggen uit de app.";
