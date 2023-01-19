@@ -74,11 +74,6 @@ class GameManager: ObservableObject {
             })
             .store(in: &cancellables)
         
-        self.signalRService.$isReconnecting
-            .sink(receiveValue: { isReconnecting in
-                self.isReconnecting = isReconnecting
-            })
-            .store(in: &cancellables)
     }
     
     //Submits an answer to the API

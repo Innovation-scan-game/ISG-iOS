@@ -21,7 +21,7 @@ struct SummaryScalable: View {
             }
 
             HStack {
-                Text("Average score: \(String(format: "%.1f", vm.averageScalable * 20))%")
+                Text("questionroom_title_6") + Text("\(String(format: "%.1f", vm.averageScalable * 20))%")
                 Spacer()
             }
             .padding(.vertical, 10)
@@ -31,9 +31,9 @@ struct SummaryScalable: View {
             }
             .padding(.horizontal, 10)
             HStack {
-                Text("Disagree")
+                Text("questionroom_subtitle_2")
                 Spacer()
-                Text("Agree")
+                Text("questionroom_subtitle_3")
             }
         }
         .foregroundColor(Color.black)

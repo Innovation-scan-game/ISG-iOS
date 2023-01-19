@@ -26,7 +26,13 @@ struct SummaryMPC: View {
                         Spacer()
                         Text("\(vm.summaryMPC[key]!)")
                         
-                        HStack{}.frame(width: 35, height: CGFloat(vm.summaryMPC[key]!*10)).background(Color(UIColor.systemBlue)).shadow(radius: 5)
+                        if(vm.summaryMPC[key]! > 0) {
+                            HStack{}.frame(width: 35, height: CGFloat((80/vm.players.count)) * CGFloat(vm.summaryMPC[key]!)).background(Color(UIColor.systemBlue)).shadow(radius: 5)
+                        }
+                        else {
+                            HStack{}.frame(width: 35, height: 3).background(Color(UIColor.systemRed)).shadow(radius: 5)
+                        }
+                        
                         
                         Text("\(key)")
                     }.padding(.horizontal, 20).frame(maxHeight: 150)

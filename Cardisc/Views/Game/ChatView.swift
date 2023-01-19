@@ -108,19 +108,27 @@ struct ChatView: View {
         .fullScreenCover(isPresented: $vm.isLoadingMainMenu) {
             LoadingView(title: Text("loading_title_2"), message: Text("loading_subtitle_2"), icon: "flag.2.crossed.fill", iconWidth: 45, returnButton: false)
         }
+        
+        
         .navigationBarItems(
             leading:
-                Button(action: { vm.showConfirmation.toggle()}) {
+                Button(action: { vm.showLeaveConfirmation.toggle()}) {
                     Image(systemName: "chevron.left")
                     Text("host_menu_backbutton_text")
                 }
-        .alert(isPresented: $vm.showConfirmation) {
+        .alert(isPresented: $vm.showLeaveConfirmation) {
             Alert(
                 title: Text("host_menu_title_7"),
                 message: Text("host_menu_subtitle_1"),
                 primaryButton: .destructive(Text("host_menu_title_8")) { vm.leaveGame()},
                 secondaryButton: .cancel())
         })
+        
+        .alert(isPresented: $vm.showErrorMessage) {
+                    Alert(title: Text("Action failed!"), message: Text("Maximum length of answer exceeded: 300"), dismissButton: .default(Text("OK")) {
+                        vm.showErrorMessage = false
+                    })
+                }
 
     }
 }

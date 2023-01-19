@@ -26,6 +26,22 @@ struct OpenQuestionCard : View {
                     Spacer()
                 }
                 .padding(.bottom, 10)
+                HStack {
+                    if let picture = vm.currentCard.picture {
+                        AsyncImage(url: URL(string: picture)) { image in
+                            image
+                                .resizable()
+                                .scaledToFill()
+
+                        } placeholder:
+                        {
+                            ProgressView()
+                        }
+                    }
+                    
+                    Spacer()
+                }
+                .padding(.bottom, 10)
             }
             .foregroundColor(Color.black)
             .padding(.top, 10)
@@ -50,6 +66,11 @@ struct OpenQuestionCard : View {
             vm.submitAnswer()
         }
         .navigationDestination(isPresented: $vm.submittedAnswer) { ChatView(vm: vm) }
+        .alert(isPresented: $vm.showErrorMessage) {
+                    Alert(title: Text("Action failed!"), message: Text("Maximum length of chatmessage exceeded: 300"), dismissButton: .default(Text("OK")) {
+                        vm.showErrorMessage = false
+                    })
+                }
     }
 }
 

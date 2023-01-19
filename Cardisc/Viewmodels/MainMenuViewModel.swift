@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Network
 
 class MainMenuViewModel: ObservableObject {
     private let userManager = UserManager()
+    private let monitor = NWPathMonitor()
     @Published var gameViewModel = GameViewModel()
     
     //Loading states

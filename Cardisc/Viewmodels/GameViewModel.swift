@@ -9,13 +9,16 @@ import Foundation
 import SignalRClient
 import Combine
 import UIKit
+import Network
 
 class GameViewModel: ObservableObject {
     
     private let gameManager = GameManager()
+    private let monitor = NWPathMonitor()
     
     @Published var isPresentingConfirm: Bool = false
-    @Published var showConfirmation: Bool = false
+    @Published var showLeaveConfirmation: Bool = false
+    @Published var showErrorMessage: Bool = false
     
     //Loading states
     @Published var isLoadingJoinSession: Bool = false
@@ -26,7 +29,6 @@ class GameViewModel: ObservableObject {
     @Published var startedGame: Bool = false
     @Published var finishedGame: Bool = false
     @Published var joinedGame: Bool = false
-    @Published var isReconnecting: Bool = false
     @Published var leftGame: Bool = false
     @Published var loadingState: Bool = false
     
@@ -37,9 +39,9 @@ class GameViewModel: ObservableObject {
     @Published var players: [LobbyPlayer] = []
     @Published var game = Game(cards: [], roundDuration: 0)
     @Published var lobby: Lobby = Lobby(id: "", hostId: "", sessionCode: "", created: "", sessionAuth: "", players: [])
-    @Published var currentCard: Card = Card(id: "", number: 0, name: "", body: "", type: 0)
+    @Published var currentCard: Card = Card(id: "", number: 0, name: "", body: "", type: 0, picture: nil)
     @Published var gameIndex: Int = 0
-    @Published var gameId = ""
+    @Published var gameId: String = ""
     @Published var answer: String = ""
     @Published var scalableAnswer: Double = 3
     @Published var answerGiven: Bool = false
@@ -50,8 +52,10 @@ class GameViewModel: ObservableObject {
     @Published var chatMessages: [ChatMessage] = []
     @Published var keyboardHeigtChat: CGFloat = 0
     @Published var chatting: Bool = false
-    @Published var conclusion = ""
-    @Published var joinSessionError = ""
+    @Published var conclusion: String = ""
+    @Published var joinSessionError: String = ""
+    @Published var sendMessageError: String = ""
+    
     
     private var cancellables: [AnyCancellable] = []
     
@@ -93,31 +97,38 @@ class GameViewModel: ObservableObject {
             })
             .store(in: &cancellables)
         
-        self.gameManager.$isReconnecting
-            .sink(receiveValue: { isReconnecting in
-                self.isReconnecting = isReconnecting
-            })
-            .store(in: &cancellables)
     }
     
     // Submits an answer to the session
     func submitAnswer() {
         DispatchQueue.main.async {
             if(self.answer != "") {
-                self.gameManager.submitAnswer(answer: self.answer)
-                self.submittedAnswer = true
-                self.answerGiven = false
-                self.nextRoundStarted = false
+                if(self.answer.count < 300) {
+                    self.gameManager.submitAnswer(answer: self.answer)
+                    self.submittedAnswer = true
+                    self.answerGiven = false
+                    self.nextRoundStarted = false
+                }
+                else {
+                    self.showErrorMessage.toggle()
+                    self.answer = ""
+                }
             }
         }
     }
     
     // Sends a chatmessage from current user to the session
     func sendChatMessage() {
-        if(chatMessage != "") {
-            DispatchQueue.main.async {
-                self.gameManager.sendChatMessage(msg: self.chatMessage)
-                self.chatMessage = ""
+        DispatchQueue.main.async {
+            if(self.chatMessage != "") {
+                if(self.chatMessage.count < 300) {
+                    self.gameManager.sendChatMessage(msg: self.chatMessage)
+                    self.chatMessage = ""
+                }
+                else {
+                    self.showErrorMessage = true
+                    self.chatMessage = ""
+                }
             }
         }
     }
@@ -125,7 +136,13 @@ class GameViewModel: ObservableObject {
     // Gets executed by the gamehost, marks the current round finished and asks for a new round
     func nextRound() {
         if(self.isHost) {
-            self.gameManager.nextRound(conclusion: self.conclusion)
+            if(self.conclusion.count < 300) {
+                self.gameManager.nextRound(conclusion: self.conclusion)
+            }
+            else {
+                self.showErrorMessage = true
+                self.conclusion = ""
+            }
         }
     }
     

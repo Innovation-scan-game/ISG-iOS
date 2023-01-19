@@ -25,7 +25,6 @@ class SignalRService: ObservableObject {
     @Published var answers: [Answer] = []
     @Published var chatMessages: [ChatMessage] = []
     @Published var gameIndex: Int = 0
-    @Published var isReconnecting: Bool = false
     
     public init() {
         self.connection = HubConnectionBuilder(url: URL(string: Constants.SIGNALR_BASE_URL + defaults.string(forKey: "X-AUTHTOKEN")!)!)
@@ -81,12 +80,7 @@ class SignalRService: ObservableObject {
         connection.on(method: "close", callback: { })
 
         connection.start()
-        
-        self.connectionDelegation.$isReconnecting
-            .sink(receiveValue: { isReconnecting in
-                self.isReconnecting = isReconnecting
-            })
-            .store(in: &cancellables)
+    
     }
     
     public func stopConnection() {

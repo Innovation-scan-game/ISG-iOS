@@ -100,6 +100,7 @@ If the playing card contains an open question, the player is asked to answer it 
 "questionroom_title_3" = "Round";
 "questionroom_title_4" = "Play card";
 "questionroom_title_5" = "Pick an answer:";
+"questionroom_title_6" = "Average score:";
 
 "chatroom_title_1" = "Chat";
 "chatroom_subtitle_1" = "Discuss your answer bellow and wait for the game host to continue the game.";

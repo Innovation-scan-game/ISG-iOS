@@ -99,9 +99,6 @@ struct GameLobbyView: View {
         .fullScreenCover(isPresented: $vm.isLoadingStartingSession) {
             LoadingView(title: Text("loading_title_1"), message: Text("loading_subtitle_1"), icon: "hourglass.tophalf.filled", iconWidth: 25, returnButton: false)
         }
-        .fullScreenCover(isPresented: $vm.isReconnecting) {
-            LoadingView(title: Text("loading_title_3"), message: Text("loading_subtitle_3"), icon: "network", iconWidth: 30, returnButton: true)
-        }
         .navigationDestination(isPresented: $vm.startedGame, destination: { CardView(vm: vm) })
 
         .navigationBarTitleDisplayMode(.inline)
@@ -110,11 +107,11 @@ struct GameLobbyView: View {
         })
         .navigationBarBackButtonHidden(true)
         .backgroundImage(imageName: "WP3")
-        .navigationBarItems(leading: Button(action: { vm.showConfirmation.toggle()}) {
+        .navigationBarItems(leading: Button(action: { vm.showLeaveConfirmation.toggle()}) {
             Image(systemName: "chevron.left")
             Text("Leave session")
         }
-            .alert(isPresented: $vm.showConfirmation) { Alert(
+            .alert(isPresented: $vm.showLeaveConfirmation) { Alert(
                 title: Text("host_menu_title_7"),
                 message: Text("host_menu_subtitle_1"),
                 primaryButton: .destructive(Text("host_menu_title_8"))

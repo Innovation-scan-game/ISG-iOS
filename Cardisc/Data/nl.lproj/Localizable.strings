@@ -105,6 +105,7 @@ Als de kaart een open vraag bevat, wordt de speler gevraagd om deze individueel 
 "questionroom_title_3" = "Ronde ";
 "questionroom_title_4" = "Speel kaart";
 "questionroom_title_5" = "Kies een antwoord:";
+"questionroom_title_6" = "Gemiddelde score:";
 
 "chatroom_title_1" = "Chat";
 "chatroom_subtitle_1" = "Bespreek uw antwoord hieronder en wacht op verdergaan van de game host.";

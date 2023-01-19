@@ -90,6 +90,7 @@ struct MainMenuView: View {
             }
             .navigationDestination(isPresented: $vm.hostSucceed) { NavigationLazyView(GameLobbyView(vm: vm.gameViewModel)) }
             .navigationDestination(isPresented: $vm.isLoggedOff) { StartView() }
+
         }
         .backgroundImage()
     }

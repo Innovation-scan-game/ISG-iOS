@@ -61,5 +61,12 @@ struct ConclusionView: View {
         .fullScreenCover(isPresented: $vm.isLoadingMainMenu) {
             LoadingView(title: Text("loading_title_2"), message: Text("loading_subtitle_2"), icon: "flag.2.crossed.fill", iconWidth: 45, returnButton: false)
         }
+        .alert(isPresented: $vm.showErrorMessage) {
+                    Alert(title: Text("Action failed!"), message: Text("Maximum length of a conclusion exceeded: 300"), dismissButton: .default(Text("OK")) {
+                        vm.showErrorMessage = false
+                    })
+                }
+
+
     }
 }

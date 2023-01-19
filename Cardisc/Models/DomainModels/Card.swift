@@ -13,4 +13,5 @@ struct Card: Codable {
     let name: String
     let body: String
     let type: Int
+    let picture: String?
 }

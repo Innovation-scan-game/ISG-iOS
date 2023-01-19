@@ -41,10 +41,10 @@ struct MenuItem: View {
             .padding(.horizontal, 20)
             .padding(.vertical, 15)
             .foregroundColor(Color.white)
-            .shadow(radius: 15)
             .frame(minWidth: minWidth ?? nil, alignment: .leading)
             .background(Color(menuColor))
             .cornerRadius(13, corners: [.topLeft, .bottomLeft])
+            .shadow(radius: 25)
             .padding(.vertical, 10)
         }
     }

@@ -13,6 +13,7 @@ struct cardDto: Codable {
     let cardName: String
     let cardBody: String
     let type: Int
+    let picture: String?
     
     func toDomainModel() -> Card {
         return Card(
@@ -20,7 +21,8 @@ struct cardDto: Codable {
             number: self.cardNumber,
             name: self.cardName,
             body: self.cardBody,
-            type: self.type
+            type: self.type,
+            picture: self.picture
         )
     }
 }
