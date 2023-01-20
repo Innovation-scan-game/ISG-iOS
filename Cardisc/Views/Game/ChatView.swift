@@ -57,7 +57,7 @@ struct ChatView: View {
                 SummaryOpen(vm: vm)
             }
             
-            ChatMessageList(chatMessages: $vm.chatMessages)
+            ChatMessageList(vm: self.vm)
             
             VStack {
                 HStack {
