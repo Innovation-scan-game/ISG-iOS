@@ -1,12 +1,12 @@
 /*
   Localizable.strings
-  Cardisc
+  RoundTable
 
   Created by Tim van Kesteren on 11/01/2023.
   
 */
 
-"app_title" = "Cardisc";
+"app_title" = "RoundTable";
 "app_subtitle" = "Een idee ontwikkel platform";
 
 "main_menu_title_1" = "Join a game";
@@ -28,7 +28,7 @@
 "host_menu_title_4" = "Start Game";
 "host_menu_title_5" = "Ready";
 "host_menu_title_6" = "Unready";
-"share_message" = "Join my Cardisc game via the following Game ID: ";
+"share_message" = "Join my RoundTable game via the following Game ID: ";
 "host_menu_title_7" = "Leaving current session";
 "host_menu_subtitle_1" = "Are you sure you want to leave this session?";
 "host_menu_title_8" = "Leave";
@@ -74,13 +74,13 @@ If the playing card contains an open question, the player is asked to answer it 
 "start_title_3" = "Exit";
 
 "login_title_1" = "Login";
-"login_text" = "Login to your Cardisc-Account";
+"login_text" = "Login to your RoundTable-Account";
 "login_title_2" = "Username";
 "login_title_3" = "Password";
 "login_title_4" = "Login";
 
 "register_title_1" = "Register";
-"register_text" = "Create your own Cardisc-Account";
+"register_text" = "Create your own RoundTable-Account";
 "register_title_2" = "Username";
 "register_title_3" = "Emailadress";
 "register_title_4" = "Password";
@@ -100,7 +100,7 @@ If the playing card contains an open question, the player is asked to answer it 
 "questionroom_title_3" = "Round";
 "questionroom_title_4" = "Play card";
 "questionroom_title_5" = "Pick an answer:";
-"questionroom_title_6" = "Average score:";
+"questionroom_title_6" = "Average score: ";
 
 "chatroom_title_1" = "Chat";
 "chatroom_subtitle_1" = "Discuss your answer bellow and wait for the game host to continue the game.";
