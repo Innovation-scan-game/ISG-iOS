@@ -1,0 +1,50 @@
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Data/Enums/SessionResponseType.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SessionResponseType.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SessionResponseType.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SessionResponseType.dia"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SessionResponseType.swiftdeps"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/ScalableQuestionCard/ScalableQuestionCard.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ScalableQuestionCard.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ScalableQuestionCard.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ScalableQuestionCard.dia"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ScalableQuestionCard.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/Lobby/ChatMessageList.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ChatMessageList.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ChatMessageList.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ChatMessageList.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ChatMessageList.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Managers/JoinGameManager.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/JoinGameManager.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/JoinGameManager.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/JoinGameManager.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/JoinGameManager.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Viewmodels/StartViewModel.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/StartViewModel.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/StartViewModel.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/StartViewModel.dia"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/StartViewModel.swiftdeps"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/MPCQuestionCard/SummaryMPC.swift":
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryMPC.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryMPC.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryMPC.swiftdeps"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryMPC.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/GameLobbyView.swift":
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/GameLobbyView.dia"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/GameLobbyView.d"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/GameLobbyView.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/GameLobbyView.swiftdeps"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/OpenQuestionCard/SummaryOpen.swift":
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryOpen.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryOpen.dia"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryOpen.swiftdeps"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryOpen.o"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/Lobby/ChatMessageItem.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ChatMessageItem.swiftdeps"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ChatMessageItem.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ChatMessageItem.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/ChatMessageItem.o"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/MPCQuestionCard/MPCButton.swift":
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MPCButton.dia"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MPCButton.swiftdeps"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MPCButton.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MPCButton.d"

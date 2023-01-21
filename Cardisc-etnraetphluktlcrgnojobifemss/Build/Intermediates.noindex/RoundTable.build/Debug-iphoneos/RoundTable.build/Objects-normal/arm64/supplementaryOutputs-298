@@ -1,0 +1,45 @@
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/General/MenuItem.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MenuItem.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MenuItem.d"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MenuItem.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MenuItem.dia"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/AccountSettingsView.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/AccountSettingsView.o"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/AccountSettingsView.dia"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/AccountSettingsView.swiftdeps"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/AccountSettingsView.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/HowToPlayView.swift":
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/HowToPlayView.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/HowToPlayView.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/HowToPlayView.d"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/HowToPlayView.swiftdeps"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Managers/CardManager.swift":
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/CardManager.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/CardManager.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/CardManager.swiftdeps"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/CardManager.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/OpenQuestionCard/PlayerAnswerOpen.swift":
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/PlayerAnswerOpen.d"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/PlayerAnswerOpen.o"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/PlayerAnswerOpen.dia"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/PlayerAnswerOpen.swiftdeps"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/ScalableQuestionCard/SummaryScalable.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryScalable.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryScalable.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryScalable.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/SummaryScalable.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Data/Dto/lobbyPlayerDto.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/lobbyPlayerDto.swiftdeps"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/lobbyPlayerDto.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/lobbyPlayerDto.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/lobbyPlayerDto.dia"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Data/Dto/createUserDto.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/createUserDto.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/createUserDto.swiftdeps"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/createUserDto.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/createUserDto.dia"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Data/Dto/cardListDto.swift":
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/cardListDto.d"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/cardListDto.swiftdeps"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/cardListDto.o"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/cardListDto.dia"

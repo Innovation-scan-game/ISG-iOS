@@ -1,0 +1,24 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/CardView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "questionroom_title_1"
+      },
+      {
+        "comment": "",
+        "key": "questionroom_subtitle_1"
+      },
+      {
+        "comment": "",
+        "key": "loading_title_2"
+      },
+      {
+        "comment": "",
+        "key": "loading_subtitle_2"
+      }
+    ]
+  },
+  "version": 1
+}

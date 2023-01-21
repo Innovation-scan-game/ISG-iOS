@@ -1,0 +1,28 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/MainMenuView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "main_menu_title_2"
+      },
+      {
+        "comment": "",
+        "key": "main_menu_title_5"
+      },
+      {
+        "comment": "",
+        "key": "main_menu_title_1"
+      },
+      {
+        "comment": "",
+        "key": "main_menu_title_4"
+      },
+      {
+        "comment": "",
+        "key": "main_menu_title_3"
+      }
+    ]
+  },
+  "version": 1
+}

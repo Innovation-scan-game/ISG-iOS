@@ -1,0 +1,36 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/HowToPlayView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "htp_title_1"
+      },
+      {
+        "comment": "",
+        "key": "htp_subtitle_1"
+      },
+      {
+        "comment": "",
+        "key": "htp_text_1"
+      },
+      {
+        "comment": "",
+        "key": "htp_subtitle_2"
+      },
+      {
+        "comment": "",
+        "key": "htp_text_2"
+      },
+      {
+        "comment": "",
+        "key": "htp_subtitle_3"
+      },
+      {
+        "comment": "",
+        "key": "htp_text_3"
+      }
+    ]
+  },
+  "version": 1
+}

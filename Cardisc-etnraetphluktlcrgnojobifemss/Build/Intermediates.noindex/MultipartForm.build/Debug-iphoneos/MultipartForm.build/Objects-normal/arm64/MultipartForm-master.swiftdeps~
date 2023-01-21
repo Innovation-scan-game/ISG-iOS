@@ -1,0 +1,9 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "5489758d60a97ffcbf9fc415e5b56d7a5dd4bfbae3d296a1702b30a6cfa44411"
+build_start_time: [1674337248, 25457859]
+build_end_time: [1674337248, 71869850]
+inputs:
+  ? "/Users/tim/Library/Developer/Xcode/DerivedData/Cardisc-etnraetphluktlcrgnojobifemss/SourcePackages/checkouts/MultipartForm/Sources/MultipartForm/Data+Helpers.swift"
+  : !private [1672959658, 283591985]
+  ? "/Users/tim/Library/Developer/Xcode/DerivedData/Cardisc-etnraetphluktlcrgnojobifemss/SourcePackages/checkouts/MultipartForm/Sources/MultipartForm/MultipartForm.swift"
+  : !private [1672959658, 283780813]

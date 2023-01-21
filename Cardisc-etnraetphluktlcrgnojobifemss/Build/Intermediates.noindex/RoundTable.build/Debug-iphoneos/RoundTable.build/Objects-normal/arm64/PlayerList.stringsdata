@@ -1,0 +1,16 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/Lobby/PlayerList.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "host_menu_title_2"
+      },
+      {
+        "comment": "",
+        "key": "host_menu_title_3"
+      }
+    ]
+  },
+  "version": 1
+}

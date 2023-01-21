@@ -1,0 +1,48 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/AccountSettingsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "accountsettings_title_4"
+      },
+      {
+        "comment": "",
+        "key": "accountsettings_title_1"
+      },
+      {
+        "comment": "",
+        "key": "accountsettings_subtitle_1"
+      },
+      {
+        "comment": "",
+        "key": "accountsettings_subtitle_2"
+      },
+      {
+        "comment": "",
+        "key": "********"
+      },
+      {
+        "comment": "",
+        "key": "accountsettings_title_2"
+      },
+      {
+        "comment": "",
+        "key": "accountsettings_title_3"
+      },
+      {
+        "comment": "",
+        "key": "accountsettings_title_5"
+      },
+      {
+        "comment": "",
+        "key": "accountsettings_subtitle_3"
+      },
+      {
+        "comment": "",
+        "key": "accountsettings_title_6"
+      }
+    ]
+  },
+  "version": 1
+}

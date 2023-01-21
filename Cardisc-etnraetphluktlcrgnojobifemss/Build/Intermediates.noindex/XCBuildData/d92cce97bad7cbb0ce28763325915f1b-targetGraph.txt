@@ -1,0 +1,12 @@
+Target dependency graph (6 targets)
+Pods-Cardisc in Pods, no dependencies
+SignalRClient in SignalRClient, no dependencies
+SignalRClient in SignalRClient, depends on:
+SignalRClient in SignalRClient (explicit)
+MultipartForm in MultipartForm, no dependencies
+MultipartForm in MultipartForm, depends on:
+MultipartForm in MultipartForm (explicit)
+RoundTable in RoundTable, depends on:
+Pods-Cardisc in Pods (implicit dependency via file 'Pods_Cardisc.framework' in build phase 'Link Binary')
+SignalRClient in SignalRClient (explicit)
+MultipartForm in MultipartForm (explicit)

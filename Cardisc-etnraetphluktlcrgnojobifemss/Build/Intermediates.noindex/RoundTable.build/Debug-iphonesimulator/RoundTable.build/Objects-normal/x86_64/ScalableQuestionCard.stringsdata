@@ -1,0 +1,36 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/ScalableQuestionCard/ScalableQuestionCard.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "questionroom_title_4"
+      },
+      {
+        "comment": "",
+        "key": "%@"
+      },
+      {
+        "comment": "",
+        "key": "questionroom_title_3"
+      },
+      {
+        "comment": "",
+        "key": " %lld/%lld"
+      },
+      {
+        "comment": "",
+        "key": "**Score:** %lld"
+      },
+      {
+        "comment": "",
+        "key": "Disagree"
+      },
+      {
+        "comment": "",
+        "key": "Agree"
+      }
+    ]
+  },
+  "version": 1
+}

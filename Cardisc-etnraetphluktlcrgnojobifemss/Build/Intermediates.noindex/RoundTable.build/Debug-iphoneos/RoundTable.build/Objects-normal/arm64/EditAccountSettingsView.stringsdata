@@ -1,0 +1,48 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/EditAccountSettingsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "editaccountinfo_title_7"
+      },
+      {
+        "comment": "",
+        "key": ""
+      },
+      {
+        "comment": "",
+        "key": "editaccountinfo_title_2"
+      },
+      {
+        "comment": "",
+        "key": "editaccountinfo_title_3"
+      },
+      {
+        "comment": "",
+        "key": "editaccountinfo_title_4"
+      },
+      {
+        "comment": "",
+        "key": "editaccountinfo_title_5"
+      },
+      {
+        "comment": "",
+        "key": "editaccountinfo_title_1"
+      },
+      {
+        "comment": "",
+        "key": "editaccountinfo_text"
+      },
+      {
+        "comment": "",
+        "key": "editaccountinfo_title_8"
+      },
+      {
+        "comment": "",
+        "key": "editaccountinfo_text_2"
+      }
+    ]
+  },
+  "version": 1
+}

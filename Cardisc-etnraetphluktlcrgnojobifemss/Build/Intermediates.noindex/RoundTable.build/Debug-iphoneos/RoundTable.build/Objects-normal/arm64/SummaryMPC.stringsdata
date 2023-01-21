@@ -1,0 +1,28 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/MPCQuestionCard/SummaryMPC.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "chatroom_title_3"
+      },
+      {
+        "comment": "",
+        "key": "chatroom_title_4"
+      },
+      {
+        "comment": "",
+        "key": " %lld/%lld"
+      },
+      {
+        "comment": "",
+        "key": "%lld"
+      },
+      {
+        "comment": "",
+        "key": "%@"
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,16 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/General/Logo.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "app_title"
+      },
+      {
+        "comment": "",
+        "key": "app_subtitle"
+      }
+    ]
+  },
+  "version": 1
+}

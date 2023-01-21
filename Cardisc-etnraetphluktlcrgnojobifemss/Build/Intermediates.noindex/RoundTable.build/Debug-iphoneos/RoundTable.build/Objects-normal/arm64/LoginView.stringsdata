@@ -1,0 +1,32 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/LoginView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": ""
+      },
+      {
+        "comment": "",
+        "key": "login_title_4"
+      },
+      {
+        "comment": "",
+        "key": "login_title_2"
+      },
+      {
+        "comment": "",
+        "key": "login_title_3"
+      },
+      {
+        "comment": "",
+        "key": "login_title_1"
+      },
+      {
+        "comment": "",
+        "key": "login_text"
+      }
+    ]
+  },
+  "version": 1
+}

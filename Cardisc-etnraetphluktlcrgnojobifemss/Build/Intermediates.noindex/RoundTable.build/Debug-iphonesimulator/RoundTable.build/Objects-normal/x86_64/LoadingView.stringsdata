@@ -1,0 +1,20 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/LoadingView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "host_menu_backbutton_text"
+      },
+      {
+        "comment": "",
+        "key": "Loading view"
+      },
+      {
+        "comment": "",
+        "key": "Please wait while the next view is being loaded.."
+      }
+    ]
+  },
+  "version": 1
+}

@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Cardisc.xcodeproj">
+      location = "group:/Users/tim/Documents/XCode/ISG-iOS1/RoundTable.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

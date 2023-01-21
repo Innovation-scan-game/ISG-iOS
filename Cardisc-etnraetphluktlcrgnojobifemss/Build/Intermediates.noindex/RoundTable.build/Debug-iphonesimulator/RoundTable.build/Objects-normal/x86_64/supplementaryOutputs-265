@@ -1,0 +1,50 @@
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Data/Enums/SessionStatus.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/SessionStatus.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/SessionStatus.dia"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/SessionStatus.d"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/SessionStatus.o"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Managers/AccountManager.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/AccountManager.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/AccountManager.swiftdeps"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/AccountManager.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/AccountManager.dia"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/EditAccountSettingsView.swift":
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/EditAccountSettingsView.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/EditAccountSettingsView.dia"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/EditAccountSettingsView.swiftdeps"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/EditAccountSettingsView.o"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Data/Dto/sessionDto.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/sessionDto.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/sessionDto.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/sessionDto.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/sessionDto.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Viewmodels/GameViewModel.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/GameViewModel.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/GameViewModel.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/GameViewModel.dia"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/GameViewModel.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/LoginView.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/LoginView.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/LoginView.swiftdeps"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/LoginView.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/LoginView.dia"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Managers/UserManager.swift":
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/UserManager.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/UserManager.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/UserManager.swiftdeps"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/UserManager.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/MainMenuView.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/MainMenuView.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/MainMenuView.d"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/MainMenuView.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/MainMenuView.dia"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/ConclusionView.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/ConclusionView.o"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/ConclusionView.dia"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/ConclusionView.d"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/ConclusionView.swiftdeps"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Data/Enums/UserRole.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/UserRole.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/UserRole.swiftdeps"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/UserRole.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphonesimulator/RoundTable.build/Objects-normal/x86_64/UserRole.dia"

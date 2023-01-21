@@ -1,0 +1,40 @@
+{
+  "source": "/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/OpenQuestionCard/OpenQuestionCard.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "questionroom_title_4"
+      },
+      {
+        "comment": "",
+        "key": "questionroom_title_2"
+      },
+      {
+        "comment": "",
+        "key": "%@"
+      },
+      {
+        "comment": "",
+        "key": "questionroom_title_3"
+      },
+      {
+        "comment": "",
+        "key": " %lld/%lld"
+      },
+      {
+        "comment": "",
+        "key": "Action failed!"
+      },
+      {
+        "comment": "",
+        "key": "Maximum length of chatmessage exceeded: 300"
+      },
+      {
+        "comment": "",
+        "key": "OK"
+      }
+    ]
+  },
+  "version": 1
+}

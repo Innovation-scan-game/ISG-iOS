@@ -1,0 +1,45 @@
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Menu/RegisterView.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/RegisterView.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/RegisterView.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/RegisterView.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/RegisterView.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Models/DomainModels/Lobby.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/Lobby.swiftdeps"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/Lobby.d"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/Lobby.o"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/Lobby.dia"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/CardView.swift":
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/CardView.dia"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/CardView.d"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/CardView.swiftdeps"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/CardView.o"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/OpenQuestionCard/OpenQuestionCard.swift":
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/OpenQuestionCard.dia"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/OpenQuestionCard.d"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/OpenQuestionCard.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/OpenQuestionCard.swiftdeps"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Data/Dto/playerLeftDto.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/playerLeftDto.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/playerLeftDto.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/playerLeftDto.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/playerLeftDto.d"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/General/NavigationLazyView.swift":
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/NavigationLazyView.d"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/NavigationLazyView.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/NavigationLazyView.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/NavigationLazyView.o"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/LoadingView.swift":
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/LoadingView.d"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/LoadingView.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/LoadingView.dia"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/LoadingView.o"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Views/Game/Components/MPCQuestionCard/MPCQuestionCard.swift":
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MPCQuestionCard.d"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MPCQuestionCard.swiftdeps"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MPCQuestionCard.o"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/MPCQuestionCard.dia"
+"/Users/tim/Documents/XCode/ISG-iOS1/RoundTable/Viewmodels/LoginViewModel.swift":
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/LoginViewModel.d"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/LoginViewModel.swiftdeps"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/LoginViewModel.o"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/RoundTable.build/Debug-iphoneos/RoundTable.build/Objects-normal/arm64/LoginViewModel.dia"

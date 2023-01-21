@@ -1,0 +1,4 @@
+module MultipartForm {
+header "MultipartForm-Swift.h"
+export *
+}

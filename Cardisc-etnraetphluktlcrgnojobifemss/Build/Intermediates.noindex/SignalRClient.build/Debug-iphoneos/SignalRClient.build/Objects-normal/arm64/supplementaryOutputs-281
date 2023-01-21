@@ -1,0 +1,20 @@
+"/Users/tim/Library/Developer/Xcode/DerivedData/Cardisc-etnraetphluktlcrgnojobifemss/SourcePackages/checkouts/SignalR-Client-Swift/Sources/SignalRClient/CodableHelpers.swift":
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/CodableHelpers.dia"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/CodableHelpers.d"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/CodableHelpers.o"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/CodableHelpers.swiftdeps"
+"/Users/tim/Library/Developer/Xcode/DerivedData/Cardisc-etnraetphluktlcrgnojobifemss/SourcePackages/checkouts/SignalR-Client-Swift/Sources/SignalRClient/DefaultHttpClient.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/DefaultHttpClient.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/DefaultHttpClient.dia"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/DefaultHttpClient.d"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/DefaultHttpClient.o"
+"/Users/tim/Library/Developer/Xcode/DerivedData/Cardisc-etnraetphluktlcrgnojobifemss/SourcePackages/checkouts/SignalR-Client-Swift/Sources/SignalRClient/Connection.swift":
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/Connection.swiftdeps"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/Connection.dia"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/Connection.d"
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/Connection.o"
+"/Users/tim/Library/Developer/Xcode/DerivedData/Cardisc-etnraetphluktlcrgnojobifemss/SourcePackages/checkouts/SignalR-Client-Swift/Sources/SignalRClient/ConnectionDelegate.swift":
+  object: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/ConnectionDelegate.o"
+  dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/ConnectionDelegate.d"
+  diagnostics: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/ConnectionDelegate.dia"
+  swift-dependencies: "/Users/tim/Documents/XCode/ISG-iOS1/Cardisc-etnraetphluktlcrgnojobifemss/Build/Intermediates.noindex/SignalRClient.build/Debug-iphoneos/SignalRClient.build/Objects-normal/arm64/ConnectionDelegate.swiftdeps"
