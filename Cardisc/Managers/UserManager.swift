@@ -30,6 +30,8 @@ class UserManager {
             "password": password
         ]
         
+        print(body)
+        
         apiService.httpRequest(body: body, url: "user/", model: userDto.self, httpMethod: "PUT") {
             data in
             self.defaults.removeObject(forKey: "X-AUTHTOKEN")
