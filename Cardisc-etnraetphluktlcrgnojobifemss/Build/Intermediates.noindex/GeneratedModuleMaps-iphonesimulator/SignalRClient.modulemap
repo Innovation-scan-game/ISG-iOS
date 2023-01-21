@@ -1,4 +1,0 @@
-module SignalRClient {
-header "SignalRClient-Swift.h"
-export *
-}
