@@ -7,6 +7,6 @@ Real-time communication is provided by SignalR, using a client designed by Moozz
 
 Optionally, this application/tool could be used to gather information on various topics in a pleasant way. Information from multiple choice, agree/disagree and open-ended questions, among others.
 
-Version number 1.01 (beta) 
+Version number 1.2 (beta) 
 
 https://github.com/moozzyk/SignalR-Client-Swift
