@@ -65,6 +65,11 @@ struct RegisterView: View {
         .navigationDestination(isPresented: $vm.userRegistered, destination: { StartView() })
         .backgroundImage()
         .foregroundColor(Color.black)
+        .alert(isPresented: $vm.userRegistered) {
+                    Alert(title: Text("User created!"), message: Text("Please login with your new user account"), dismissButton: .default(Text("OK")) {
+                        vm.userRegistered = false
+                    })
+                }
         
     }
 }

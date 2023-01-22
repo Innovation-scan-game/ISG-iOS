@@ -26,9 +26,12 @@ struct PlayerList: View {
                 
                 Divider().frame(height: 1).foregroundColor(Color.black).padding(.horizontal, 10)
                 
-                ForEach(players) { player in
-                    PlayerItem(player: player)
+                ScrollView(.vertical) {
+                    ForEach(players) { player in
+                        PlayerItem(player: player)
+                    }
                 }
+
             }
             .frame(maxWidth: .infinity)
             .frame(minHeight: 350, alignment: .top)

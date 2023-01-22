@@ -17,6 +17,7 @@ class RegisterViewModel: ObservableObject {
     @Published var passwordRepeated: String = ""
     @Published var userRegistered: Bool = false
     @Published var errorMsg: String = ""
+    @Published var showSucceedMessage: Bool = false
     
     func registerUser() {
         DispatchQueue.main.async {
@@ -25,7 +26,6 @@ class RegisterViewModel: ObservableObject {
                     self.accountManager.registerUser(username: self.username, password: self.password, emailadress: self.emailaddress) { data in
                         if (data != nil) {
                             self.userRegistered = true
-                            print("\(data!.username) registered")
                             self.errorMsg = ""
                         }
                         else {
