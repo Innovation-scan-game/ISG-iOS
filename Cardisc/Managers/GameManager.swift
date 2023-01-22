@@ -31,7 +31,7 @@ class GameManager: ObservableObject {
         if let currentUser = UserDefaults.standard.data(forKey: "user") {
             do {
                 let decoder = JSONDecoder()
-                self.currentUser = try decoder.decode(loginResponseDto.self, from: currentUser).user
+                self.currentUser = try decoder.decode(userDto.self, from: currentUser)
             } catch {
                 print("Unable to Decode Note (\(error))")
             }

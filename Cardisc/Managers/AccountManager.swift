@@ -22,7 +22,7 @@ class AccountManager {
 
             do {
                 let encoder = JSONEncoder()
-                let user = try encoder.encode(data)
+                let user = try encoder.encode(data.user)
                 UserDefaults.standard.set(user, forKey: "user")
             } catch {
                 print("Unable to Encode Note (\(error))")

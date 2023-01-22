@@ -45,7 +45,7 @@ class UserViewModel: ObservableObject {
         if let currentUser = UserDefaults.standard.data(forKey: "user") {
             do {
                 let decoder = JSONDecoder()
-                self.currentUser = try decoder.decode(loginResponseDto.self, from: currentUser).user.toDomainModel()
+                self.currentUser = try decoder.decode(userDto.self, from: currentUser).toDomainModel()
                 self.username = self.currentUser.username
                 self.email = self.currentUser.email
                 
@@ -131,6 +131,8 @@ class UserViewModel: ObservableObject {
                 if let uiImage = UIImage(data: data) {
                     self.userManager.uploadAvatar(uiimage: uiImage, id: self.currentUser.id) { data in
                         if let data = data {
+                            
+                            
                             self.currentUser = data
                             self.imageLoading = false
                         }

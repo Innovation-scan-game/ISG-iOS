@@ -55,6 +55,15 @@ class UserManager {
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.apiService.httpRequest(body: nil, url: "user/\(id)", model: userDto.self, httpMethod: "GET") { data in
+                
+                do {
+                    let encoder = JSONEncoder()
+                    let user = try encoder.encode(data)
+                    UserDefaults.standard.set(user, forKey: "user")
+                } catch {
+                    print("HIER GAAT HET VOUTTT (\(error))")
+                }
+                
                 completion(data.toDomainModel())
             } failure: { error in
                 print(error.localizedDescription)
