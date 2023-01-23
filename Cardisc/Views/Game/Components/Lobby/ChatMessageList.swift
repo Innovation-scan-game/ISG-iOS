@@ -16,7 +16,7 @@ struct ChatMessageList: View {
             ScrollView(.vertical) {
                 LazyVStack {
                     ForEach(vm.chatMessages) { message in
-                        ChatMessageItem(name: message.username, message: message.message).id(message.id)
+                        ChatMessageItem(name: message.username, message: message.message).id(message.id).animation(.default)
                     }
                 }
                 
