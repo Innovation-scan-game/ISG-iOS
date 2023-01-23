@@ -30,6 +30,8 @@ struct CardiscTextfield: View {
             .autocapitalization(.none)
             .background(Color.white)
             .cornerRadius(10)
+            .disableAutocorrection(true)
+            .autocapitalization(.none)
         }
         .padding(.vertical, 5)
     }

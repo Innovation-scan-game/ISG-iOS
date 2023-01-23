@@ -51,7 +51,6 @@ struct HowToPlayView: View {
                         Text("htp_text_3").foregroundColor(Color.white)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.top, 10)
                     
                 }
             }.padding(.horizontal, 30)

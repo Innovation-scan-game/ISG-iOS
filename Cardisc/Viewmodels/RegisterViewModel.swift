@@ -29,7 +29,7 @@ class RegisterViewModel: ObservableObject {
                             self.errorMsg = ""
                         }
                         else {
-                            self.errorMsg = "User already exists"
+                            self.errorMsg = "Usercredentials incorrect, please try again."
                         }
                     }
                 }

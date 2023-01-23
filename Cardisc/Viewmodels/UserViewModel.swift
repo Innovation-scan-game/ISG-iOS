@@ -113,7 +113,7 @@ class UserViewModel: ObservableObject {
                         self.updatedUser = true
                     }
                     else {
-                        self.errorMsg = "Username aleady exists"
+                        self.errorMsg = "Username or emailadres aleady exists"
                     }
                 }
             }
@@ -131,8 +131,6 @@ class UserViewModel: ObservableObject {
                 if let uiImage = UIImage(data: data) {
                     self.userManager.uploadAvatar(uiimage: uiImage, id: self.currentUser.id) { data in
                         if let data = data {
-                            
-                            
                             self.currentUser = data
                             self.imageLoading = false
                         }

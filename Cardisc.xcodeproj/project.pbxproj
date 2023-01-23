@@ -326,6 +326,7 @@
 			children = (
 				22CB502B2963322B0054951A /* Info.plist */,
 				22A80AAB292A722D003CD018 /* CardiscApp.swift */,
+				22E034A6296EEDF500A9D224 /* Localizable.strings */,
 				22A80AD5292A7260003CD018 /* Data */,
 				22A80AD9292A7284003CD018 /* Managers */,
 				22A80AD8292A727A003CD018 /* Viewmodels */,
@@ -371,7 +372,6 @@
 				22A80B0D292A856C003CD018 /* ApiService.swift */,
 				22E8C751293CE8A7005CCC00 /* SignalRService.swift */,
 				22CB502C2966F6CD0054951A /* ConnectionDelegation.swift */,
-				22E034A6296EEDF500A9D224 /* Localizable.strings */,
 			);
 			path = Data;
 			sourceTree = "<group>";
