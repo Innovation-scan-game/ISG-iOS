@@ -34,7 +34,7 @@ struct PlayerList: View {
 
             }
             .frame(maxWidth: .infinity)
-            .frame(minHeight: 350, alignment: .top)
+            .frame(maxHeight: 350, alignment: .top)
             .background(Color.white)
             .cornerRadius(10, corners: [.allCorners])
             .padding(.vertical, 5)
