@@ -109,6 +109,7 @@ If the playing card contains an open question, the player is asked to answer it 
 "chatroom_title_2" = "Continue";
 "chatroom_title_3" = "Answers";
 "chatroom_title_4" = "Completed";
+"chaterror" = "Max length of a chatmessage is 300 chars";
 
 "conclusion_title_1" = "Conclusion (optional)";
 "conclusion_text_1" = "Add a conclusion to the conversation in the pervious view if that applies.";

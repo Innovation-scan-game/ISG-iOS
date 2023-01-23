@@ -17,7 +17,9 @@ struct ScalableQuestionCard : View {
                 Text("\(vm.currentCard.name)").foregroundColor(Color.black).bold().font(.system(size: 20))
                 Spacer()
                 Text("questionroom_title_3") + Text(" \(vm.gameIndex+1)/\(vm.game.cards.count)")
-            }.padding(.bottom, 10)
+            }
+            .padding(.bottom, 10)
+            .frame(alignment: .top)
             
             HStack {
                 Text(vm.currentCard.body)
@@ -41,7 +43,7 @@ struct ScalableQuestionCard : View {
         }
         .padding(25)
         .background(Color.white)
-        .cornerRadius(20, corners: [.allCorners])
+        .cornerRadius(10, corners: [.allCorners])
         .padding(.horizontal, 30)
         .shadow(radius: 10)
         .foregroundColor(Color.black)

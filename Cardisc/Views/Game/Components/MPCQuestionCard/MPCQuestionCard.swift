@@ -49,7 +49,7 @@ struct MPCQuestionCard : View {
         .foregroundColor(Color.black)
         .padding(20)
         .background(Color.white)
-        .cornerRadius(20, corners: [.allCorners])
+        .cornerRadius(10, corners: [.allCorners])
         .padding(.horizontal, 30)
         .shadow(radius: 10)
         .padding(.bottom, 20)

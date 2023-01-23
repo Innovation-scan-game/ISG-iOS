@@ -2,7 +2,7 @@
 //  LoginMainView.swift
 //  Cardisc
 //
-//  Created by Sibtain Ali (Fiverr) on 28/12/2022.
+//  Created by Tim van Kesteren on 28/12/2022.
 //
 
 import SwiftUI

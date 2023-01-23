@@ -114,6 +114,7 @@ Als de kaart een open vraag bevat, wordt de speler gevraagd om deze individueel 
 "chatroom_title_2" = "Verdergaan";
 "chatroom_title_3" = "Antwoorden";
 "chatroom_title_4" = "Voltooid";
+"chaterror" = "Maximale lengte voor een chatbericht is jammer genoeg 300 tekens.";
 
 "conclusion_title_1" = "Conclusie (optioneel)";
 "conclusion_text_1" = "Voeg een conclusie toe aan het gesprek in het vorige scherm als dat van toepassing is.";

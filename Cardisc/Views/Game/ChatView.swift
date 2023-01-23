@@ -125,7 +125,7 @@ struct ChatView: View {
         })
         
         .alert(isPresented: $vm.showErrorMessage) {
-                    Alert(title: Text("Action failed!"), message: Text("Maximum length of answer exceeded: 300"), dismissButton: .default(Text("OK")) {
+                    Alert(title: Text("Action failed!"), message: Text("chaterror"), dismissButton: .default(Text("OK")) {
                         vm.showErrorMessage = false
                     })
                 }

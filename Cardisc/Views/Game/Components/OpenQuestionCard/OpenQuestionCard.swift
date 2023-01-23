@@ -48,7 +48,7 @@ struct OpenQuestionCard : View {
             .padding(.bottom, 20)
             .padding(.horizontal, 15)
             .background(Color.white)
-            .cornerRadius(20, corners: [.allCorners])
+            .cornerRadius(10, corners: [.allCorners])
             
             CardiscTextfield(value: $vm.answer, label: Text("questionroom_title_2"), placeholder: nil)
         }
