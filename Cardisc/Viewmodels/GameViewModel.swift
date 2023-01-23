@@ -55,6 +55,7 @@ class GameViewModel: ObservableObject {
     @Published var conclusion: String = ""
     @Published var joinSessionError: String = ""
     @Published var sendMessageError: String = ""
+    @Published var showQuestion: Bool = false
     
     
     private var cancellables: [AnyCancellable] = []

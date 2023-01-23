@@ -129,6 +129,11 @@ struct ChatView: View {
                         vm.showErrorMessage = false
                     })
                 }
+        .alert(isPresented: $vm.showQuestion) {
+            Alert(title: Text("\(vm.currentCard.name)"), message: Text("\(vm.currentCard.body)"), dismissButton: .default(Text("OK")) {
+                        vm.showQuestion = false
+                    })
+                }
 
     }
 }

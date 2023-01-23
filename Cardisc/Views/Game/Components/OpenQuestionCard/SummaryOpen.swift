@@ -18,6 +18,14 @@ struct SummaryOpen: View {
                 Text("chatroom_title_3").bold()
                 Spacer()
                 Text("chatroom_title_4") + Text(" \(vm.answers.count)/\(vm.players.count)")
+                Spacer()
+                Image(systemName: "questionmark.app.fill")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(Color.blue)
+                    .onTapGesture {
+                    vm.showQuestion.toggle()
+                }
             }
             
             Divider()

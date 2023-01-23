@@ -66,7 +66,7 @@ struct RegisterView: View {
         .backgroundImage()
         .foregroundColor(Color.black)
         .alert(isPresented: $vm.userRegistered) {
-                    Alert(title: Text("User created!"), message: Text("Please login with your new user account"), dismissButton: .default(Text("OK")) {
+                    Alert(title: Text("register_title_7"), message: Text("register_title_8"), dismissButton: .default(Text("OK")) {
                         vm.userRegistered = false
                     })
                 }
