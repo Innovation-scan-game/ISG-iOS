@@ -88,6 +88,8 @@ If the playing card contains an open question, the player is asked to answer it 
 "register_title_6" = "Register";
 "register_title_7" = "Account created!";
 "register_title_8" = "Log in with your new account to start.";
+"register_error_1" = "Usercredentials already in our database, please try another emailadres and/or username";
+"register_error_2" = "Password length to short, please try another one (min. length 5 characters).";
 
 "loading_title_1" = "Starting game";
 "loading_title_2" = "Game finished";

@@ -91,6 +91,8 @@ Als de kaart een open vraag bevat, wordt de speler gevraagd om deze individueel 
 "register_title_6" = "Registreren";
 "register_title_7" = "Account aangemaakt!";
 "register_title_8" = "Log in met je nieuwe account om te beginnen.";
+"register_error_1" = "Gebruikersgegevens al bekend bij RoundTable, probeer a.u.b. andere gebruikersnaam en/ of emailadres";
+"register_error_2" = "Wachtwoord te kort, minimale lengte van 5 karakters vereist.";
 
 "loading_title_1" = "Spel starten";
 "loading_title_2" = "Spel voltooid";
