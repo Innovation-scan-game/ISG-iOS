@@ -29,7 +29,7 @@ struct SummaryScalable: View {
             }
 
             HStack {
-                Text("questionroom_title_6") + Text("\(String(format: "%.1f", vm.averageScalable * 20))%")
+                Text("questionroom_title_6") + Text("\(String(format: "%.1f", vm.averageScalable))")
                 Spacer()
             }
             .padding(.vertical, 10)
