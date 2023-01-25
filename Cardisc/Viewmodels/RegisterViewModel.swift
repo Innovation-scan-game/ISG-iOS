@@ -33,26 +33,26 @@ class RegisterViewModel: ObservableObject {
                                     self.errorMsg = ""
                                 }
                                 else {
-                                    self.errorMsg = "register_error_1"
+                                    self.errorMsg = "register_error_1".localized()
                                 }
                             }
                         }
                         else {
-                            self.errorMsg = "register_error_2"
+                            self.errorMsg = "register_error_2".localized()
                         }
                         
                     }
                     else {
-                        self.errorMsg = "Passwords aren't matching"
+                        self.errorMsg = "register_error_3".localized()
                     }
                 }
                 else {
-                    self.errorMsg = "Emailadres incorrect"
+                    self.errorMsg = "register_error_4".localized()
                 }
                 
             }
             else {
-                self.errorMsg = "Some fields are empty"
+                self.errorMsg = "register_error_5".localized()
             }
             
         }

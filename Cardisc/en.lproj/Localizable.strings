@@ -19,6 +19,8 @@
 "join_menu_decription" = "Join a game by entering the Game ID you received from the game host. A GameID is a key that exists of 4 digits. this could be numeric and/or letters.";
 "join_menu_title_2" = "Enter game id";
 "join_menu_button_text" = "Join Game";
+"join_error_1" = "GameID not recognised, please check this and try again.";
+
 
 "host_menu_backbutton_text" = "Leave session";
 "host_menu_title_1" = "Game lobby: ";
@@ -78,6 +80,10 @@ If the playing card contains an open question, the player is asked to answer it 
 "login_title_2" = "Username";
 "login_title_3" = "Password";
 "login_title_4" = "Login";
+"login_error_1" = "Usercredentials incorrect";
+"login_error_2" = "Password field empty";
+"login_error_3" = "Usernamefield is empty";
+"login_error_4" = "Emailfield is empty";
 
 "register_title_1" = "Register";
 "register_text" = "Create your own RoundTable-Account";
@@ -90,6 +96,10 @@ If the playing card contains an open question, the player is asked to answer it 
 "register_title_8" = "Log in with your new account to start.";
 "register_error_1" = "Usercredentials already in our database, please try another emailadres and/or username";
 "register_error_2" = "Password length to short, please try another one (min. length 5 characters).";
+"register_error_3" = "Passwords aren't matching, please check the passwordfields.";
+"register_error_4" = "Emailadres not valid";
+"register_error_5" = "Some fields are still empty";
+"register_error_6" = "Username or emailadres already in use";
 
 "loading_title_1" = "Starting game";
 "loading_title_2" = "Game finished";

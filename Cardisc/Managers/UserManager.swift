@@ -61,7 +61,7 @@ class UserManager {
                     let user = try encoder.encode(data)
                     UserDefaults.standard.set(user, forKey: "user")
                 } catch {
-                    print("HIER GAAT HET VOUTTT (\(error))")
+                    print(error.localizedDescription)
                 }
                 
                 completion(data.toDomainModel())

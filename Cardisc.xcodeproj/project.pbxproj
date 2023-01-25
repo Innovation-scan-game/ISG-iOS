@@ -75,7 +75,6 @@
 		22A80B06292A842D003CD018 /* CardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B05292A842D003CD018 /* CardManager.swift */; };
 		22A80B0C292A8549003CD018 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B0B292A8549003CD018 /* Constants.swift */; };
 		22A80B0E292A856C003CD018 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A80B0D292A856C003CD018 /* ApiService.swift */; };
-		22BB35DD2946940800986383 /* JoinGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BB35DC2946940800986383 /* JoinGameManager.swift */; };
 		22CB500D295C9EAB0054951A /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB500C295C9EAB0054951A /* StartViewModel.swift */; };
 		22CB500F295CA1F80054951A /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB500E295CA1F80054951A /* CustomModifiers.swift */; };
 		22CB5011295CAD060054951A /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CB5010295CAD060054951A /* Logo.swift */; };
@@ -183,7 +182,6 @@
 		22A80B05292A842D003CD018 /* CardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManager.swift; sourceTree = "<group>"; };
 		22A80B0B292A8549003CD018 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		22A80B0D292A856C003CD018 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		22BB35DC2946940800986383 /* JoinGameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinGameManager.swift; sourceTree = "<group>"; };
 		22CB500C295C9EAB0054951A /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
 		22CB500E295CA1F80054951A /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 		22CB5010295CAD060054951A /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
@@ -324,8 +322,8 @@
 		22A80AAA292A722D003CD018 /* Cardisc */ = {
 			isa = PBXGroup;
 			children = (
-				22CB502B2963322B0054951A /* Info.plist */,
 				22A80AAB292A722D003CD018 /* CardiscApp.swift */,
+				22CB502B2963322B0054951A /* Info.plist */,
 				22E034A6296EEDF500A9D224 /* Localizable.strings */,
 				22A80AD5292A7260003CD018 /* Data */,
 				22A80AD9292A7284003CD018 /* Managers */,
@@ -414,7 +412,6 @@
 				22A40E6F2932CC4100FF7952 /* AccountManager.swift */,
 				22A40E712932CCB800FF7952 /* GameManager.swift */,
 				22A80B03292A8420003CD018 /* UserManager.swift */,
-				22BB35DC2946940800986383 /* JoinGameManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -743,7 +740,6 @@
 				22A40E5C2931676200FF7952 /* sessionDto.swift in Sources */,
 				22A40E4B29313FBF00FF7952 /* UserRole.swift in Sources */,
 				22A40E4929313F8400FF7952 /* SessionStatus.swift in Sources */,
-				22BB35DD2946940800986383 /* JoinGameManager.swift in Sources */,
 				226CC87B2930ED00005663C5 /* ScalableQuestionCard.swift in Sources */,
 				2203C9272957585500FD2921 /* SummaryOpen.swift in Sources */,
 				22CB500D295C9EAB0054951A /* StartViewModel.swift in Sources */,

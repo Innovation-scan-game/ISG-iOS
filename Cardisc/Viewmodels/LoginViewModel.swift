@@ -33,18 +33,18 @@ class LoginViewModel: ObservableObject {
                         }
                         else {
                             self.isRequestInProgress = false
-                            self.errorMessage = "Usercredentials incorrect"
+                            self.errorMessage = "login_error_1".localized()
                         }
                         
                     }
                 }
                 else {
-                    self.errorMessage = "Passwordfield is empty!"
+                    self.errorMessage = "login_error_2".localized()
                     self.isRequestInProgress = false
                 }
             }
             else {
-                self.errorMessage = "Usernamefield is empty!"
+                self.errorMessage = "login_error_3".localized()
                 self.isRequestInProgress = false
             }
 

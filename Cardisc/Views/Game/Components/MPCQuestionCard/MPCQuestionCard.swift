@@ -20,11 +20,16 @@ struct MPCQuestionCard : View {
                 Text("questionroom_title_3") + Text(" \(vm.gameIndex+1)/\(vm.game.cards.count)")
             }.padding(.bottom, 10)
             
+            
             HStack {
-                Text(vm.currentCard.body).foregroundColor(Color.black)
+                ScrollView(.vertical) {
+                    Text(vm.currentCard.body).foregroundColor(Color.black)
+                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.top, 5)
+            
+            
             
             HStack {
                 Text("questionroom_title_5")

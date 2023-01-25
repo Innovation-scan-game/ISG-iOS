@@ -210,7 +210,7 @@ class GameViewModel: ObservableObject {
                     self.isLoadingJoinSession = false
                 }
                 else {
-                    self.joinSessionError = "Game ID not recognised.."
+                    self.joinSessionError = "join_error_1".localized()
                     self.isLoadingJoinSession = false
                 }
             }

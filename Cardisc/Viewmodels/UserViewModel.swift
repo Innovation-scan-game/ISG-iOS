@@ -83,7 +83,7 @@ class UserViewModel: ObservableObject {
                 self.changedUserDetails += "Username \(currentUser.username) -> \(self.username) \n"
             }
             else {
-                self.errorMsg = "Username field can not be empty"
+                self.errorMsg = "login_error_3".localized()
             }
         }
         
@@ -92,7 +92,7 @@ class UserViewModel: ObservableObject {
                 self.changedUserDetails += "Email \(currentUser.email) -> \(self.email) \n"
             }
             else {
-                self.errorMsg = "Emailfield can not be empty"
+                self.errorMsg = "login_error_4".localized()
             }
         }
         
@@ -101,7 +101,7 @@ class UserViewModel: ObservableObject {
                 self.changedUserDetails += "Password ****** -> \(self.password) \n"
             }
             else {
-                self.errorMsg = "Passwords aren't matching!"
+                self.errorMsg = "register_error_3".localized()
             }
         }
         
@@ -113,7 +113,7 @@ class UserViewModel: ObservableObject {
                         self.updatedUser = true
                     }
                     else {
-                        self.errorMsg = "Username or emailadres aleady exists"
+                        self.errorMsg = "register_error_6".localized()
                     }
                 }
             }

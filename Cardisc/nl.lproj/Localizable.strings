@@ -19,6 +19,7 @@
 "join_menu_decription" = "Join een spel door de Game ID hieronder in te vullen die je hebt ontvangen van de host. Een Game ID is een unieke reeks bestaande uit 4 cijfers en/ of letters.";
 "join_menu_title_2" = "Voer Game ID in:";
 "join_menu_button_text" = "Join sessie";
+"join_error_1" = "GameID net herkent, controleer en probeer opnieuw.";
 
 "host_menu_backbutton_text" = "Verlaat sessie";
 "host_menu_title_1" = "Spel lobby: ";
@@ -81,6 +82,12 @@ Als de kaart een open vraag bevat, wordt de speler gevraagd om deze individueel 
 "login_title_2" = "Gebruikersnaam";
 "login_title_3" = "Wachtwoord";
 "login_title_4" = "Inloggen";
+"login_error_1" = "Gebruikersgegevens incorrect";
+"login_error_2" = "Gebruikersnaamveld is leeg";
+"login_error_3" = "Passwordveld is leeg";
+"login_error_1" = "Logingegevens onjuist, probeer aub opnieuw.";
+"login_error_2" = "Wachtwoordgeld leeg.";
+"login_error_3" = "Gebruikersnaamveld leeg.";
 
 "register_title_1" = "Registreren";
 "register_text" = "Maak uw eigen RoundTable-account aan";
@@ -93,6 +100,10 @@ Als de kaart een open vraag bevat, wordt de speler gevraagd om deze individueel 
 "register_title_8" = "Log in met je nieuwe account om te beginnen.";
 "register_error_1" = "Gebruikersgegevens al bekend bij RoundTable, probeer a.u.b. andere gebruikersnaam en/ of emailadres";
 "register_error_2" = "Wachtwoord te kort, minimale lengte van 5 karakters vereist.";
+"register_error_3" = "Wachtwoorden komen niet overeen.";
+"register_error_4" = "Emailadres is niet geldig, controleer aub de invoer.";
+"register_error_5" = "Sommige velden zijn leeg.";
+"register_error_6" = "Gebruikersnaam of emailadres al reeds in gebruik.";
 
 "loading_title_1" = "Spel starten";
 "loading_title_2" = "Spel voltooid";

@@ -134,6 +134,7 @@ class ApiService {
         task.resume()
     }
     
+    // Upload request
     func httpUploadRequest<T: Decodable>
     (
         model: T.Type,

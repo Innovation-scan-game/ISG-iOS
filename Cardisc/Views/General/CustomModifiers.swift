@@ -66,3 +66,10 @@ extension View {
     }
     
 }
+
+extension String {
+    func localized() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
+}
+
